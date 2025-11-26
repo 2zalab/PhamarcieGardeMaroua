@@ -1,0 +1,37 @@
+com.maroua.pharmaciegarde.test.app-graphics-path-1.0.1-0 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\03479dc19411ef95181ce9e46709e319\transformed\graphics-path-1.0.1\res
+com.maroua.pharmaciegarde.test.app-core-1.13.1-1 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20da7a45cc1568dee896992a7b10f3bd\transformed\core-1.13.1\res
+com.maroua.pharmaciegarde.test.app-ui-unit-release-2 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\288e5f1156a84938178ecca58e1f57fa\transformed\ui-unit-release\res
+com.maroua.pharmaciegarde.test.app-lifecycle-viewmodel-ktx-2.8.3-3 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2b53d0a74fffdfd703150d698a9e11d0\transformed\lifecycle-viewmodel-ktx-2.8.3\res
+com.maroua.pharmaciegarde.test.app-ui-graphics-release-4 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3d8f65731c4ebd58d731191486a39e0f\transformed\ui-graphics-release\res
+com.maroua.pharmaciegarde.test.app-customview-poolingcontainer-1.0.0-5 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4922566f23d96aedfcfe52a6bb22d9e5\transformed\customview-poolingcontainer-1.0.0\res
+com.maroua.pharmaciegarde.test.app-activity-compose-1.8.2-6 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4d040f2dc53435398214e656177b9134\transformed\activity-compose-1.8.2\res
+com.maroua.pharmaciegarde.test.app-runtime-saveable-release-7 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\550047b43308aac28ce031fb3e9a59aa\transformed\runtime-saveable-release\res
+com.maroua.pharmaciegarde.test.app-lifecycle-viewmodel-release-8 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\59050c9f65fbb44f9fb53e4e17449872\transformed\lifecycle-viewmodel-release\res
+com.maroua.pharmaciegarde.test.app-annotation-experimental-1.4.1-9 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5d05ad9a55b7b43ac3fd28c5243cee8b\transformed\annotation-experimental-1.4.1\res
+com.maroua.pharmaciegarde.test.app-ui-test-junit4-release-10 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5f1655fdc858faa2071199d42607d3b6\transformed\ui-test-junit4-release\res
+com.maroua.pharmaciegarde.test.app-savedstate-1.2.1-11 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\661c9f7a07b3d98184390abb9ec6d244\transformed\savedstate-1.2.1\res
+com.maroua.pharmaciegarde.test.app-emoji2-1.3.0-12 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\683557e1dc8920a2987e6e7cfd92e953\transformed\emoji2-1.3.0\res
+com.maroua.pharmaciegarde.test.app-startup-runtime-1.1.1-13 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7456eec442e2556968844b818dcb05ea\transformed\startup-runtime-1.1.1\res
+com.maroua.pharmaciegarde.test.app-lifecycle-runtime-compose-release-14 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\78acb97fc146ca79b1d2789134400ec6\transformed\lifecycle-runtime-compose-release\res
+com.maroua.pharmaciegarde.test.app-ui-text-release-15 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7db6f5b3173dde186de293f943f955de\transformed\ui-text-release\res
+com.maroua.pharmaciegarde.test.app-activity-ktx-1.8.2-16 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8cfa98abc6507524e8faba429658946d\transformed\activity-ktx-1.8.2\res
+com.maroua.pharmaciegarde.test.app-lifecycle-process-2.8.3-17 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\917f3e760aaf9839c205421d52c9579e\transformed\lifecycle-process-2.8.3\res
+com.maroua.pharmaciegarde.test.app-core-1.5.0-18 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9a48cacdf10900ada1323ff5e34df03c\transformed\core-1.5.0\res
+com.maroua.pharmaciegarde.test.app-profileinstaller-1.3.1-19 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9b7566ea7160dda7931f70ef60589af3\transformed\profileinstaller-1.3.1\res
+com.maroua.pharmaciegarde.test.app-lifecycle-viewmodel-savedstate-2.8.3-20 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a0e282a046d8d255d8d5c07395b5e933\transformed\lifecycle-viewmodel-savedstate-2.8.3\res
+com.maroua.pharmaciegarde.test.app-core-ktx-1.13.1-21 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a658dd3fbea50ab3da1a4067d6894ebb\transformed\core-ktx-1.13.1\res
+com.maroua.pharmaciegarde.test.app-lifecycle-livedata-core-2.8.3-22 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b00712a14f7ac81746d4d9fc19705ac9\transformed\lifecycle-livedata-core-2.8.3\res
+com.maroua.pharmaciegarde.test.app-ui-release-23 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b4b8f553a46089b9de9c6bb2da45ddad\transformed\ui-release\res
+com.maroua.pharmaciegarde.test.app-savedstate-ktx-1.2.1-24 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bc319dbbe110ae0dd84e74e1b63aa912\transformed\savedstate-ktx-1.2.1\res
+com.maroua.pharmaciegarde.test.app-runtime-release-25 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bfb102c285f269e5b9ee547766609e70\transformed\runtime-release\res
+com.maroua.pharmaciegarde.test.app-ui-geometry-release-26 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c28ab228885ed70318f1cfea92c0a55e\transformed\ui-geometry-release\res
+com.maroua.pharmaciegarde.test.app-activity-1.8.2-27 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ca240c8bff8dfbf07f926b5b8944b7e0\transformed\activity-1.8.2\res
+com.maroua.pharmaciegarde.test.app-ui-util-release-28 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d00604cb45d9945e1fd1a4727097de54\transformed\ui-util-release\res
+com.maroua.pharmaciegarde.test.app-lifecycle-runtime-ktx-release-29 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d76389ced7faed204c5b1f4fad5481ed\transformed\lifecycle-runtime-ktx-release\res
+com.maroua.pharmaciegarde.test.app-ui-test-release-30 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ecff82b0ab2e67d926802f8cc65e7474\transformed\ui-test-release\res
+com.maroua.pharmaciegarde.test.app-lifecycle-runtime-release-31 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\fc791d7afd37f8256030b2e7a79b6adb\transformed\lifecycle-runtime-release\res
+com.maroua.pharmaciegarde.test.app-core-runtime-2.2.0-32 C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\fdd35816b4ec6f828bbc0d83e3a3f38a\transformed\core-runtime-2.2.0\res
+com.maroua.pharmaciegarde.test.app-androidTest-33 F:\GitHub\PhamarcieGarde\mobile-app\app\build\generated\res\resValues\androidTest\debug
+com.maroua.pharmaciegarde.test.app-mergeDebugAndroidTestResources-34 F:\GitHub\PhamarcieGarde\mobile-app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.maroua.pharmaciegarde.test.app-mergeDebugAndroidTestResources-35 F:\GitHub\PhamarcieGarde\mobile-app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.maroua.pharmaciegarde.test.app-debugAndroidTest-36 F:\GitHub\PhamarcieGarde\mobile-app\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

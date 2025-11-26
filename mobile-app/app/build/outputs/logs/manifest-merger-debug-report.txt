@@ -1,0 +1,830 @@
+-- Merging decision tree log ---
+meta-data#com.google.android.geo.API_KEY
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:24:9-26:47
+	android:value
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:25:13-58
+manifest
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:2:1-39:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1db97126f66f44a2c82fe051f33ed749\transformed\hilt-navigation-compose-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0e59efa493ee7b77e5009aaa530ca6b9\transformed\hilt-navigation-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4320a1b31a22d7bd298853740e889bef\transformed\navigation-common-2.7.5\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\71405720f3cc12f76fb9c4ab98c2bb0f\transformed\navigation-runtime-2.7.5\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bc3864648a401b38c0689c1cafa2abf0\transformed\navigation-common-ktx-2.7.5\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9fcd30a373e14a9e0c51b8f764d22f62\transformed\navigation-runtime-ktx-2.7.5\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\134c315c6015ac08ac9ca664ef70119e\transformed\navigation-compose-2.7.5\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:hilt-android:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\39c624ff96d2c2d121541366f444bb09\transformed\hilt-android-2.48\AndroidManifest.xml:16:1-19:12
+MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\364eb18e1746900704db50eff4e4ee9e\transformed\coil-compose-2.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\748beea0265332c6b5257ec5fd472ae7\transformed\coil-compose-base-2.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\58cb9aef7b7fff20f7f31a77539f3c89\transformed\coil-2.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\11daf60682a5d177d156a2ba88bdbc26\transformed\coil-base-2.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df463b71d716950973c6374f6ec48ac7\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e1afde5147099b5ac63e02e98f3d154f\transformed\appcompat-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13dc2ceaa10f0e29c18a3441e62ee9da\transformed\datastore-preferences-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b4e6dff22bf243b35d68475c34a10b0f\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:17:1-145:12
+MERGED from [androidx.room:room-ktx:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\44e633a9858b4f1bcec897e62e184dad\transformed\room-ktx-2.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-splashscreen:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13f4be14fdeebc5b7e639d5f45e3518e\transformed\core-splashscreen-1.0.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.maps.android:maps-compose:4.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e56a95f5f7abbfb88817a1d3c9bea738\transformed\maps-compose-4.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.maps.android:maps-ktx:5.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7af54a112a8eda23593f1728373e6290\transformed\maps-ktx-5.0.0\AndroidManifest.xml:18:1-23:12
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c08e42d3d42cee3fcea90de6c3c88d75\transformed\play-services-location-21.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\03379df87b6509b65297e77a91c09919\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f684e1e83881ae13bb124ee7b4c3079b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\dc274e044c34088e6e2cfd8822b30b71\transformed\play-services-fido-20.0.1\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3c2695bb96c49d967d85faeb9d243a5a\transformed\accompanist-systemuicontroller-0.32.0\AndroidManifest.xml:17:1-23:12
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b111619d3eb430b6db4fdae749096921\transformed\accompanist-permissions-0.32.0\AndroidManifest.xml:17:1-23:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\968f6b1c393a32c4c927055fbcd32050\transformed\accompanist-drawablepainter-0.32.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.material3:material3-android:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a75b5b7a5015362f1cc2dff3d0b980d4\transformed\material3-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7748914c1dffa3fed52eaa3db49f1e3d\transformed\animation-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\acceba3f43e4a35076d010f96f6df961\transformed\ui-tooling-data-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\528e74827abb741895d370c7d7878f6b\transformed\ui-tooling-preview-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\639981c618e7b514025a83868b78b6f2\transformed\ui-text-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8a8e92e705b3b6df49ec9e2d3caf94ad\transformed\ui-geometry-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e91a907a5b0e9c767287dfa066ca9809\transformed\ui-graphics-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cea829278ba02bc45f8705d60385910a\transformed\ui-util-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20fe5edcdb33f4640aa7b4c00eedccbc\transformed\ui-unit-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material-android:1.6.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\62514f60eb3d3e83adc0af04725ad59c\transformed\material-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df92da9caf1f00e1e25a2ccd0506e587\transformed\material-ripple-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\77232c9ef8a11f917009b74998796bb7\transformed\animation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee6c18711c6c206e696f26f801f3e0ba\transformed\foundation-layout-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5c4770774decc781d9663bee870c8fbc\transformed\foundation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee38a4eaa5c3fa931308a0e58e5e0d83\transformed\material-icons-extended-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5dddd3c04d36f52f17fa8dfd7ddfa997\transformed\material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2e43d53ce21bf57aea8d6ebbcaabe4a4\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1b4aaf707a26887705cc3595553e1730\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3eb158c4b4f532560140515320eecd23\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\449800f5dbcb9e9e8d769c0e76f34f0c\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7b4a6f556d539db77775dc4ef75dcb7f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\932f58bc5fad74531bd4e3e55c3bc6ae\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9d9751d5d2d05339b2a1d8d0974f4152\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\628b154888e0a00a8fd5885e8830b042\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3f8263555091e92a3ddf485fc17d448b\transformed\core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9f10f93b3a17667324f5fa360cc79e8c\transformed\autofill-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4e5913d03934832eb33f188b9f029254\transformed\graphics-path-1.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0a4c1038e70bbebae8047bed0bb7cc67\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\eeb2f83c002d4d3d0882989cc5ac18c8\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c907e76e55f085318a292eda7d95771f\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88949be0e24fcc253aadcd7612fb0db7\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ad9ca6f057cedcd3e44484ca13bcd9f9\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b9c4a986ad234aae3488a667a24c3435\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cd7144e4c9cda4424c051d52d8bd0af8\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5448c972513ab94b9a5e3994158c9873\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5e76cb98196e844a84f61bbaabde649e\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\749fcd3f0b42a7952f9bcbf132846f63\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\430590a8239c260e2cedd7d95e1a6f24\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\73fe3064f6134e4b4e390a1e51941bf2\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\957c25c83d5682fc939df916153026de\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0effc3316c458ea76b7625e7f79cf7b5\transformed\lifecycle-viewmodel-compose-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\49fbf4c48802cb2525e03d7ab8be457f\transformed\ui-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\335343746f0e6180e72b75b606422043\transformed\activity-1.8.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4938d3c02154f309d7989b73f05b5be4\transformed\activity-ktx-1.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-compose:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\91b98dca426d9c7eab4e76d220b860ad\transformed\activity-compose-1.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f2eb177e5a442f70a93550f84d32a5af\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20afcf5c2c966373d88a767b6b2205de\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88a35f17ab048dfb024e6f53afaade8b\transformed\datastore-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\32f70286ff9169bf8501016e7aec3f91\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\905cb049aaece842e197f47cc7d63cb3\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d849e314a24b81c94a7cdf1bf1eefcd4\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\016b38b234acda2055868cc9fc593097\transformed\sqlite-2.4.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bcf0ab1ffc987fb93ac0faa689c8d16d\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e5e9c42baeca6b1a6880f85a31b142bd\transformed\napier-debug\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8c9b22edfa83e711fbf05e94b9c1969b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2823cf53f4549f4701160f465ee4bd0e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b5e9c35a679331faf3b4f3b8593cb4af\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a1dda3b62a294381f8346b2c95ef7639\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.databinding:viewbinding:7.4.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d15442ac4a4d70d448bbc31ee9b4303c\transformed\viewbinding-7.4.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2dfcb096ddcdb7b5a8e8cb342f285271\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\977c03cb76125b37138bf9f27848238b\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\59248489bc3e5208f451095367019e30\transformed\dagger-lint-aar-2.48\AndroidManifest.xml:16:1-19:12
+	package
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.CALL_PHONE
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:8:5-69
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:8:22-66
+application
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:10:5-37:19
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:10:5-37:19
+MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c08e42d3d42cee3fcea90de6c3c88d75\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c08e42d3d42cee3fcea90de6c3c88d75\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\dc274e044c34088e6e2cfd8822b30b71\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\dc274e044c34088e6e2cfd8822b30b71\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\32f70286ff9169bf8501016e7aec3f91\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\32f70286ff9169bf8501016e7aec3f91\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8c9b22edfa83e711fbf05e94b9c1969b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8c9b22edfa83e711fbf05e94b9c1969b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+	android:roundIcon
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:18:9-54
+	android:icon
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:15:9-43
+	android:localeConfig
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:17:9-51
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:16:9-41
+	android:fullBackupContent
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:14:9-54
+	tools:targetApi
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:22:9-29
+	android:allowBackup
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:20:9-54
+	android:dataExtractionRules
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:13:9-65
+	android:usesCleartextTraffic
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:21:9-44
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:11:9-50
+activity#com.maroua.pharmaciegarde.MainActivity
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:28:9-36:20
+	android:exported
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:31:13-58
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:29:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:32:13-35:29
+action#android.intent.action.MAIN
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:33:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:34:17-77
+	android:name
+		ADDED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml:34:27-74
+uses-sdk
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+MERGED from [androidx.hilt:hilt-navigation-compose:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1db97126f66f44a2c82fe051f33ed749\transformed\hilt-navigation-compose-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1db97126f66f44a2c82fe051f33ed749\transformed\hilt-navigation-compose-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0e59efa493ee7b77e5009aaa530ca6b9\transformed\hilt-navigation-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0e59efa493ee7b77e5009aaa530ca6b9\transformed\hilt-navigation-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4320a1b31a22d7bd298853740e889bef\transformed\navigation-common-2.7.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4320a1b31a22d7bd298853740e889bef\transformed\navigation-common-2.7.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\71405720f3cc12f76fb9c4ab98c2bb0f\transformed\navigation-runtime-2.7.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\71405720f3cc12f76fb9c4ab98c2bb0f\transformed\navigation-runtime-2.7.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bc3864648a401b38c0689c1cafa2abf0\transformed\navigation-common-ktx-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bc3864648a401b38c0689c1cafa2abf0\transformed\navigation-common-ktx-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9fcd30a373e14a9e0c51b8f764d22f62\transformed\navigation-runtime-ktx-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9fcd30a373e14a9e0c51b8f764d22f62\transformed\navigation-runtime-ktx-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\134c315c6015ac08ac9ca664ef70119e\transformed\navigation-compose-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\134c315c6015ac08ac9ca664ef70119e\transformed\navigation-compose-2.7.5\AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:hilt-android:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\39c624ff96d2c2d121541366f444bb09\transformed\hilt-android-2.48\AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\39c624ff96d2c2d121541366f444bb09\transformed\hilt-android-2.48\AndroidManifest.xml:18:3-42
+MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\364eb18e1746900704db50eff4e4ee9e\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\364eb18e1746900704db50eff4e4ee9e\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\748beea0265332c6b5257ec5fd472ae7\transformed\coil-compose-base-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\748beea0265332c6b5257ec5fd472ae7\transformed\coil-compose-base-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\58cb9aef7b7fff20f7f31a77539f3c89\transformed\coil-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\58cb9aef7b7fff20f7f31a77539f3c89\transformed\coil-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\11daf60682a5d177d156a2ba88bdbc26\transformed\coil-base-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\11daf60682a5d177d156a2ba88bdbc26\transformed\coil-base-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df463b71d716950973c6374f6ec48ac7\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df463b71d716950973c6374f6ec48ac7\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e1afde5147099b5ac63e02e98f3d154f\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e1afde5147099b5ac63e02e98f3d154f\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13dc2ceaa10f0e29c18a3441e62ee9da\transformed\datastore-preferences-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13dc2ceaa10f0e29c18a3441e62ee9da\transformed\datastore-preferences-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b4e6dff22bf243b35d68475c34a10b0f\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b4e6dff22bf243b35d68475c34a10b0f\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\44e633a9858b4f1bcec897e62e184dad\transformed\room-ktx-2.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\44e633a9858b4f1bcec897e62e184dad\transformed\room-ktx-2.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-splashscreen:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13f4be14fdeebc5b7e639d5f45e3518e\transformed\core-splashscreen-1.0.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-splashscreen:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\13f4be14fdeebc5b7e639d5f45e3518e\transformed\core-splashscreen-1.0.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.maps.android:maps-compose:4.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e56a95f5f7abbfb88817a1d3c9bea738\transformed\maps-compose-4.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.maps.android:maps-compose:4.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e56a95f5f7abbfb88817a1d3c9bea738\transformed\maps-compose-4.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.maps.android:maps-ktx:5.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7af54a112a8eda23593f1728373e6290\transformed\maps-ktx-5.0.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.maps.android:maps-ktx:5.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7af54a112a8eda23593f1728373e6290\transformed\maps-ktx-5.0.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c08e42d3d42cee3fcea90de6c3c88d75\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c08e42d3d42cee3fcea90de6c3c88d75\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\03379df87b6509b65297e77a91c09919\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\03379df87b6509b65297e77a91c09919\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f684e1e83881ae13bb124ee7b4c3079b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f684e1e83881ae13bb124ee7b4c3079b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\dc274e044c34088e6e2cfd8822b30b71\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\dc274e044c34088e6e2cfd8822b30b71\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3c2695bb96c49d967d85faeb9d243a5a\transformed\accompanist-systemuicontroller-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3c2695bb96c49d967d85faeb9d243a5a\transformed\accompanist-systemuicontroller-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b111619d3eb430b6db4fdae749096921\transformed\accompanist-permissions-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b111619d3eb430b6db4fdae749096921\transformed\accompanist-permissions-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\968f6b1c393a32c4c927055fbcd32050\transformed\accompanist-drawablepainter-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\968f6b1c393a32c4c927055fbcd32050\transformed\accompanist-drawablepainter-0.32.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a75b5b7a5015362f1cc2dff3d0b980d4\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a75b5b7a5015362f1cc2dff3d0b980d4\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7748914c1dffa3fed52eaa3db49f1e3d\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7748914c1dffa3fed52eaa3db49f1e3d\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\acceba3f43e4a35076d010f96f6df961\transformed\ui-tooling-data-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\acceba3f43e4a35076d010f96f6df961\transformed\ui-tooling-data-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\528e74827abb741895d370c7d7878f6b\transformed\ui-tooling-preview-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\528e74827abb741895d370c7d7878f6b\transformed\ui-tooling-preview-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\639981c618e7b514025a83868b78b6f2\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\639981c618e7b514025a83868b78b6f2\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8a8e92e705b3b6df49ec9e2d3caf94ad\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8a8e92e705b3b6df49ec9e2d3caf94ad\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e91a907a5b0e9c767287dfa066ca9809\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e91a907a5b0e9c767287dfa066ca9809\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cea829278ba02bc45f8705d60385910a\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cea829278ba02bc45f8705d60385910a\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20fe5edcdb33f4640aa7b4c00eedccbc\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20fe5edcdb33f4640aa7b4c00eedccbc\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.6.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\62514f60eb3d3e83adc0af04725ad59c\transformed\material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\62514f60eb3d3e83adc0af04725ad59c\transformed\material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df92da9caf1f00e1e25a2ccd0506e587\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\df92da9caf1f00e1e25a2ccd0506e587\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\77232c9ef8a11f917009b74998796bb7\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\77232c9ef8a11f917009b74998796bb7\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee6c18711c6c206e696f26f801f3e0ba\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee6c18711c6c206e696f26f801f3e0ba\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5c4770774decc781d9663bee870c8fbc\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5c4770774decc781d9663bee870c8fbc\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee38a4eaa5c3fa931308a0e58e5e0d83\transformed\material-icons-extended-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ee38a4eaa5c3fa931308a0e58e5e0d83\transformed\material-icons-extended-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5dddd3c04d36f52f17fa8dfd7ddfa997\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5dddd3c04d36f52f17fa8dfd7ddfa997\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2e43d53ce21bf57aea8d6ebbcaabe4a4\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2e43d53ce21bf57aea8d6ebbcaabe4a4\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1b4aaf707a26887705cc3595553e1730\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1b4aaf707a26887705cc3595553e1730\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3eb158c4b4f532560140515320eecd23\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3eb158c4b4f532560140515320eecd23\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\449800f5dbcb9e9e8d769c0e76f34f0c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\449800f5dbcb9e9e8d769c0e76f34f0c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7b4a6f556d539db77775dc4ef75dcb7f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\7b4a6f556d539db77775dc4ef75dcb7f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\932f58bc5fad74531bd4e3e55c3bc6ae\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\932f58bc5fad74531bd4e3e55c3bc6ae\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9d9751d5d2d05339b2a1d8d0974f4152\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9d9751d5d2d05339b2a1d8d0974f4152\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\628b154888e0a00a8fd5885e8830b042\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\628b154888e0a00a8fd5885e8830b042\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3f8263555091e92a3ddf485fc17d448b\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\3f8263555091e92a3ddf485fc17d448b\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9f10f93b3a17667324f5fa360cc79e8c\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\9f10f93b3a17667324f5fa360cc79e8c\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4e5913d03934832eb33f188b9f029254\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4e5913d03934832eb33f188b9f029254\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0a4c1038e70bbebae8047bed0bb7cc67\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0a4c1038e70bbebae8047bed0bb7cc67\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\eeb2f83c002d4d3d0882989cc5ac18c8\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\eeb2f83c002d4d3d0882989cc5ac18c8\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c907e76e55f085318a292eda7d95771f\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\c907e76e55f085318a292eda7d95771f\transformed\lifecycle-viewmodel-2.8.3\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88949be0e24fcc253aadcd7612fb0db7\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88949be0e24fcc253aadcd7612fb0db7\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ad9ca6f057cedcd3e44484ca13bcd9f9\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\ad9ca6f057cedcd3e44484ca13bcd9f9\transformed\lifecycle-livedata-core-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b9c4a986ad234aae3488a667a24c3435\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b9c4a986ad234aae3488a667a24c3435\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cd7144e4c9cda4424c051d52d8bd0af8\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\cd7144e4c9cda4424c051d52d8bd0af8\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5448c972513ab94b9a5e3994158c9873\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5448c972513ab94b9a5e3994158c9873\transformed\lifecycle-viewmodel-savedstate-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5e76cb98196e844a84f61bbaabde649e\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\5e76cb98196e844a84f61bbaabde649e\transformed\lifecycle-viewmodel-ktx-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\749fcd3f0b42a7952f9bcbf132846f63\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\749fcd3f0b42a7952f9bcbf132846f63\transformed\lifecycle-service-2.8.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\430590a8239c260e2cedd7d95e1a6f24\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\430590a8239c260e2cedd7d95e1a6f24\transformed\lifecycle-livedata-core-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\73fe3064f6134e4b4e390a1e51941bf2\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\73fe3064f6134e4b4e390a1e51941bf2\transformed\lifecycle-livedata-2.8.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\957c25c83d5682fc939df916153026de\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\957c25c83d5682fc939df916153026de\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0effc3316c458ea76b7625e7f79cf7b5\transformed\lifecycle-viewmodel-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0effc3316c458ea76b7625e7f79cf7b5\transformed\lifecycle-viewmodel-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\49fbf4c48802cb2525e03d7ab8be457f\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\49fbf4c48802cb2525e03d7ab8be457f\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\335343746f0e6180e72b75b606422043\transformed\activity-1.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\335343746f0e6180e72b75b606422043\transformed\activity-1.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4938d3c02154f309d7989b73f05b5be4\transformed\activity-ktx-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4938d3c02154f309d7989b73f05b5be4\transformed\activity-ktx-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\91b98dca426d9c7eab4e76d220b860ad\transformed\activity-compose-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\91b98dca426d9c7eab4e76d220b860ad\transformed\activity-compose-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f2eb177e5a442f70a93550f84d32a5af\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f2eb177e5a442f70a93550f84d32a5af\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20afcf5c2c966373d88a767b6b2205de\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\20afcf5c2c966373d88a767b6b2205de\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88a35f17ab048dfb024e6f53afaade8b\transformed\datastore-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\88a35f17ab048dfb024e6f53afaade8b\transformed\datastore-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\32f70286ff9169bf8501016e7aec3f91\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\32f70286ff9169bf8501016e7aec3f91\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\905cb049aaece842e197f47cc7d63cb3\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\905cb049aaece842e197f47cc7d63cb3\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d849e314a24b81c94a7cdf1bf1eefcd4\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d849e314a24b81c94a7cdf1bf1eefcd4\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\016b38b234acda2055868cc9fc593097\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\016b38b234acda2055868cc9fc593097\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bcf0ab1ffc987fb93ac0faa689c8d16d\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\bcf0ab1ffc987fb93ac0faa689c8d16d\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e5e9c42baeca6b1a6880f85a31b142bd\transformed\napier-debug\AndroidManifest.xml:7:5-9:41
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e5e9c42baeca6b1a6880f85a31b142bd\transformed\napier-debug\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8c9b22edfa83e711fbf05e94b9c1969b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\8c9b22edfa83e711fbf05e94b9c1969b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2823cf53f4549f4701160f465ee4bd0e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2823cf53f4549f4701160f465ee4bd0e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b5e9c35a679331faf3b4f3b8593cb4af\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b5e9c35a679331faf3b4f3b8593cb4af\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a1dda3b62a294381f8346b2c95ef7639\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a1dda3b62a294381f8346b2c95ef7639\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.databinding:viewbinding:7.4.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d15442ac4a4d70d448bbc31ee9b4303c\transformed\viewbinding-7.4.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:7.4.2] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\d15442ac4a4d70d448bbc31ee9b4303c\transformed\viewbinding-7.4.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2dfcb096ddcdb7b5a8e8cb342f285271\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\2dfcb096ddcdb7b5a8e8cb342f285271\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\977c03cb76125b37138bf9f27848238b\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\977c03cb76125b37138bf9f27848238b\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.dagger:dagger-lint-aar:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\59248489bc3e5208f451095367019e30\transformed\dagger-lint-aar-2.48\AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.48] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\59248489bc3e5208f451095367019e30\transformed\dagger-lint-aar-2.48\AndroidManifest.xml:18:3-42
+	android:targetSdkVersion
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\GitHub\PhamarcieGarde\mobile-app\app\src\main\AndroidManifest.xml
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:25:13-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:22-74
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\895deea1f63f75fbd8a74d23365c99e6\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:33:13-31
+	android:authorities
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
+	android:value
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:44:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:45:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:52:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:58:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+queries
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
+package#com.google.android.apps.maps
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:24:13-63
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92

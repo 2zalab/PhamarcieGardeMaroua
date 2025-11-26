@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Pharmacie de Garde</string>
+
+    <!-- Navigation -->
+    <string name="home">Accueil</string>
+    <string name="map">Carte</string>
+    <string name="search">Recherche</string>
+    <string name="favorites">Favoris</string>
+    <string name="settings">Paramètres</string>
+
+    <!-- Common -->
+    <string name="on_duty">De Garde</string>
+    <string name="all_pharmacies">Toutes les Pharmacies</string>
+    <string name="search_pharmacy">Rechercher une pharmacie…</string>
+    <string name="call">Appeler</string>
+    <string name="get_directions">Itinéraire</string>
+    <string name="close">Fermer</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="save">Enregistrer</string>
+
+    <!-- Pharmacy Features -->
+    <string name="open_24h">Ouvert 24h/24</string>
+    <string name="parking_available">Parking disponible</string>
+    <string name="wheelchair_access">Accès PMR</string>
+    <string name="on_duty_today">De garde aujourd\'hui</string>
+
+    <!-- Details -->
+    <string name="phone">Téléphone</string>
+    <string name="address">Adresse</string>
+    <string name="district">Quartier</string>
+    <string name="description">Description</string>
+    <string name="schedules">Horaires de garde</string>
+    <string name="services_accessibility">Services &amp; Accessibilité</string>
+    <string name="contact_location">Contact &amp; Localisation</string>
+
+    <!-- Messages -->
+    <string name="no_pharmacies_found">Aucune pharmacie trouvée</string>
+    <string name="loading">Chargement…</string>
+    <string name="error_loading">Erreur lors du chargement</string>
+    <string name="retry">Réessayer</string>
+    <string name="no_favorites">Aucun favori</string>
+    <string name="add_favorites_message">Ajoutez des pharmacies à vos favoris pour un accès rapide</string>
+
+    <!-- Location -->
+    <string name="nearby_pharmacies">Pharmacies à proximité</string>
+    <string name="km_away">%s km</string>
+    <string name="location_permission_required">Permission de localisation requise</string>
+    <string name="grant_permission">Autoriser</string>
+    <string name="location_permission_message">Pour afficher votre position et les pharmacies à proximité, nous avons besoin d\'accéder à votre localisation.</string>
+
+    <!-- Settings -->
+    <string name="app_settings">Paramètres de l\'application</string>
+    <string name="theme">Thème</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="theme_system">Système</string>
+    <string name="language">Langue</string>
+    <string name="language_french">Français</string>
+    <string name="language_english">English</string>
+    <string name="notifications">Notifications</string>
+    <string name="enable_notifications">Activer les notifications</string>
+    <string name="on_duty_notifications">Notifications de garde</string>
+    <string name="on_duty_notifications_desc">Recevoir des notifications sur les pharmacies de garde</string>
+    <string name="about">À propos</string>
+    <string name="version">Version</string>
+    <string name="app_info">Informations sur l\'application</string>
+    <string name="app_description">Application pour trouver les pharmacies de garde à Maroua</string>
+
+    <!-- Filters -->
+    <string name="filters">Filtres</string>
+    <string name="apply_filters">Appliquer les filtres</string>
+    <string name="reset_filters">Réinitialiser</string>
+    <string name="filter_on_duty">Seulement de garde</string>
+    <string name="filter_24h">Ouvert 24h/24</string>
+    <string name="filter_parking">Avec parking</string>
+    <string name="filter_wheelchair">Accessible PMR</string>
+    <string name="filter_by_district">Par quartier</string>
+    <string name="all_districts">Tous les quartiers</string>
+
+    <!-- Search States -->
+    <string name="search_pharmacy_title">Recherchez une pharmacie</string>
+    <string name="search_pharmacy_subtitle">Tapez un nom, une adresse ou un quartier</string>
+    <string name="no_results">Aucun résultat</string>
+    <string name="no_results_for">Aucune pharmacie trouvée pour \"%s\"</string>
+    <string name="results_found">%d résultat(s) trouvé(s)</string>
+
+    <!-- Home Screen -->
+    <string name="hero_title">Trouvez rapidement une pharmacie</string>
+    <string name="hero_subtitle">Service disponible 24h/24</string>
+    <string name="on_duty_pharmacies">Pharmacies de Garde</string>
+    <string name="currently_available">Actuellement disponibles</string>
+    <string name="pharmacies_count">%d pharmacies disponibles</string>
+
+    <!-- Rating -->
+    <string name="rate_pharmacy">Évaluer la pharmacie</string>
+    <string name="your_rating">Votre note</string>
+    <string name="add_comment">Ajouter un commentaire (optionnel)</string>
+    <string name="submit_rating">Envoyer l\'évaluation</string>
+    <string name="rating_success">Merci pour votre évaluation!</string>
+    <string name="rating_error">Erreur lors de l\'envoi de votre évaluation</string>
+    <string name="ratings">Évaluations</string>
+    <string name="average_rating">Note moyenne</string>
+
+    <!-- New BottomNav & Screens -->
+    <string name="pharmacies">Pharmacies</string>
+    <string name="all_pharmacies_title">Toutes les Pharmacies</string>
+    <string name="pharmacy_details">Détails de la pharmacie</string>
+    <string name="add_to_favorites">Ajouter aux favoris</string>
+    <string name="remove_from_favorites">Retirer des favoris</string>
+    <string name="no_on_duty_pharmacies">Aucune pharmacie de garde</string>
+    <string name="no_on_duty_message">Il n\'y a actuellement aucune pharmacie de garde. Consultez toutes les pharmacies pour trouver celle qui vous convient.</string>
+    <string name="pharmacies_available">%d pharmacie(s) disponible(s)</string>
+    <string name="maroua_city">Maroua</string>
+
+    <!-- Author Info -->
+    <string name="developed_by">Développé par</string>
+    <string name="company_name">Maroua Innovation Technology</string>
+    <string name="contact_us">Nous contacter</string>
+    <string name="phone_primary">Tél : 691 805 321</string>
+    <string name="phone_secondary">Tél : 672 277 579</string>
+    <string name="email_contact">Email : contact@mit.cm</string>
+
+    <!-- Authentication -->
+    <string name="sign_in">Se connecter</string>
+    <string name="sign_in_with_google">Continuer avec Google</string>
+    <string name="sign_out">Se déconnecter</string>
+    <string name="welcome_back">Bienvenue</string>
+    <string name="auth_required">Connexion requise</string>
+    <string name="auth_required_message">Veuillez vous connecter pour accéder aux fonctionnalités premium</string>
+    <string name="sign_in_error">Erreur de connexion</string>
+    <string name="sign_out_error">Erreur de déconnexion</string>
+
+    <!-- Google Cloud Console Web Client ID (OAuth 2.0) -->
+    <!-- IMPORTANT: Remplacez par votre vrai Client ID depuis Google Cloud Console -->
+    <!-- Format: xxxxx-xxxxx.apps.googleusercontent.com -->
+    <string name="default_web_client_id" translatable="false">YOUR_WEB_CLIENT_ID_HERE</string>
+</resources>

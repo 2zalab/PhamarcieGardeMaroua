@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">On-Call Pharmacy</string>
+
+    <!-- Navigation -->
+    <string name="home">Home</string>
+    <string name="map">Map</string>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="settings">Settings</string>
+
+    <!-- Common -->
+    <string name="on_duty">On Duty</string>
+    <string name="all_pharmacies">All Pharmacies</string>
+    <string name="search_pharmacy">Search for a pharmacy…</string>
+    <string name="call">Call</string>
+    <string name="get_directions">Get Directions</string>
+    <string name="close">Close</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+
+    <!-- Pharmacy Features -->
+    <string name="open_24h">Open 24/7</string>
+    <string name="parking_available">Parking Available</string>
+    <string name="wheelchair_access">Wheelchair Access</string>
+    <string name="on_duty_today">On duty today</string>
+
+    <!-- Details -->
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="district">District</string>
+    <string name="description">Description</string>
+    <string name="schedules">Duty Schedules</string>
+    <string name="services_accessibility">Services &amp; Accessibility</string>
+    <string name="contact_location">Contact &amp; Location</string>
+
+    <!-- Messages -->
+    <string name="no_pharmacies_found">No pharmacies found</string>
+    <string name="loading">Loading…</string>
+    <string name="error_loading">Error loading data</string>
+    <string name="retry">Retry</string>
+    <string name="no_favorites">No favorites</string>
+    <string name="add_favorites_message">Add pharmacies to your favorites for quick access</string>
+
+    <!-- Location -->
+    <string name="nearby_pharmacies">Nearby Pharmacies</string>
+    <string name="km_away">%s km</string>
+    <string name="location_permission_required">Location permission required</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="location_permission_message">To show your location and nearby pharmacies, we need access to your location.</string>
+
+    <!-- Settings -->
+    <string name="app_settings">App Settings</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="language">Language</string>
+    <string name="language_french">Français</string>
+    <string name="language_english">English</string>
+    <string name="notifications">Notifications</string>
+    <string name="enable_notifications">Enable notifications</string>
+    <string name="on_duty_notifications">Duty Notifications</string>
+    <string name="on_duty_notifications_desc">Receive notifications about on-duty pharmacies</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    <string name="app_info">App Information</string>
+    <string name="app_description">App to find on-duty pharmacies in Maroua</string>
+
+    <!-- Filters -->
+    <string name="filters">Filters</string>
+    <string name="apply_filters">Apply Filters</string>
+    <string name="reset_filters">Reset</string>
+    <string name="filter_on_duty">On duty only</string>
+    <string name="filter_24h">Open 24/7</string>
+    <string name="filter_parking">With parking</string>
+    <string name="filter_wheelchair">Wheelchair accessible</string>
+    <string name="filter_by_district">By district</string>
+    <string name="all_districts">All districts</string>
+
+    <!-- Search States -->
+    <string name="search_pharmacy_title">Search for a pharmacy</string>
+    <string name="search_pharmacy_subtitle">Enter a name, address or district</string>
+    <string name="no_results">No results</string>
+    <string name="no_results_for">No pharmacy found for \"%s\"</string>
+    <string name="results_found">%d result(s) found</string>
+
+    <!-- Home Screen -->
+    <string name="hero_title">Find a pharmacy quickly</string>
+    <string name="hero_subtitle">Service available 24/7</string>
+    <string name="on_duty_pharmacies">On-Duty Pharmacies</string>
+    <string name="currently_available">Currently available</string>
+    <string name="pharmacies_count">%d pharmacies available</string>
+
+    <!-- Rating -->
+    <string name="rate_pharmacy">Rate Pharmacy</string>
+    <string name="your_rating">Your Rating</string>
+    <string name="add_comment">Add a comment (optional)</string>
+    <string name="submit_rating">Submit Rating</string>
+    <string name="rating_success">Thank you for your rating!</string>
+    <string name="rating_error">Error submitting your rating</string>
+    <string name="ratings">Ratings</string>
+    <string name="average_rating">Average Rating</string>
+
+    <!-- New BottomNav & Screens -->
+    <string name="pharmacies">Pharmacies</string>
+    <string name="all_pharmacies_title">All Pharmacies</string>
+    <string name="pharmacy_details">Pharmacy Details</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="no_on_duty_pharmacies">No on-duty pharmacies</string>
+    <string name="no_on_duty_message">There are currently no on-duty pharmacies. Check all pharmacies to find one that suits you.</string>
+    <string name="pharmacies_available">%d pharmacy(s) available</string>
+    <string name="maroua_city">Maroua</string>
+
+    <!-- Author Info -->
+    <string name="developed_by">Developed by</string>
+    <string name="company_name">Maroua Innovation Technology</string>
+    <string name="contact_us">Contact us</string>
+    <string name="phone_primary">Tel: 691 805 321</string>
+    <string name="phone_secondary">Tel: 672 277 579</string>
+    <string name="email_contact">Email: contact@mit.cm</string>
+
+    <!-- Authentication -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_with_google">Continue with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="welcome_back">Welcome</string>
+    <string name="auth_required">Sign in required</string>
+    <string name="auth_required_message">Please sign in to access premium features</string>
+    <string name="sign_in_error">Sign in error</string>
+    <string name="sign_out_error">Sign out error</string>
+</resources>

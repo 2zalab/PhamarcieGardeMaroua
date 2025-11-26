@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.maroua.pharmaciegarde.app-mergeDebugResources-75:/values-v31/values-v31.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\TOUZA ISAAC\\.gradle\\caches\\transforms-4\\13f4be14fdeebc5b7e639d5f45e3518e\\transformed\\core-splashscreen-1.0.1\\res\\values-v31\\values-v31.xml",
+                    "from": {
+                        "startLines": "2,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,473",
+                        "endLines": "8,13",
+                        "endColumns": "12,12",
+                        "endOffsets": "468,697"
+                    }
+                }
+            ]
+        }
+    ]
+}

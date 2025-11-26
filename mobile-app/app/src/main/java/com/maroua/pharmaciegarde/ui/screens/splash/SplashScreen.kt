@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocalPharmacy
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -72,10 +73,10 @@ fun SplashScreen(
             Spacer(modifier = Modifier.height(48.dp))
 
             // Indicateur de chargement (optionnel)
-            // CircularProgressIndicator(
-            //     modifier = Modifier.size(32.dp),
-            //     color = MaterialTheme.colorScheme.primary
-            // )
+             CircularProgressIndicator(
+                 modifier = Modifier.size(32.dp),
+                 color = MaterialTheme.colorScheme.primary
+             )
         }
     }
 }

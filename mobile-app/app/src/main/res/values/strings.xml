@@ -136,5 +136,5 @@
     <!-- Google Cloud Console Web Client ID (OAuth 2.0) -->
     <!-- IMPORTANT: Remplacez par votre vrai Client ID depuis Google Cloud Console -->
     <!-- Format: xxxxx-xxxxx.apps.googleusercontent.com -->
-    <string name="default_web_client_id" translatable="false">YOUR_WEB_CLIENT_ID_HERE</string>
+    <string name="default_web_client_id" translatable="false">719536363620-6t7r1b9j055itqianvfe4sthmhgr48be.apps.googleusercontent.com</string>
 </resources>

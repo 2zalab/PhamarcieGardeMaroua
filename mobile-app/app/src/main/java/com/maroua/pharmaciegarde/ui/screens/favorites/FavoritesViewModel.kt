@@ -82,5 +82,9 @@ class FavoritesViewModel @Inject constructor(
     suspend fun removeFavorite(pharmacyId: Int) {
         favoritesRepository.removeFavorite(pharmacyId)
     }
+
+    fun refresh() {
+        loadFavorites()
+    }
 }
 

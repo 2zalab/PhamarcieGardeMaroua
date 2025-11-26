@@ -29,6 +29,11 @@ fun AllPharmaciesScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
+    // Actualiser les données au chargement
+    LaunchedEffect(Unit) {
+        viewModel.refreshPharmacies()
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(

@@ -114,4 +114,11 @@ class AuthRepository @Inject constructor(
      * Vérifier si l'utilisateur est connecté
      */
     suspend fun isUserSignedIn(): Boolean = tokenManager.hasToken()
+
+    /**
+     * Observer l'état de connexion de l'utilisateur
+     */
+    fun isUserSignedInFlow(): Flow<Boolean> = tokenManager.getTokenFlow().map { token ->
+        token != null
+    }
 }

@@ -23,7 +23,8 @@ fun AppNavigation(
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val navController = rememberNavController()
-    val currentUser by authViewModel.currentUser.collectAsState()
+    // Observer l'état de connexion en temps réel
+    val isUserSignedIn by authViewModel.isUserSignedInFlow().collectAsState(initial = false)
 
     NavHost(
         navController = navController,
@@ -33,8 +34,8 @@ fun AppNavigation(
         composable(RootDestination.Splash.route) {
             SplashScreen(
                 onTimeout = {
-                    // Après 5 secondes, vérifier si l'utilisateur est connecté
-                    if (currentUser != null) {
+                    // Après délai, vérifier si l'utilisateur est connecté
+                    if (isUserSignedIn) {
                         navController.navigate(RootDestination.Main.route) {
                             popUpTo(RootDestination.Splash.route) { inclusive = true }
                         }

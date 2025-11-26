@@ -32,6 +32,8 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    fun isUserSignedInFlow() = authRepository.isUserSignedInFlow()
+
     fun signInWithGoogle(account: GoogleSignInAccount) {
         viewModelScope.launch {
             _authState.value = AuthState.Loading
@@ -57,6 +59,10 @@ class AuthViewModel @Inject constructor(
 
     fun resetAuthState() {
         _authState.value = AuthState.Initial
+    }
+
+    fun setError(message: String) {
+        _authState.value = AuthState.Error(message)
     }
 
     fun getGoogleSignInClient() = authRepository.getGoogleSignInClient()

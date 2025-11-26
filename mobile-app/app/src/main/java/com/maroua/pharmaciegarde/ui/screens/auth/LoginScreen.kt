@@ -37,13 +37,24 @@ fun LoginScreen(
     val googleSignInLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-                viewModel.signInWithGoogle(account)
-            } catch (e: ApiException) {
-                // Handle error
+        when (result.resultCode) {
+            Activity.RESULT_OK -> {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                try {
+                    val account = task.getResult(ApiException::class.java)
+                    viewModel.signInWithGoogle(account)
+                } catch (e: ApiException) {
+                    // Log l'erreur pour le débogage
+                    e.printStackTrace()
+                    viewModel.setError("Échec de la connexion Google: ${e.localizedMessage ?: "Erreur inconnue"}")
+                }
+            }
+            Activity.RESULT_CANCELED -> {
+                // L'utilisateur a annulé la connexion
+                viewModel.setError("Connexion annulée")
+            }
+            else -> {
+                viewModel.setError("Erreur lors de la connexion")
             }
         }
     }

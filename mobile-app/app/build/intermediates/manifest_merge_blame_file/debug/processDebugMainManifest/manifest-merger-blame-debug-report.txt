@@ -27,12 +27,12 @@
 18    <uses-permission android:name="android.permission.CALL_PHONE" />
 18-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:5-69
 18-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:22-66
-19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
-19-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
-20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
-20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:13:5-79
+19-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:13:22-76
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
+20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
 21    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 21-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
 21-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
@@ -68,57 +68,57 @@
 38-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 39
 40    <application
-40-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:14:5-41:19
+40-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:5-42:19
 41        android:name="com.maroua.pharmaciegarde.PharmacieGardeApplication"
-41-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:9-50
+41-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-50
 42        android:allowBackup="true"
-42-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-35
+42-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-35
 43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 43-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 44        android:dataExtractionRules="@xml/data_extraction_rules"
-44-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-65
+44-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:18:9-65
 45        android:debuggable="true"
 46        android:extractNativeLibs="false"
 47        android:fullBackupContent="@xml/backup_rules"
-47-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:18:9-54
+47-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-54
 48        android:icon="@mipmap/ic_launcher"
-48-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-43
+48-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-43
 49        android:label="@string/app_name"
-49-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-41
+49-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-41
 50        android:localeConfig="@xml/locales_config"
-50-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-51
+50-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:22:9-51
 51        android:roundIcon="@mipmap/ic_launcher_round"
-51-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:22:9-54
+51-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:23:9-54
 52        android:supportsRtl="true"
-52-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:23:9-35
+52-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:24:9-35
 53        android:testOnly="true"
 54        android:theme="@style/Theme.PharmacieDeGarde"
-54-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:24:9-54
+54-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:9-54
 55        android:usesCleartextTraffic="true" >
-55-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:9-44
+55-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:26:9-44
 56        <meta-data
 57            android:name="com.google.android.geo.API_KEY"
-57-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:29:13-58
+57-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-58
 58            android:value="AIzaSyArnTzRpyXwhk20gVyq3Kl2Vq8aqz0rxNU" />
-58-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-44
+58-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:31:13-44
 59
 60        <activity
-60-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:32:9-40:20
+60-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:9-41:20
 61            android:name="com.maroua.pharmaciegarde.MainActivity"
-61-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:13-41
+61-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:13-41
 62            android:exported="true"
-62-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:13-36
+62-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:35:13-36
 63            android:theme="@style/Theme.PharmacieDeGarde" >
-63-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:35:13-58
+63-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:36:13-58
 64            <intent-filter>
-64-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:36:13-39:29
+64-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:13-40:29
 65                <action android:name="android.intent.action.MAIN" />
-65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:17-69
-65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:25-66
+65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:17-69
+65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:25-66
 66
 67                <category android:name="android.intent.category.LAUNCHER" />
-67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:17-77
-67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:27-74
+67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:39:17-77
+67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:39:27-74
 68            </intent-filter>
 69        </activity>
 70

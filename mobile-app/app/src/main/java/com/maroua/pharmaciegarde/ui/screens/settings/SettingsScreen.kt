@@ -19,12 +19,17 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import com.maroua.pharmaciegarde.BuildConfig
 import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.local.AppLanguage
 import com.maroua.pharmaciegarde.data.local.ThemeMode
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
 import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
+import coil.compose.SubcomposeAsyncImageContent
+import coil.request.ImageRequest
+import coil.compose.AsyncImagePainter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -77,28 +82,45 @@ fun SettingsScreen(
                         ) {
                             // User photo or default icon
                             if (currentUser?.photoUrl != null && currentUser!!.photoUrl!!.isNotEmpty()) {
-                                AsyncImage(
-                                    model = coil.request.ImageRequest.Builder(context)
-                                        .data(currentUser!!.photoUrl)
-                                        .crossfade(true
+                                Log.d("SettingsScreen", "photoUrl = ${currentUser?.photoUrl}")
+
+                                SubcomposeAsyncImage(
+                                    model = ImageRequest.Builder(context)
+                                        .data(currentUser?.photoUrl)
+                                        .crossfade(true)
+                                        .listener(
+                                            onError = { _, result ->
+                                                Log.e("SettingsScreen", "Image load error: ${result.throwable.message}")
+                                            }
+                                        )
                                         .build(),
-                                    contentDescription = null,
+                                    contentDescription = "Photo de profil",
                                     modifier = Modifier
                                         .size(56.dp)
-                                        .clip(CircleShape),
-                                    error = androidx.compose.ui.res.painterResource(
-                                        android.R.drawable.ic_menu_gallery
-                                    )
-                                )
-                            } else {
-                                Icon(
-                                    imageVector = Icons.Default.AccountCircle,
-                                    contentDescription = null,
-                                    modifier = Modifier.size(56.dp),
-                                    tint = MaterialTheme.colorScheme.onPrimaryContainer
-                                )
+                                        .clip(CircleShape)
+                                ) {
+                                    when (painter.state) {
+                                        is AsyncImagePainter.State.Loading -> {
+                                            CircularProgressIndicator(
+                                                modifier = Modifier.size(20.dp),
+                                                color = MaterialTheme.colorScheme.primary
+                                            )
+                                        }
+                                        is AsyncImagePainter.State.Error -> {
+                                            Log.e("SettingsScreen", "Error state reached")
+                                            Icon(
+                                                imageVector = Icons.Default.AccountCircle,
+                                                contentDescription = "User",
+                                                modifier = Modifier.size(56.dp),
+                                                tint = MaterialTheme.colorScheme.primary
+                                            )
+                                        }
+                                        else -> {
+                                            SubcomposeAsyncImageContent()
+                                        }
+                                    }
+                                }
                             }
-
                             Spacer(modifier = Modifier.width(16.dp))
 
                             Column(modifier = Modifier.weight(1f)) {

@@ -1689,3 +1689,4 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 xml backup_rules
 xml data_extraction_rules
 xml locales_config
+xml network_security_config

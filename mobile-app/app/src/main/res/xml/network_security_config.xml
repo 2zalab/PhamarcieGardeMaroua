@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Autoriser HTTP pour le backend local -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.1.119</domain>
+    </domain-config>
+
+    <!-- Autoriser HTTPS pour Google (par défaut c'est autorisé, mais on le spécifie) -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">lh3.googleusercontent.com</domain>
+        <domain includeSubdomains="true">googleusercontent.com</domain>
+    </domain-config>
+
+    <!-- Configuration par défaut pour tous les autres domaines -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

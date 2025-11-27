@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 meta-data#com.google.android.geo.API_KEY
-INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:28:9-30:47
+INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:29:9-31:47
 	android:value
 		INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-44
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:31:13-44
 	android:name
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:29:13-58
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-58
 manifest
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-43:12
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [androidx.hilt:hilt-navigation-compose:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1db97126f66f44a2c82fe051f33ed749\transformed\hilt-navigation-compose-1.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.hilt:hilt-navigation:1.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0e59efa493ee7b77e5009aaa530ca6b9\transformed\hilt-navigation-1.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.5] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\4320a1b31a22d7bd298853740e889bef\transformed\navigation-common-2.7.5\AndroidManifest.xml:17:1-22:12
@@ -147,9 +147,17 @@ uses-permission#android.permission.CALL_PHONE
 ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:5-69
 	android:name
 		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:22-66
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:13:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:13:22-76
 application
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:14:5-41:19
-INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:14:5-41:19
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:5-42:19
+INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:5-42:19
 MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
@@ -187,49 +195,49 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\TOUZA ISAAC\.gradl
 	android:extractNativeLibs
 		INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml
 	android:roundIcon
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:22:9-54
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-43
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-43
 	android:localeConfig
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-51
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:22:9-51
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-41
 	android:fullBackupContent
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:18:9-54
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-54
 	tools:targetApi
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:26:9-29
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:27:9-29
 	android:allowBackup
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:24:9-54
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:9-54
 	android:dataExtractionRules
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-65
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:18:9-65
 	android:usesCleartextTraffic
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:9-44
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:26:9-44
 	android:name
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:9-50
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-50
 activity#com.maroua.pharmaciegarde.MainActivity
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:32:9-40:20
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:9-41:20
 	android:exported
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:35:13-36
 	android:theme
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:35:13-58
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:36:13-58
 	android:name
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:13-41
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:36:13-39:29
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:13-40:29
 action#android.intent.action.MAIN
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:17-69
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:17-77
+ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:27-74
+		ADDED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:39:27-74
 uses-sdk
 INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml
@@ -456,12 +464,6 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-	android:name
-		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
 	android:name

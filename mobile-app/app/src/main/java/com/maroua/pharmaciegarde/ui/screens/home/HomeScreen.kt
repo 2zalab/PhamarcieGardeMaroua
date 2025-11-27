@@ -180,7 +180,10 @@ fun HeroSection(userName: String? = null) {
         ) {
             // Message de bienvenue avec le nom de l'utilisateur
             Text(
-                text = if (userName != null) "👋 Bon retour $userName" else "👋 Bienvenue",
+                text = if (userName != null)
+                    "👋 ${stringResource(R.string.welcome_back_greeting, userName)}"
+                else
+                    "👋 ${stringResource(R.string.welcome_greeting)}",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -209,7 +212,7 @@ fun SortSelector(
         FilterChip(
             selected = currentSort == "default",
             onClick = { onSortChange("default") },
-            label = { Text("Par défaut") },
+            label = { Text(stringResource(R.string.sort_by_default)) },
             leadingIcon = if (currentSort == "default") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null
@@ -217,7 +220,7 @@ fun SortSelector(
         FilterChip(
             selected = currentSort == "name",
             onClick = { onSortChange("name") },
-            label = { Text("Par nom") },
+            label = { Text(stringResource(R.string.sort_by_name)) },
             leadingIcon = if (currentSort == "name") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null
@@ -225,7 +228,7 @@ fun SortSelector(
         FilterChip(
             selected = currentSort == "district",
             onClick = { onSortChange("district") },
-            label = { Text("Par quartier") },
+            label = { Text(stringResource(R.string.sort_by_district)) },
             leadingIcon = if (currentSort == "district") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null

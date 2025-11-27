@@ -143,7 +143,7 @@ fun PharmacySortSelector(
         FilterChip(
             selected = currentSort == "default",
             onClick = { onSortChange("default") },
-            label = { Text("Par défaut") },
+            label = { Text(stringResource(R.string.sort_by_default)) },
             leadingIcon = if (currentSort == "default") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null
@@ -151,7 +151,7 @@ fun PharmacySortSelector(
         FilterChip(
             selected = currentSort == "name",
             onClick = { onSortChange("name") },
-            label = { Text("Par nom") },
+            label = { Text(stringResource(R.string.sort_by_name)) },
             leadingIcon = if (currentSort == "name") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null
@@ -159,7 +159,7 @@ fun PharmacySortSelector(
         FilterChip(
             selected = currentSort == "district",
             onClick = { onSortChange("district") },
-            label = { Text("Par quartier") },
+            label = { Text(stringResource(R.string.sort_by_district)) },
             leadingIcon = if (currentSort == "district") {
                 { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
             } else null

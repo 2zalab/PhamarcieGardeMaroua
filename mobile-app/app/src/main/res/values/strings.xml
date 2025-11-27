@@ -133,6 +133,15 @@
     <string name="sign_in_error">Erreur de connexion</string>
     <string name="sign_out_error">Erreur de déconnexion</string>
 
+    <!-- Greetings -->
+    <string name="welcome_greeting">Bienvenue</string>
+    <string name="welcome_back_greeting">Bon retour %s</string>
+
+    <!-- Sorting Options -->
+    <string name="sort_by_default">Par défaut</string>
+    <string name="sort_by_name">Par nom</string>
+    <string name="sort_by_district">Par quartier</string>
+
     <!-- Google Cloud Console Web Client ID (OAuth 2.0) -->
     <!-- IMPORTANT: Remplacez par votre vrai Client ID depuis Google Cloud Console -->
     <!-- Format: xxxxx-xxxxx.apps.googleusercontent.com -->

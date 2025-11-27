@@ -32,9 +32,25 @@ fun HomeScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onMapClick: () -> Unit,
     onSearchClick: () -> Unit,
+    currentUserName: String? = null,
     viewModel: PharmacyViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    var sortBy by remember { mutableStateOf("default") }
+
+    // Actualiser les données au chargement
+    LaunchedEffect(Unit) {
+        viewModel.refreshPharmacies()
+    }
+
+    // Tri des pharmacies
+    val sortedPharmacies = remember(uiState.onDutyPharmacies, sortBy) {
+        when (sortBy) {
+            "name" -> uiState.onDutyPharmacies.sortedBy { it.name }
+            "district" -> uiState.onDutyPharmacies.sortedBy { it.district }
+            else -> uiState.onDutyPharmacies
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -98,20 +114,28 @@ fun HomeScreen(
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
                         item {
-                            HeroSection()
+                            HeroSection(userName = currentUserName)
                         }
 
-                        if (uiState.onDutyPharmacies.isNotEmpty()) {
+                        if (sortedPharmacies.isNotEmpty()) {
                             item {
                                 SectionHeader(
                                     title = stringResource(R.string.on_duty_pharmacies),
-                                    subtitle = stringResource(R.string.pharmacies_available, uiState.onDutyPharmacies.size),
+                                    subtitle = stringResource(R.string.pharmacies_available, sortedPharmacies.size),
                                     icon = Icons.Default.MedicalServices
                                 )
                             }
 
+                            // Tri des pharmacies
+                            item {
+                                SortSelector(
+                                    currentSort = sortBy,
+                                    onSortChange = { sortBy = it }
+                                )
+                            }
+
                             items(
-                                items = uiState.onDutyPharmacies,
+                                items = sortedPharmacies,
                                 key = { it.id }
                             ) { pharmacy ->
                                 PharmacyCard(
@@ -133,7 +157,7 @@ fun HomeScreen(
 }
 
 @Composable
-fun HeroSection() {
+fun HeroSection(userName: String? = null) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -154,25 +178,58 @@ fun HeroSection() {
                 .padding(20.dp),
             verticalArrangement = Arrangement.Center
         ) {
-            Icon(
-                imageVector = Icons.Default.LocalPharmacy,
-                contentDescription = null,
-                modifier = Modifier.size(48.dp),
-                tint = Color.White
-            )
-            Spacer(modifier = Modifier.height(8.dp))
+            // Message de bienvenue avec le nom de l'utilisateur
             Text(
-                text = stringResource(R.string.hero_title),
-                style = MaterialTheme.typography.titleMedium,
+                text = if (userName != null) "👋 Bon retour $userName" else "👋 Bienvenue",
+                style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = stringResource(R.string.hero_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color.White.copy(alpha = 0.9f)
             )
         }
+    }
+}
+
+@Composable
+fun SortSelector(
+    currentSort: String,
+    onSortChange: (String) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        FilterChip(
+            selected = currentSort == "default",
+            onClick = { onSortChange("default") },
+            label = { Text("Par défaut") },
+            leadingIcon = if (currentSort == "default") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "name",
+            onClick = { onSortChange("name") },
+            label = { Text("Par nom") },
+            leadingIcon = if (currentSort == "name") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "district",
+            onClick = { onSortChange("district") },
+            label = { Text("Par quartier") },
+            leadingIcon = if (currentSort == "district") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
     }
 }
 

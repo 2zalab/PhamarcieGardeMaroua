@@ -103,8 +103,8 @@ fun MainScreen(
                                         }
                                         // Éviter plusieurs copies de la même destination
                                         launchSingleTop = true
-                                        // Restore state when reselecting a previously selected item
-                                        restoreState = true
+                                        // Actualiser la page à chaque clic (pas de restoreState)
+                                        restoreState = false
                                     }
                                 }
                             }
@@ -130,7 +130,8 @@ fun MainScreen(
                     },
                     onSearchClick = {
                         navController.navigate(AppDestination.Search.route)
-                    }
+                    },
+                    currentUserName = currentUser?.name
                 )
             }
 

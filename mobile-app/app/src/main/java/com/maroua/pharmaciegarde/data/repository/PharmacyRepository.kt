@@ -37,7 +37,11 @@ class PharmacyRepository @Inject constructor(
             try {
                 val response = apiService.getOnDutyPharmacies()
                 if (response.success) {
-                    Result.Success(response.data)
+                    // S'assurer que toutes les pharmacies retournées sont marquées comme de garde
+                    val pharmaciesWithOnDutyFlag = response.data.map { pharmacy ->
+                        pharmacy.copy(isOnDutyToday = true)
+                    }
+                    Result.Success(pharmaciesWithOnDutyFlag)
                 } else {
                     Result.Error(response.message ?: "Erreur inconnue")
                 }

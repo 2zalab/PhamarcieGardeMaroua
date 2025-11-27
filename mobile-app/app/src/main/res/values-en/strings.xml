@@ -141,4 +141,12 @@
     <string name="sort_by_default">Default</string>
     <string name="sort_by_name">By name</string>
     <string name="sort_by_district">By district</string>
+
+    <!-- Sign Out -->
+    <string name="sign_out_confirmation">Do you really want to sign out?</string>
+
+    <!-- Contact Labels -->
+    <string name="orange_number">Orange Number</string>
+    <string name="mtn_number">MTN Number</string>
+    <string name="email_address">Email Address</string>
 </resources>

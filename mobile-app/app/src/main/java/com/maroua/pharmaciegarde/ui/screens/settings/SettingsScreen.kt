@@ -76,11 +76,11 @@ fun SettingsScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             // User photo or default icon
-                            if (currentUser?.photoUrl != null && currentUser.photoUrl.isNotEmpty()) {
+                            if (currentUser?.photoUrl != null && currentUser!!.photoUrl!!.isNotEmpty()) {
                                 AsyncImage(
                                     model = coil.request.ImageRequest.Builder(context)
-                                        .data(currentUser.photoUrl)
-                                        .crossfade(true)
+                                        .data(currentUser!!.photoUrl)
+                                        .crossfade(true
                                         .build(),
                                     contentDescription = null,
                                     modifier = Modifier

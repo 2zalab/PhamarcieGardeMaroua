@@ -41,7 +41,7 @@ fun FavoritesScreen(
         } else {
             uiState.favoritePharmacies.filter { pharmacy ->
                 pharmacy.name.contains(searchQuery, ignoreCase = true) ||
-                pharmacy.district.contains(searchQuery, ignoreCase = true) ||
+                pharmacy.district!!.contains(searchQuery, ignoreCase = true) ||
                 pharmacy.address.contains(searchQuery, ignoreCase = true)
             }
         }

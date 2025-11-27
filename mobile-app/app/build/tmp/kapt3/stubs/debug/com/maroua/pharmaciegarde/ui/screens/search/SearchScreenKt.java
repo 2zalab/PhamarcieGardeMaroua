@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ExperimentalComposeUiApi;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.text.input.ImeAction;
+import com.maroua.pharmaciegarde.R;
 import com.maroua.pharmaciegarde.data.model.Pharmacy;
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel;
 

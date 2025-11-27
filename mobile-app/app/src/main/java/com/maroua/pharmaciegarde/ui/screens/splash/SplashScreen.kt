@@ -12,11 +12,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
+import com.maroua.pharmaciegarde.R
+
 
 @Composable
 fun SplashScreen(
@@ -40,12 +45,13 @@ fun SplashScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             // Logo Pharmacie
-            Icon(
-                imageVector = Icons.Default.LocalPharmacy,
+            Image(
+                painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo",
-                modifier = Modifier.size(120.dp),
-                tint = MaterialTheme.colorScheme.primary
+                modifier = Modifier.size(120.dp)
             )
+
+
 
             Spacer(modifier = Modifier.height(32.dp))
 

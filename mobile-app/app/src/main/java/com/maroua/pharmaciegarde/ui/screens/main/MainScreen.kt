@@ -131,7 +131,7 @@ fun MainScreen(
                     onSearchClick = {
                         navController.navigate(AppDestination.Search.route)
                     },
-                    currentUserName = currentUser?.name
+                    currentUserName = currentUser?.displayName
                 )
             }
 

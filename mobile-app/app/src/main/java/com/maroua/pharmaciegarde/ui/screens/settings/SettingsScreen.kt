@@ -270,7 +270,7 @@ fun SettingsScreen(
                 SettingsItem(
                     icon = Icons.Default.Phone,
                     title = stringResource(R.string.phone_primary),
-                    subtitle = "Numero Orange",
+                    subtitle = stringResource(R.string.orange_number),
                     onClick = {
                         val intent = Intent(Intent.ACTION_DIAL).apply {
                             data = Uri.parse("tel:691805321")
@@ -284,7 +284,7 @@ fun SettingsScreen(
                 SettingsItem(
                     icon = Icons.Default.Phone,
                     title = stringResource(R.string.phone_secondary),
-                    subtitle = "Numero MTN",
+                    subtitle = stringResource(R.string.mtn_number),
                     onClick = {
                         val intent = Intent(Intent.ACTION_DIAL).apply {
                             data = Uri.parse("tel:672277579")
@@ -298,7 +298,7 @@ fun SettingsScreen(
                 SettingsItem(
                     icon = Icons.Default.Email,
                     title = stringResource(R.string.email_contact),
-                    subtitle = "Adresse Email",
+                    subtitle = stringResource(R.string.email_address),
                     onClick = {
                         val intent = Intent(Intent.ACTION_SENDTO).apply {
                             data = Uri.parse("mailto:contact@mit.cm")
@@ -342,7 +342,7 @@ fun SettingsScreen(
                 )
             },
             title = { Text(stringResource(R.string.sign_out)) },
-            text = { Text("Voulez-vous vraiment vous déconnecter ?") },
+            text = { Text(stringResource(R.string.sign_out_confirmation)) },
             confirmButton = {
                 TextButton(
                     onClick = {

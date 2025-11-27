@@ -127,7 +127,7 @@ fun SearchBar(
         onValueChange = onQueryChange,
         modifier = modifier,
         placeholder = {
-            Text("Rechercher une pharmacie...")
+            Text(stringResource(R.string.search_pharmacy))
         },
         leadingIcon = {
             Icon(
@@ -141,7 +141,7 @@ fun SearchBar(
                 IconButton(onClick = { onQueryChange("") }) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Effacer",
+                        contentDescription = stringResource(R.string.close),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }

@@ -1101,6 +1101,7 @@ int string description 0x7f0d0051
 int string developed_by 0x7f0d0052
 int string district 0x7f0d0053
 int string dropdown_menu 0x7f0d0054
+int string email_address 0x7f0d00f1
 int string email_contact 0x7f0d0055
 int string enable_notifications 0x7f0d0056
 int string error_loading 0x7f0d0057
@@ -1184,6 +1185,7 @@ int string m3c_tooltip_long_press_label 0x7f0d00a4
 int string m3c_tooltip_pane_description 0x7f0d00a5
 int string map 0x7f0d00a6
 int string maroua_city 0x7f0d00a7
+int string mtn_number 0x7f0d00f2
 int string navigation_menu 0x7f0d00a8
 int string nearby_pharmacies 0x7f0d00a9
 int string no_favorites 0x7f0d00aa
@@ -1201,6 +1203,7 @@ int string on_duty_notifications_desc 0x7f0d00b5
 int string on_duty_pharmacies 0x7f0d00b6
 int string on_duty_today 0x7f0d00b7
 int string open_24h 0x7f0d00b8
+int string orange_number 0x7f0d00f3
 int string parking_available 0x7f0d00b9
 int string pharmacies 0x7f0d00ba
 int string pharmacies_available 0x7f0d00bb
@@ -1233,7 +1236,11 @@ int string sign_in 0x7f0d00d5
 int string sign_in_error 0x7f0d00d6
 int string sign_in_with_google 0x7f0d00d7
 int string sign_out 0x7f0d00d8
+int string sign_out_confirmation 0x7f0d00f4
 int string sign_out_error 0x7f0d00d9
+int string sort_by_default 0x7f0d00ec
+int string sort_by_district 0x7f0d00ed
+int string sort_by_name 0x7f0d00ee
 int string state_empty 0x7f0d00da
 int string state_off 0x7f0d00db
 int string state_on 0x7f0d00dc
@@ -1250,6 +1257,8 @@ int string tooltip_description 0x7f0d00e6
 int string tooltip_label 0x7f0d00e7
 int string version 0x7f0d00e8
 int string welcome_back 0x7f0d00e9
+int string welcome_back_greeting 0x7f0d00ef
+int string welcome_greeting 0x7f0d00f0
 int string wheelchair_access 0x7f0d00ea
 int string your_rating 0x7f0d00eb
 int style AlertDialog_AppCompat 0x7f0e0000

@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Brush;
 import androidx.compose.ui.graphics.vector.ImageVector;
 import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.text.font.FontWeight;
+import com.maroua.pharmaciegarde.R;
 import com.maroua.pharmaciegarde.data.model.Pharmacy;
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel;
 

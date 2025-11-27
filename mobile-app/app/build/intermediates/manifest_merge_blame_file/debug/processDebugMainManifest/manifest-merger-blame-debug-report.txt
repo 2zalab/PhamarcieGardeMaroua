@@ -8,432 +8,439 @@
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="35" />
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:5:5-67
-11-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:6:5-79
-12-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:6:22-76
-13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:7:5-81
-13-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:7:22-78
-14    <uses-permission android:name="android.permission.CALL_PHONE" />
-14-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:8:5-69
-14-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:8:22-66
-15    <uses-permission android:name="android.permission.WAKE_LOCK" />
-15-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
-15-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
-16-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
-17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-17-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
-17-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
-18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-18-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
-18-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:22-74
-19
-20    <uses-feature
-20-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
-21        android:glEsVersion="0x00020000"
-21-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
-22        android:required="true" />
-22-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+11    <uses-feature
+11-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:5:5-7:36
+12        android:name="android.hardware.telephony"
+12-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:6:9-50
+13        android:required="false" />
+13-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:7:9-33
+14
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:9:5-67
+15-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:9:22-64
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:10:5-79
+16-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:10:22-76
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:11:5-81
+17-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:11:22-78
+18    <uses-permission android:name="android.permission.CALL_PHONE" />
+18-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:5-69
+18-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:22-66
+19    <uses-permission android:name="android.permission.WAKE_LOCK" />
+19-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
+19-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+20-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
+21    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+21-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
+21-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+22-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
+22-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:22-74
 23
-24    <queries>
-24-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
-25
-26        <!-- Needs to be explicitly declared on Android R+ -->
-27        <package android:name="com.google.android.apps.maps" />
-27-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
-27-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
-28    </queries>
+24    <uses-feature
+24-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+25        android:glEsVersion="0x00020000"
+25-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+26        android:required="true" />
+26-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+27
+28    <queries>
+28-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 29
-30    <permission
-30-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-31        android:name="com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-31-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-32        android:protectionLevel="signature" />
-32-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+30        <!-- Needs to be explicitly declared on Android R+ -->
+31        <package android:name="com.google.android.apps.maps" />
+31-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+31-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+32    </queries>
 33
-34    <uses-permission android:name="com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-34-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-34-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-35
-36    <application
-36-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:10:5-37:19
-37        android:name="com.maroua.pharmaciegarde.PharmacieGardeApplication"
-37-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:11:9-50
-38        android:allowBackup="true"
-38-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:12:9-35
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-40        android:dataExtractionRules="@xml/data_extraction_rules"
-40-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:13:9-65
-41        android:debuggable="true"
-42        android:extractNativeLibs="false"
-43        android:fullBackupContent="@xml/backup_rules"
-43-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:14:9-54
-44        android:icon="@mipmap/ic_launcher"
-44-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:9-43
-45        android:label="@string/app_name"
-45-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-41
-46        android:localeConfig="@xml/locales_config"
-46-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-51
-47        android:roundIcon="@mipmap/ic_launcher_round"
+34    <permission
+34-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+35        android:name="com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.maroua.pharmaciegarde.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+39
+40    <application
+40-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:14:5-41:19
+41        android:name="com.maroua.pharmaciegarde.PharmacieGardeApplication"
+41-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:15:9-50
+42        android:allowBackup="true"
+42-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:16:9-35
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.13.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\b1c0ce80b2ba211ed1c186ba08345c96\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+44        android:dataExtractionRules="@xml/data_extraction_rules"
+44-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:17:9-65
+45        android:debuggable="true"
+46        android:extractNativeLibs="false"
+47        android:fullBackupContent="@xml/backup_rules"
 47-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:18:9-54
-48        android:supportsRtl="true"
-48-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-35
-49        android:testOnly="true"
-50        android:theme="@style/Theme.PharmacieDeGarde"
-50-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-54
-51        android:usesCleartextTraffic="true" >
-51-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-44
-52        <meta-data
-53            android:name="com.google.android.geo.API_KEY"
-53-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:13-58
-54            android:value="AIzaSyArnTzRpyXwhk20gVyq3Kl2Vq8aqz0rxNU" />
-54-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:26:13-44
-55
-56        <activity
-56-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:28:9-36:20
-57            android:name="com.maroua.pharmaciegarde.MainActivity"
-57-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:29:13-41
-58            android:exported="true"
-58-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-36
-59            android:theme="@style/Theme.PharmacieDeGarde" >
-59-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:31:13-58
-60            <intent-filter>
-60-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:32:13-35:29
-61                <action android:name="android.intent.action.MAIN" />
-61-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:17-69
-61-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:25-66
-62
-63                <category android:name="android.intent.category.LAUNCHER" />
-63-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:17-77
-63-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:27-74
-64            </intent-filter>
-65        </activity>
+48        android:icon="@mipmap/ic_launcher"
+48-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:19:9-43
+49        android:label="@string/app_name"
+49-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:20:9-41
+50        android:localeConfig="@xml/locales_config"
+50-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:21:9-51
+51        android:roundIcon="@mipmap/ic_launcher_round"
+51-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:22:9-54
+52        android:supportsRtl="true"
+52-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:23:9-35
+53        android:testOnly="true"
+54        android:theme="@style/Theme.PharmacieDeGarde"
+54-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:24:9-54
+55        android:usesCleartextTraffic="true" >
+55-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:25:9-44
+56        <meta-data
+57            android:name="com.google.android.geo.API_KEY"
+57-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:29:13-58
+58            android:value="AIzaSyArnTzRpyXwhk20gVyq3Kl2Vq8aqz0rxNU" />
+58-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:30:13-44
+59
+60        <activity
+60-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:32:9-40:20
+61            android:name="com.maroua.pharmaciegarde.MainActivity"
+61-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:33:13-41
+62            android:exported="true"
+62-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:34:13-36
+63            android:theme="@style/Theme.PharmacieDeGarde" >
+63-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:35:13-58
+64            <intent-filter>
+64-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:36:13-39:29
+65                <action android:name="android.intent.action.MAIN" />
+65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:17-69
+65-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:37:25-66
 66
-67        <service
-67-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:24:9-28:63
-68            android:name="androidx.room.MultiInstanceInvalidationService"
-68-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:25:13-74
-69            android:directBootAware="true"
-69-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:26:13-43
-70            android:exported="false" />
-70-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:27:13-37
-71
-72        <provider
-72-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
-73            android:name="androidx.startup.InitializationProvider"
-73-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
-74            android:authorities="com.maroua.pharmaciegarde.androidx-startup"
-74-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
-75            android:exported="false" >
-75-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
-76            <meta-data
-76-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
-77                android:name="androidx.work.WorkManagerInitializer"
-77-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
-78                android:value="androidx.startup" />
-78-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
-79            <meta-data
-79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-80                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-81                android:value="androidx.startup" />
-81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-82            <meta-data
-82-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-83-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
-84                android:value="androidx.startup" />
-84-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
-85            <meta-data
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-86                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-87                android:value="androidx.startup" />
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-88        </provider>
-89
-90        <service
-90-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
-91            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-91-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
-92            android:directBootAware="false"
-92-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
-93            android:enabled="@bool/enable_system_alarm_service_default"
-93-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
-94            android:exported="false" />
-94-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
-95        <service
-95-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
-96            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-96-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
-97            android:directBootAware="false"
-97-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
-98            android:enabled="@bool/enable_system_job_service_default"
-98-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
-99            android:exported="true"
-99-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
-100            android:permission="android.permission.BIND_JOB_SERVICE" />
-100-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
-101        <service
-101-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
-102            android:name="androidx.work.impl.foreground.SystemForegroundService"
-102-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
-103            android:directBootAware="false"
-103-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
-104            android:enabled="@bool/enable_system_foreground_service_default"
-104-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
-105            android:exported="false" />
-105-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
-106
-107        <receiver
-107-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
-108            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-108-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
-109            android:directBootAware="false"
-109-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
-110            android:enabled="true"
-110-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
-111            android:exported="false" />
-111-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
-112        <receiver
-112-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
-113            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-113-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
-114            android:directBootAware="false"
-114-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
-115            android:enabled="false"
-115-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
-116            android:exported="false" >
-116-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
-117            <intent-filter>
-117-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
-118                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-118-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
-118-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
-119                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-119-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
-119-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
-120            </intent-filter>
-121        </receiver>
-122        <receiver
-122-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
-123            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-123-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
-124            android:directBootAware="false"
-124-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
-125            android:enabled="false"
-125-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
-126            android:exported="false" >
-126-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
-127            <intent-filter>
-127-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
-128                <action android:name="android.intent.action.BATTERY_OKAY" />
-128-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
-128-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
-129                <action android:name="android.intent.action.BATTERY_LOW" />
-129-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
-129-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
-130            </intent-filter>
-131        </receiver>
-132        <receiver
-132-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
-133            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-133-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
-134            android:directBootAware="false"
-134-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
-135            android:enabled="false"
-135-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
-136            android:exported="false" >
-136-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
-137            <intent-filter>
-137-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
-138                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-138-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
-138-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
-139                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-139-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
-139-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
-140            </intent-filter>
-141        </receiver>
-142        <receiver
-142-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
-143            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-143-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
-144            android:directBootAware="false"
-144-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
-145            android:enabled="false"
-145-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
-146            android:exported="false" >
-146-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
-147            <intent-filter>
-147-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
-148                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-148-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
-148-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
-149            </intent-filter>
-150        </receiver>
-151        <receiver
-151-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
-152            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-152-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
-153            android:directBootAware="false"
-153-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
-154            android:enabled="false"
-154-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
-155            android:exported="false" >
-155-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
-156            <intent-filter>
-156-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
-157                <action android:name="android.intent.action.BOOT_COMPLETED" />
-157-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
-157-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
-158                <action android:name="android.intent.action.TIME_SET" />
-158-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
-158-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
-159                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-159-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
-159-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
-160            </intent-filter>
-161        </receiver>
-162        <receiver
-162-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
-163            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-163-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
-164            android:directBootAware="false"
-164-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
-165            android:enabled="@bool/enable_system_alarm_service_default"
-165-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
-166            android:exported="false" >
-166-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
-167            <intent-filter>
-167-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
-168                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-168-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
-168-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
-169            </intent-filter>
-170        </receiver>
-171        <receiver
-171-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
-172            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-172-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
-173            android:directBootAware="false"
-173-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
-174            android:enabled="true"
-174-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
-175            android:exported="true"
-175-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
-176            android:permission="android.permission.DUMP" >
-176-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
-177            <intent-filter>
-177-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
-178                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-178-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
-178-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
-179            </intent-filter>
-180        </receiver> <!-- Needs to be explicitly declared on P+ -->
-181        <uses-library
-181-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
-182            android:name="org.apache.http.legacy"
-182-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
-183            android:required="false" />
-183-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
-184
-185        <activity
-185-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
-186            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-186-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
-187            android:excludeFromRecents="true"
-187-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
-188            android:exported="false"
-188-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
-189            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-189-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
-190        <!--
-191            Service handling Google Sign-In user revocation. For apps that do not integrate with
-192            Google Sign-In, this service will never be started.
-193        -->
-194        <service
-194-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
-195            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-195-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
-196            android:exported="true"
-196-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
-197            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-197-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
-198            android:visibleToInstantApps="true" />
-198-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
-199
-200        <activity
-200-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-201            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-201-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
-202            android:exported="false"
-202-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-203            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-203-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:17-77
+67-->F:\GitHub\App PhamarcieGardeMaroua\mobile-app\app\src\main\AndroidManifest.xml:38:27-74
+68            </intent-filter>
+69        </activity>
+70
+71        <service
+71-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:24:9-28:63
+72            android:name="androidx.room.MultiInstanceInvalidationService"
+72-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:25:13-74
+73            android:directBootAware="true"
+73-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:26:13-43
+74            android:exported="false" />
+74-->[androidx.room:room-runtime:2.6.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\aaf86dd2c91d4b3a70859b4b97ee7b56\transformed\room-runtime-2.6.0\AndroidManifest.xml:27:13-37
+75
+76        <provider
+76-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
+77            android:name="androidx.startup.InitializationProvider"
+77-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
+78            android:authorities="com.maroua.pharmaciegarde.androidx-startup"
+78-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
+79            android:exported="false" >
+79-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
+80            <meta-data
+80-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
+81                android:name="androidx.work.WorkManagerInitializer"
+81-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
+82                android:value="androidx.startup" />
+82-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
+83            <meta-data
+83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+85                android:value="androidx.startup" />
+85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\1c502d43c4f1e1130706bbf198aae15c\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+86            <meta-data
+86-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+87-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+88                android:value="androidx.startup" />
+88-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\0c9c2f28942f08e5bbf350b2b75c3247\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+91                android:value="androidx.startup" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+92        </provider>
+93
+94        <service
+94-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
+95            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+95-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
+96            android:directBootAware="false"
+96-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
+97            android:enabled="@bool/enable_system_alarm_service_default"
+97-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
+98            android:exported="false" />
+98-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
+99        <service
+99-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
+100            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+100-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
+101            android:directBootAware="false"
+101-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
+102            android:enabled="@bool/enable_system_job_service_default"
+102-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
+103            android:exported="true"
+103-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
+104            android:permission="android.permission.BIND_JOB_SERVICE" />
+104-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
+105        <service
+105-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
+106            android:name="androidx.work.impl.foreground.SystemForegroundService"
+106-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
+107            android:directBootAware="false"
+107-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
+108            android:enabled="@bool/enable_system_foreground_service_default"
+108-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
+109            android:exported="false" />
+109-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
+110
+111        <receiver
+111-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
+112            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+112-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
+113            android:directBootAware="false"
+113-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
+114            android:enabled="true"
+114-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
+115            android:exported="false" />
+115-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
+116        <receiver
+116-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
+117            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+117-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
+118            android:directBootAware="false"
+118-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
+119            android:enabled="false"
+119-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
+120            android:exported="false" >
+120-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
+121            <intent-filter>
+121-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
+122                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+122-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
+122-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
+123                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+123-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
+123-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
+124            </intent-filter>
+125        </receiver>
+126        <receiver
+126-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
+127            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+127-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
+128            android:directBootAware="false"
+128-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
+129            android:enabled="false"
+129-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
+130            android:exported="false" >
+130-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
+131            <intent-filter>
+131-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
+132                <action android:name="android.intent.action.BATTERY_OKAY" />
+132-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
+132-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
+133                <action android:name="android.intent.action.BATTERY_LOW" />
+133-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
+133-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
+134            </intent-filter>
+135        </receiver>
+136        <receiver
+136-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
+137            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+137-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
+138            android:directBootAware="false"
+138-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
+139            android:enabled="false"
+139-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
+140            android:exported="false" >
+140-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
+141            <intent-filter>
+141-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
+142                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+142-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
+142-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
+143                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+143-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
+143-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
+144            </intent-filter>
+145        </receiver>
+146        <receiver
+146-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
+147            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+147-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
+148            android:directBootAware="false"
+148-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
+149            android:enabled="false"
+149-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
+150            android:exported="false" >
+150-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
+151            <intent-filter>
+151-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
+152                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+152-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
+152-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
+153            </intent-filter>
+154        </receiver>
+155        <receiver
+155-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
+156            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+156-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
+157            android:directBootAware="false"
+157-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
+158            android:enabled="false"
+158-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
+159            android:exported="false" >
+159-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
+160            <intent-filter>
+160-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
+161                <action android:name="android.intent.action.BOOT_COMPLETED" />
+161-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
+161-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
+162                <action android:name="android.intent.action.TIME_SET" />
+162-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
+162-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
+163                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+163-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
+163-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
+164            </intent-filter>
+165        </receiver>
+166        <receiver
+166-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
+167            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+167-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
+168            android:directBootAware="false"
+168-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
+169            android:enabled="@bool/enable_system_alarm_service_default"
+169-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
+170            android:exported="false" >
+170-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
+171            <intent-filter>
+171-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
+172                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+172-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
+172-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
+173            </intent-filter>
+174        </receiver>
+175        <receiver
+175-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
+176            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+176-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
+177            android:directBootAware="false"
+177-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
+178            android:enabled="true"
+178-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
+179            android:exported="true"
+179-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
+180            android:permission="android.permission.DUMP" >
+180-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
+181            <intent-filter>
+181-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
+182                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+182-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
+182-->[androidx.work:work-runtime:2.9.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f7bd7b35c5c7580ccbfc77b94198edb5\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
+183            </intent-filter>
+184        </receiver> <!-- Needs to be explicitly declared on P+ -->
+185        <uses-library
+185-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+186            android:name="org.apache.http.legacy"
+186-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+187            android:required="false" />
+187-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\931e820c3602b9ac232c9b96b6ff5db3\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+188
+189        <activity
+189-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+190            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+190-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+191            android:excludeFromRecents="true"
+191-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+192            android:exported="false"
+192-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+193-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+194        <!--
+195            Service handling Google Sign-In user revocation. For apps that do not integrate with
+196            Google Sign-In, this service will never be started.
+197        -->
+198        <service
+198-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+199            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+199-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+200            android:exported="true"
+200-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+201            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+201-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+202            android:visibleToInstantApps="true" />
+202-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\68c75158adbb49d8e155f10d40374c46\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+203
 204        <activity
-204-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
-205            android:name="androidx.compose.ui.tooling.PreviewActivity"
-205-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
-206            android:exported="true" />
-206-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
-207        <activity
-207-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:23:9-25:39
-208            android:name="androidx.activity.ComponentActivity"
-208-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:24:13-63
-209            android:exported="true" />
-209-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:25:13-36
-210
-211        <meta-data
-211-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
-212            android:name="com.google.android.gms.version"
-212-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
-213            android:value="@integer/google_play_services_version" />
-213-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+204-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+205            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+205-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+206            android:exported="false"
+206-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+207            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+207-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\95b7ad20823d70a6efe9283c889be7dd\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+208        <activity
+208-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+209            android:name="androidx.compose.ui.tooling.PreviewActivity"
+209-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+210            android:exported="true" />
+210-->[androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\a005de182c1563c19bd33b645cf446e4\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+211        <activity
+211-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:23:9-25:39
+212            android:name="androidx.activity.ComponentActivity"
+212-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:24:13-63
+213            android:exported="true" />
+213-->[androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\e773d439132df6d44389641814b476ae\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:25:13-36
 214
-215        <receiver
-215-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-216            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-216-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-217            android:directBootAware="false"
-217-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-218            android:enabled="true"
-218-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-219            android:exported="true"
-219-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-220            android:permission="android.permission.DUMP" >
-220-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-221            <intent-filter>
-221-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-222                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-222-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-222-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-223            </intent-filter>
-224            <intent-filter>
-224-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-225                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-225-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-225-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-226            </intent-filter>
-227            <intent-filter>
-227-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-228                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-228-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-228-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-229            </intent-filter>
-230            <intent-filter>
-230-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-231                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-231-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-231-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-232            </intent-filter>
-233        </receiver>
-234    </application>
-235
-236</manifest>
+215        <meta-data
+215-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+216            android:name="com.google.android.gms.version"
+216-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+217            android:value="@integer/google_play_services_version" />
+217-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\05984209c1531aa0d6b188c6c507d80f\transformed\play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+218
+219        <receiver
+219-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+220            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+221            android:directBootAware="false"
+221-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+222            android:enabled="true"
+222-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+223            android:exported="true"
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+224            android:permission="android.permission.DUMP" >
+224-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+225            <intent-filter>
+225-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+226                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+227            </intent-filter>
+228            <intent-filter>
+228-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+229                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+229-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+229-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+230            </intent-filter>
+231            <intent-filter>
+231-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+232                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+232-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+232-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+233            </intent-filter>
+234            <intent-filter>
+234-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+235                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+235-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+235-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\TOUZA ISAAC\.gradle\caches\transforms-4\f92dfa91e62552c9b892bb3d0227d574\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+236            </intent-filter>
+237        </receiver>
+238    </application>
+239
+240</manifest>

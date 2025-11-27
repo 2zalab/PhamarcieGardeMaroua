@@ -1102,6 +1102,7 @@ string description
 string developed_by
 string district
 string dropdown_menu
+string email_address
 string email_contact
 string enable_notifications
 string error_loading
@@ -1185,6 +1186,7 @@ string m3c_tooltip_long_press_label
 string m3c_tooltip_pane_description
 string map
 string maroua_city
+string mtn_number
 string navigation_menu
 string nearby_pharmacies
 string no_favorites
@@ -1202,6 +1204,7 @@ string on_duty_notifications_desc
 string on_duty_pharmacies
 string on_duty_today
 string open_24h
+string orange_number
 string parking_available
 string pharmacies
 string pharmacies_available
@@ -1234,7 +1237,11 @@ string sign_in
 string sign_in_error
 string sign_in_with_google
 string sign_out
+string sign_out_confirmation
 string sign_out_error
+string sort_by_default
+string sort_by_district
+string sort_by_name
 string state_empty
 string state_off
 string state_on
@@ -1251,6 +1258,8 @@ string tooltip_description
 string tooltip_label
 string version
 string welcome_back
+string welcome_back_greeting
+string welcome_greeting
 string wheelchair_access
 string your_rating
 style AlertDialog_AppCompat

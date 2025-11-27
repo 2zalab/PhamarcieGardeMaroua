@@ -27,7 +27,7 @@ public final class FavoritesRepository {
     }
     
     /**
-     * Récupérer les favoris (Laravel si authentifié, sinon local)
+     * Récupérer les favoris (observe le Flow local pour des mises à jour en temps réel)
      */
     @org.jetbrains.annotations.NotNull
     public final kotlinx.coroutines.flow.Flow<java.util.Set<java.lang.Integer>> getFavorites() {

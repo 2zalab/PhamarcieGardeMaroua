@@ -35,6 +35,7 @@ fun SettingsScreen(
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
+    val activity = context as? android.app.Activity
     val uiState by settingsViewModel.uiState.collectAsState()
     val currentUser by authViewModel.currentUser.collectAsState()
     var showThemeDialog by remember { mutableStateOf(false) }
@@ -76,13 +77,19 @@ fun SettingsScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             // User photo or default icon
-                            if (currentUser?.photoUrl != null) {
+                            if (currentUser?.photoUrl != null && currentUser.photoUrl.isNotEmpty()) {
                                 AsyncImage(
-                                    model = currentUser?.photoUrl,
+                                    model = coil.request.ImageRequest.Builder(context)
+                                        .data(currentUser.photoUrl)
+                                        .crossfade(true)
+                                        .build(),
                                     contentDescription = null,
                                     modifier = Modifier
                                         .size(56.dp)
-                                        .clip(CircleShape)
+                                        .clip(CircleShape),
+                                    error = androidx.compose.ui.res.painterResource(
+                                        android.R.drawable.ic_menu_gallery
+                                    )
                                 )
                             } else {
                                 Icon(
@@ -325,7 +332,7 @@ fun SettingsScreen(
         LanguageSelectionDialog(
             currentLanguage = uiState.language,
             onLanguageSelected = {
-                settingsViewModel.updateLanguage(it)
+                settingsViewModel.updateLanguage(it, activity)
                 showLanguageDialog = false
             },
             onDismiss = { showLanguageDialog = false }

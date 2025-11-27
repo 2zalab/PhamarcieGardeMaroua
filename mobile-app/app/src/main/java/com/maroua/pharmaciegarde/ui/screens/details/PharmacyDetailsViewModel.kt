@@ -50,10 +50,22 @@ class PharmacyDetailsViewModel @Inject constructor(
 
     fun toggleFavorite(pharmacyId: Int) {
         viewModelScope.launch {
-            if (_isFavorite.value) {
-                favoritesRepository.removeFavorite(pharmacyId)
-            } else {
-                favoritesRepository.addFavorite(pharmacyId)
+            // Mise à jour optimiste de l'état pour un feedback immédiat
+            val newFavoriteState = !_isFavorite.value
+            _isFavorite.value = newFavoriteState
+
+            try {
+                if (!newFavoriteState) {
+                    // L'état vient de passer à false, donc on retire le favori
+                    favoritesRepository.removeFavorite(pharmacyId)
+                } else {
+                    // L'état vient de passer à true, donc on ajoute le favori
+                    favoritesRepository.addFavorite(pharmacyId)
+                }
+            } catch (e: Exception) {
+                // En cas d'erreur, revenir à l'état précédent
+                _isFavorite.value = !newFavoriteState
+                e.printStackTrace()
             }
         }
     }

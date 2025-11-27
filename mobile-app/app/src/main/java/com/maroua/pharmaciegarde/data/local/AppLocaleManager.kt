@@ -1,6 +1,8 @@
 package com.maroua.pharmaciegarde.data.local
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
@@ -22,12 +24,17 @@ class AppLocaleManager @Inject constructor(
             AppLanguage.ENGLISH -> "en"
         }
 
+        // Save preference first
+        userPreferencesManager.updateLanguage(language)
+
         // Update using AppCompat's locale API (works on all Android versions)
         val appLocale = LocaleListCompat.forLanguageTags(localeCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
+    }
 
-        // Save preference
-        userPreferencesManager.updateLanguage(language)
+    fun applyPersistedLocale() {
+        // Cette méthode sera appelée au démarrage de l'app pour appliquer la locale sauvegardée
+        // AppCompatDelegate.setApplicationLocales() la gérera automatiquement
     }
 
     fun getCurrentLanguage(): String {

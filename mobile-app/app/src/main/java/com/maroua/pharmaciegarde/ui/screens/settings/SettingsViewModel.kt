@@ -1,6 +1,5 @@
 package com.maroua.pharmaciegarde.ui.screens.settings
 
-import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maroua.pharmaciegarde.data.local.AppLanguage
@@ -33,9 +32,9 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
-    fun updateLanguage(language: AppLanguage, activity: Activity? = null) {
+    fun updateLanguage(language: AppLanguage) {
         viewModelScope.launch {
-            appLocaleManager.applyLanguage(language, activity)
+            appLocaleManager.applyLanguage(language)
         }
     }
 

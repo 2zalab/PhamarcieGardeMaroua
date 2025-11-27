@@ -35,7 +35,6 @@ fun SettingsScreen(
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
-    val activity = context as? android.app.Activity
     val uiState by settingsViewModel.uiState.collectAsState()
     val currentUser by authViewModel.currentUser.collectAsState()
     var showThemeDialog by remember { mutableStateOf(false) }
@@ -332,7 +331,7 @@ fun SettingsScreen(
         LanguageSelectionDialog(
             currentLanguage = uiState.language,
             onLanguageSelected = {
-                settingsViewModel.updateLanguage(it, activity)
+                settingsViewModel.updateLanguage(it)
                 showLanguageDialog = false
             },
             onDismiss = { showLanguageDialog = false }

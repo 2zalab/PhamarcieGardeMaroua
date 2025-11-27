@@ -18,27 +18,13 @@ class FavoritesRepository @Inject constructor(
 ) {
 
     /**
-     * Récupérer les favoris (Laravel si authentifié, sinon local)
+     * Récupérer les favoris (observe le Flow local pour des mises à jour en temps réel)
      */
     fun getFavorites(): Flow<Set<Int>> = flow {
-        if (tokenManager.hasToken()) {
-            // Utilisateur authentifié - récupérer depuis Laravel
-            try {
-                val response = favoritesApiService.getFavorites()
-                if (response.isSuccessful && response.body()?.success == true) {
-                    val favoriteIds = response.body()?.data?.favorite_ids?.toSet() ?: emptySet()
-                    emit(favoriteIds)
-                } else {
-                    // En cas d'erreur, fallback sur local
-                    emit(localFavoritesManager.favoritesFlow.first())
-                }
-            } catch (e: Exception) {
-                // En cas d'erreur réseau, fallback sur local
-                emit(localFavoritesManager.favoritesFlow.first())
-            }
-        } else {
-            // Utilisateur non authentifié - utiliser local
-            localFavoritesManager.favoritesFlow.collect { emit(it) }
+        // Observer le Flow local pour des mises à jour en temps réel
+        // (le Flow local est toujours mis à jour par addFavorite/removeFavorite)
+        localFavoritesManager.favoritesFlow.collect { localFavorites ->
+            emit(localFavorites)
         }
     }
 

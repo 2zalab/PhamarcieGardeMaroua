@@ -26,10 +26,31 @@ fun FavoritesScreen(
     viewModel: FavoritesViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    var searchQuery by remember { mutableStateOf("") }
+    var sortBy by remember { mutableStateOf("default") }
 
     // Actualiser les données au chargement
     LaunchedEffect(Unit) {
         viewModel.refresh()
+    }
+
+    // Filtrage et tri des favoris
+    val filteredAndSortedFavorites = remember(uiState.favoritePharmacies, searchQuery, sortBy) {
+        val filtered = if (searchQuery.isBlank()) {
+            uiState.favoritePharmacies
+        } else {
+            uiState.favoritePharmacies.filter { pharmacy ->
+                pharmacy.name.contains(searchQuery, ignoreCase = true) ||
+                pharmacy.district.contains(searchQuery, ignoreCase = true) ||
+                pharmacy.address.contains(searchQuery, ignoreCase = true)
+            }
+        }
+
+        when (sortBy) {
+            "name" -> filtered.sortedBy { it.name }
+            "district" -> filtered.sortedBy { it.district }
+            else -> filtered
+        }
     }
 
     Scaffold(
@@ -58,27 +79,147 @@ fun FavoritesScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
+                    // Barre de recherche
                     item {
-                        Text(
-                            text = stringResource(R.string.pharmacies_count, uiState.favoritePharmacies.size),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(bottom = 8.dp)
+                        SearchBar(
+                            query = searchQuery,
+                            onQueryChange = { searchQuery = it },
+                            modifier = Modifier.fillMaxWidth()
                         )
                     }
 
-                    items(
-                        items = uiState.favoritePharmacies,
-                        key = { "fav-${it.id}" }
-                    ) { pharmacy ->
-                        PharmacyCard(
-                            pharmacy = pharmacy,
-                            onClick = { onPharmacyClick(pharmacy) },
-                            modifier = Modifier.animateItemPlacement()
+                    // Compteur et tri
+                    item {
+                        Text(
+                            text = stringResource(R.string.pharmacies_count, filteredAndSortedFavorites.size),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
+                    }
+
+                    item {
+                        FavoritesSortSelector(
+                            currentSort = sortBy,
+                            onSortChange = { sortBy = it }
+                        )
+                    }
+
+                    // Liste des favoris filtrés et triés
+                    if (filteredAndSortedFavorites.isEmpty()) {
+                        item {
+                            NoResultsState()
+                        }
+                    } else {
+                        items(
+                            items = filteredAndSortedFavorites,
+                            key = { "fav-${it.id}" }
+                        ) { pharmacy ->
+                            PharmacyCard(
+                                pharmacy = pharmacy,
+                                onClick = { onPharmacyClick(pharmacy) },
+                                modifier = Modifier.animateItemPlacement()
+                            )
+                        }
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun SearchBar(
+    query: String,
+    onQueryChange: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    OutlinedTextField(
+        value = query,
+        onValueChange = onQueryChange,
+        modifier = modifier,
+        placeholder = { Text("Rechercher une pharmacie...") },
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Default.Search,
+                contentDescription = "Recherche"
+            )
+        },
+        trailingIcon = {
+            if (query.isNotEmpty()) {
+                IconButton(onClick = { onQueryChange("") }) {
+                    Icon(
+                        imageVector = Icons.Default.Clear,
+                        contentDescription = "Effacer"
+                    )
+                }
+            }
+        },
+        singleLine = true,
+        shape = MaterialTheme.shapes.large
+    )
+}
+
+@Composable
+fun FavoritesSortSelector(
+    currentSort: String,
+    onSortChange: (String) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        FilterChip(
+            selected = currentSort == "default",
+            onClick = { onSortChange("default") },
+            label = { Text("Par défaut") },
+            leadingIcon = if (currentSort == "default") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "name",
+            onClick = { onSortChange("name") },
+            label = { Text("Par nom") },
+            leadingIcon = if (currentSort == "name") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "district",
+            onClick = { onSortChange("district") },
+            label = { Text("Par quartier") },
+            leadingIcon = if (currentSort == "district") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+    }
+}
+
+@Composable
+fun NoResultsState() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(32.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Icon(
+                imageVector = Icons.Default.SearchOff,
+                contentDescription = null,
+                modifier = Modifier.size(64.dp),
+                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Aucun résultat trouvé",
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }

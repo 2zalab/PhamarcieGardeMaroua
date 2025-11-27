@@ -28,28 +28,31 @@ fun AllPharmaciesScreen(
     viewModel: PharmacyViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    var sortBy by remember { mutableStateOf("default") }
 
     // Actualiser les données au chargement
     LaunchedEffect(Unit) {
         viewModel.refreshPharmacies()
     }
 
+    // Tri des pharmacies
+    val sortedPharmacies = remember(uiState.pharmacies, sortBy) {
+        when (sortBy) {
+            "name" -> uiState.pharmacies.sortedBy { it.name }
+            "district" -> uiState.pharmacies.sortedBy { it.district }
+            else -> uiState.pharmacies
+        }
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
-                    Column {
-                        Text(
-                            text = stringResource(R.string.all_pharmacies_title),
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            text = stringResource(R.string.pharmacies_available, uiState.pharmacies.size),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-                    }
+                    Text(
+                        text = stringResource(R.string.all_pharmacies_title),
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold
+                    )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
@@ -91,8 +94,26 @@ fun AllPharmaciesScreen(
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
+                        // Compteur de pharmacies
+                        item {
+                            Text(
+                                text = stringResource(R.string.pharmacies_available, sortedPharmacies.size),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+
+                        // Tri des pharmacies
+                        item {
+                            PharmacySortSelector(
+                                currentSort = sortBy,
+                                onSortChange = { sortBy = it }
+                            )
+                        }
+
                         items(
-                            items = uiState.pharmacies,
+                            items = sortedPharmacies,
                             key = { it.id }
                         ) { pharmacy ->
                             PharmacyCard(
@@ -105,6 +126,44 @@ fun AllPharmaciesScreen(
                 }
             }
         }
+    }
+}
+
+@Composable
+fun PharmacySortSelector(
+    currentSort: String,
+    onSortChange: (String) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        FilterChip(
+            selected = currentSort == "default",
+            onClick = { onSortChange("default") },
+            label = { Text("Par défaut") },
+            leadingIcon = if (currentSort == "default") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "name",
+            onClick = { onSortChange("name") },
+            label = { Text("Par nom") },
+            leadingIcon = if (currentSort == "name") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
+        FilterChip(
+            selected = currentSort == "district",
+            onClick = { onSortChange("district") },
+            label = { Text("Par quartier") },
+            leadingIcon = if (currentSort == "district") {
+                { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
+            } else null
+        )
     }
 }
 

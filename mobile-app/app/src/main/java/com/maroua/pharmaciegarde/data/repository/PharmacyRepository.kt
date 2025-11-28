@@ -1,6 +1,7 @@
 package com.maroua.pharmaciegarde.data.repository
 
 import com.maroua.pharmaciegarde.data.model.Pharmacy
+import com.maroua.pharmaciegarde.data.model.PharmacySchedule
 import com.maroua.pharmaciegarde.data.remote.PharmacyApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -70,6 +71,52 @@ class PharmacyRepository @Inject constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val response = apiService.getPharmacyById(id)
+                if (response.success) {
+                    Result.Success(response.data)
+                } else {
+                    Result.Error(response.message ?: "Erreur inconnue")
+                }
+            } catch (e: Exception) {
+                Result.Error(e.message ?: "Erreur de connexion")
+            }
+        }
+    }
+
+    // Schedule/Calendar methods
+    suspend fun getScheduleByDay(date: String): Result<PharmacySchedule> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = apiService.getScheduleByDay(date)
+                if (response.success) {
+                    Result.Success(response.data)
+                } else {
+                    Result.Error(response.message ?: "Erreur inconnue")
+                }
+            } catch (e: Exception) {
+                Result.Error(e.message ?: "Erreur de connexion")
+            }
+        }
+    }
+
+    suspend fun getScheduleByWeek(date: String): Result<List<PharmacySchedule>> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = apiService.getScheduleByWeek(date)
+                if (response.success) {
+                    Result.Success(response.data)
+                } else {
+                    Result.Error(response.message ?: "Erreur inconnue")
+                }
+            } catch (e: Exception) {
+                Result.Error(e.message ?: "Erreur de connexion")
+            }
+        }
+    }
+
+    suspend fun getScheduleByMonth(year: Int, month: Int): Result<List<PharmacySchedule>> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = apiService.getScheduleByMonth(year, month)
                 if (response.success) {
                     Result.Success(response.data)
                 } else {

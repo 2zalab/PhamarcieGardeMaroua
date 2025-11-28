@@ -85,18 +85,12 @@ fun SettingsScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             // User photo or default icon
-                            if (currentUser?.photoUrl != null && currentUser!!.photoUrl!!.isNotEmpty()) {
-                                Log.d("SettingsScreen", "photoUrl = ${currentUser?.photoUrl}")
-
+                            val photoUrl = currentUser?.photoUrl
+                            if (!photoUrl.isNullOrEmpty()) {
                                 SubcomposeAsyncImage(
                                     model = ImageRequest.Builder(context)
-                                        .data(currentUser?.photoUrl)
+                                        .data(photoUrl)
                                         .crossfade(true)
-                                        .listener(
-                                            onError = { _, result ->
-                                                Log.e("SettingsScreen", "Image load error: ${result.throwable.message}")
-                                            }
-                                        )
                                         .build(),
                                     contentDescription = "Photo de profil",
                                     modifier = Modifier
@@ -111,12 +105,11 @@ fun SettingsScreen(
                                             )
                                         }
                                         is AsyncImagePainter.State.Error -> {
-                                            Log.e("SettingsScreen", "Error state reached")
                                             Icon(
                                                 imageVector = Icons.Default.AccountCircle,
                                                 contentDescription = "User",
                                                 modifier = Modifier.size(56.dp),
-                                                tint = MaterialTheme.colorScheme.primary
+                                                tint = MaterialTheme.colorScheme.onPrimaryContainer
                                             )
                                         }
                                         else -> {
@@ -124,6 +117,14 @@ fun SettingsScreen(
                                         }
                                     }
                                 }
+                            } else {
+                                // Default icon if no photo
+                                Icon(
+                                    imageVector = Icons.Default.AccountCircle,
+                                    contentDescription = "User",
+                                    modifier = Modifier.size(56.dp),
+                                    tint = MaterialTheme.colorScheme.onPrimaryContainer
+                                )
                             }
                             Spacer(modifier = Modifier.width(16.dp))
 

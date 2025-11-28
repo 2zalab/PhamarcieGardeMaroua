@@ -18,7 +18,7 @@ return new class extends Migration
 
             // Subscription fields
             $table->boolean('is_subscribed')->default(false)->after('avatar');
-            $table->enum('subscription_type', ['free', 'monthly', 'annual'])->default('free')->after('is_subscribed');
+            $table->enum('subscription_type', ['FREE', 'MONTHLY', 'ANNUAL'])->default('FREE')->after('is_subscribed');
             $table->timestamp('subscription_expires_at')->nullable()->after('subscription_type');
         });
     }

@@ -147,5 +147,5 @@ class AuthRepository @Inject constructor(
     /**
      * Propriété pour exposer currentUser comme StateFlow dans AuthViewModel
      */
-    val currentUser: Flow<User?> = getCurrentUser()
+  //  val currentUser: Flow<User?> = getCurrentUser()
 }

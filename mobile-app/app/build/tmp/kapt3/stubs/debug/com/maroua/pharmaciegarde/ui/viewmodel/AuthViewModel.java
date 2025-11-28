@@ -69,7 +69,8 @@ public final class AuthViewModel extends androidx.lifecycle.ViewModel {
     }
     
     /**
-     * Rafraîchir les informations de l'utilisateur
+     * Rafraîchir les informations de l'utilisateur depuis le backend
+     * Force un nouvel appel API pour obtenir les dernières données
      */
     public final void refreshUser() {
     }

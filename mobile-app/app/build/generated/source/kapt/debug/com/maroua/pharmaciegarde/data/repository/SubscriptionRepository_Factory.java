@@ -1,0 +1,44 @@
+package com.maroua.pharmaciegarde.data.repository;
+
+import com.maroua.pharmaciegarde.data.remote.SubscriptionApiService;
+import dagger.internal.DaggerGenerated;
+import dagger.internal.Factory;
+import dagger.internal.QualifierMetadata;
+import dagger.internal.ScopeMetadata;
+import javax.annotation.processing.Generated;
+import javax.inject.Provider;
+
+@ScopeMetadata("javax.inject.Singleton")
+@QualifierMetadata
+@DaggerGenerated
+@Generated(
+    value = "dagger.internal.codegen.ComponentProcessor",
+    comments = "https://dagger.dev"
+)
+@SuppressWarnings({
+    "unchecked",
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava"
+})
+public final class SubscriptionRepository_Factory implements Factory<SubscriptionRepository> {
+  private final Provider<SubscriptionApiService> subscriptionApiProvider;
+
+  public SubscriptionRepository_Factory(Provider<SubscriptionApiService> subscriptionApiProvider) {
+    this.subscriptionApiProvider = subscriptionApiProvider;
+  }
+
+  @Override
+  public SubscriptionRepository get() {
+    return newInstance(subscriptionApiProvider.get());
+  }
+
+  public static SubscriptionRepository_Factory create(
+      Provider<SubscriptionApiService> subscriptionApiProvider) {
+    return new SubscriptionRepository_Factory(subscriptionApiProvider);
+  }
+
+  public static SubscriptionRepository newInstance(SubscriptionApiService subscriptionApi) {
+    return new SubscriptionRepository(subscriptionApi);
+  }
+}

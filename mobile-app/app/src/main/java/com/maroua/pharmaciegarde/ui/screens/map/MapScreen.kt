@@ -2,6 +2,7 @@ package com.maroua.pharmaciegarde.ui.screens.map
 
 import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.location.Location
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,14 +28,14 @@ import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
 import com.maroua.pharmaciegarde.util.SubscriptionChecker
+import kotlinx.coroutines.tasks.await
 import androidx.compose.ui.text.style.TextAlign
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.background
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-import com.google.android.gms.location.FusedLocationProviderClient
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
@@ -75,17 +76,29 @@ fun MapScreen(
     }
 
     // Obtenir la localisation quand les permissions sont accordées
+    /*
     LaunchedEffect(locationPermissionsState.allPermissionsGranted) {
         if (locationPermissionsState.allPermissionsGranted && userLocation == null) {
             try {
                 val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-                val location = fusedLocationClient.getLastLocationSuspend()
+                val location = fusedLocationClient.lastLocation.await()
                 userLocation = location?.let { LatLng(it.latitude, it.longitude) }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
     }
+    */
+    LaunchedEffect(locationPermissionsState.allPermissionsGranted) {
+        if (locationPermissionsState.allPermissionsGranted) {
+            val location = getUserLocation(context)
+            userLocation = location
+        }
+    }
+
+
+
+    // Fonction pour obtenir la localisation
 
     // Fonction pour localiser les pharmacies proches
     fun locateNearbyPharmacies() {
@@ -96,8 +109,10 @@ fun MapScreen(
                 try {
                     if (userLocation == null) {
                         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-                        val location = fusedLocationClient.getLastLocationSuspend()
-                        userLocation = location?.let { LatLng(it.latitude, it.longitude) }
+                        if (locationPermissionsState.allPermissionsGranted) {
+                            val location = getUserLocation(context)
+                            userLocation = location
+                        }
                     }
 
                     userLocation?.let { location ->
@@ -184,7 +199,7 @@ fun MapScreen(
                         }
                     },
                     containerColor = if (showNearbyPharmacies) MaterialTheme.colorScheme.secondary
-                                   else MaterialTheme.colorScheme.primary
+                    else MaterialTheme.colorScheme.primary
                 ) {
                     if (isLoadingLocation) {
                         CircularProgressIndicator(
@@ -195,9 +210,9 @@ fun MapScreen(
                     } else {
                         Icon(
                             imageVector = if (showNearbyPharmacies) Icons.Default.Home
-                                        else Icons.Default.NearMe,
+                            else Icons.Default.NearMe,
                             contentDescription = if (showNearbyPharmacies) "Toutes les pharmacies"
-                                               else "Pharmacies proches",
+                            else "Pharmacies proches",
                             tint = Color.White
                         )
                     }
@@ -245,7 +260,7 @@ fun MapScreen(
                     }
 
                     pharmaciesToShow.forEach { pharmacy ->
-                        val markerColor = if (pharmacy.onDuty) {
+                        val markerColor = if (pharmacy.isOnDutyToday) {
                             BitmapDescriptorFactory.HUE_RED // Rouge pour les pharmacies de garde
                         } else {
                             BitmapDescriptorFactory.HUE_GREEN // Vert pour les pharmacies normales
@@ -255,7 +270,7 @@ fun MapScreen(
                             state = MarkerState(
                                 position = LatLng(pharmacy.latitude, pharmacy.longitude)
                             ),
-                            title = pharmacy.name + if (pharmacy.onDuty) " 🟢 DE GARDE" else "",
+                            title = pharmacy.name + if (pharmacy.isOnDutyToday) " 🟢 DE GARDE" else "",
                             snippet = pharmacy.address,
                             icon = BitmapDescriptorFactory.defaultMarker(markerColor),
                             onClick = {
@@ -369,7 +384,7 @@ fun MapScreen(
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(
                                 text = if (showNearbyPharmacies) "Recherche des pharmacies proches..."
-                                      else "Chargement des pharmacies...",
+                                else "Chargement des pharmacies...",
                                 style = MaterialTheme.typography.bodyMedium
                             )
                         }
@@ -396,24 +411,17 @@ fun MapScreen(
     }
 }
 
-/**
- * Extension function pour obtenir la dernière localisation de manière suspendable
- * Alternative à fusedLocationClient.lastLocation.await() qui peut ne pas être reconnue
- */
-@Suppress("MissingPermission")
-private suspend fun FusedLocationProviderClient.getLastLocationSuspend(): android.location.Location? {
-    return suspendCancellableCoroutine { continuation ->
-        lastLocation
-            .addOnSuccessListener { location ->
-                continuation.resume(location)
-            }
-            .addOnFailureListener { exception ->
-                continuation.resumeWithException(exception)
-            }
-            .addOnCanceledListener {
-                continuation.cancel()
-            }
+suspend fun getUserLocation(context: Context): LatLng? = suspendCancellableCoroutine { cont ->
+    val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
+    if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+        ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        cont.resume(null)
+        return@suspendCancellableCoroutine
     }
+    fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+        if (location != null) cont.resume(LatLng(location.latitude, location.longitude))
+        else cont.resume(null)
+    }.addOnFailureListener { cont.resume(null) }
 }
 
 @Composable
@@ -437,7 +445,7 @@ fun PharmacyMapCard(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     // Indicateur "DE GARDE"
-                    if (pharmacy.onDuty) {
+                    if (pharmacy.isOnDutyToday) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier.padding(bottom = 6.dp)

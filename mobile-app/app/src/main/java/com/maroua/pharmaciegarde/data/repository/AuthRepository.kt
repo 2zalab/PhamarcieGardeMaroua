@@ -121,4 +121,31 @@ class AuthRepository @Inject constructor(
     fun isUserSignedInFlow(): Flow<Boolean> = tokenManager.getTokenFlow().map { token ->
         token != null
     }
+
+    /**
+     * Rafraîchir les informations de l'utilisateur depuis le backend
+     * Force un nouvel appel API pour obtenir les dernières données
+     */
+    suspend fun refreshUserFromBackend(): Result<User?> {
+        return try {
+            if (!tokenManager.hasToken()) {
+                return Result.success(null)
+            }
+
+            val response = authApiService.getUserInfo()
+            if (response.isSuccessful && response.body()?.success == true) {
+                val user = response.body()?.data?.toUser()
+                Result.success(user)
+            } else {
+                Result.failure(Exception("Échec du rafraîchissement de l'utilisateur"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    /**
+     * Propriété pour exposer currentUser comme StateFlow dans AuthViewModel
+     */
+    val currentUser: Flow<User?> = getCurrentUser()
 }

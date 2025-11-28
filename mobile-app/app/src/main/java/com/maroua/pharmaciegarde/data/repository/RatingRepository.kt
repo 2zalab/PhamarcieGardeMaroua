@@ -19,11 +19,18 @@ class RatingRepository @Inject constructor(
     private val ratingApiService: RatingApiService
 ) {
     /**
-     * Récupérer les notations d'une pharmacie
+     * Récupérer les notations d'une pharmacie avec pagination
+     * @param pharmacyId ID de la pharmacie
+     * @param limit Nombre d'avis à récupérer (par défaut 10)
+     * @param offset Nombre d'avis à ignorer (pour la pagination)
      */
-    fun getPharmacyRatings(pharmacyId: Int): Flow<kotlin.Result<RatingsResponse>> = flow {
+    fun getPharmacyRatings(
+        pharmacyId: Int,
+        limit: Int = 10,
+        offset: Int = 0
+    ): Flow<kotlin.Result<RatingsResponse>> = flow {
         try {
-            val response = ratingApiService.getPharmacyRatings(pharmacyId)
+            val response = ratingApiService.getPharmacyRatings(pharmacyId, limit, offset)
             emit(kotlin.Result.success(response))
         } catch (e: Exception) {
             emit(kotlin.Result.failure(e))

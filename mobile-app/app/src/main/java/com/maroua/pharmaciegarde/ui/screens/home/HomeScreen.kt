@@ -35,6 +35,7 @@ fun HomeScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onMapClick: () -> Unit,
     onSearchClick: () -> Unit,
+    onCalendarClick: () -> Unit = {},
     onNavigateToSubscription: () -> Unit = {},
     currentUserName: String? = null,
     viewModel: PharmacyViewModel = hiltViewModel(),
@@ -123,6 +124,15 @@ fun HomeScreen(
                     ) {
                         item {
                             HeroSection(userName = currentUserName)
+                        }
+
+                        // Accès rapides
+                        item {
+                            QuickAccessSection(
+                                onMapClick = onMapClick,
+                                onSearchClick = onSearchClick,
+                                onCalendarClick = onCalendarClick
+                            )
                         }
 
                         // Pharmacies de garde - uniquement pour les utilisateurs premium
@@ -478,6 +488,95 @@ fun OnDutyPremiumLockedCard(
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Passer à Premium")
             }
+        }
+    }
+}
+
+@Composable
+fun QuickAccessSection(
+    onMapClick: () -> Unit,
+    onSearchClick: () -> Unit,
+    onCalendarClick: () -> Unit
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Text(
+            text = "Accès rapides",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // Carte interactive
+            QuickAccessCard(
+                title = "Carte",
+                icon = Icons.Default.Map,
+                onClick = onMapClick,
+                modifier = Modifier.weight(1f)
+            )
+
+            // Recherche
+            QuickAccessCard(
+                title = "Recherche",
+                icon = Icons.Default.Search,
+                onClick = onSearchClick,
+                modifier = Modifier.weight(1f)
+            )
+
+            // Calendrier
+            QuickAccessCard(
+                title = "Calendrier",
+                icon = Icons.Default.CalendarMonth,
+                onClick = onCalendarClick,
+                modifier = Modifier.weight(1f)
+            )
+        }
+    }
+}
+
+@Composable
+fun QuickAccessCard(
+    title: String,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        onClick = onClick,
+        modifier = modifier.height(100.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = title,
+                tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                modifier = Modifier.size(32.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = title,
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
         }
     }
 }

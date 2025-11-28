@@ -40,17 +40,17 @@ data class CamPayPaymentRequest(
 )
 
 /**
- * Réponse de paiement CamPay
+ * Réponse de paiement CamPay (données)
  */
-data class CamPayPaymentResponse(
-    @SerializedName("status")
-    val status: String,
+data class CamPayPaymentData(
+    @SerializedName("payment_id")
+    val paymentId: Int?,
 
     @SerializedName("reference")
     val reference: String,
 
-    @SerializedName("payment_url")
-    val paymentUrl: String?,
+    @SerializedName("external_reference")
+    val externalReference: String,
 
     @SerializedName("ussd_code")
     val ussdCode: String?,
@@ -58,9 +58,42 @@ data class CamPayPaymentResponse(
     @SerializedName("operator")
     val operator: String?,
 
+    @SerializedName("amount")
+    val amount: Int,
+
+    @SerializedName("currency")
+    val currency: String,
+
+    @SerializedName("description")
+    val description: String,
+
+    @SerializedName("status")
+    val status: String,
+
     @SerializedName("message")
     val message: String?
 )
+
+/**
+ * Réponse complète de paiement CamPay
+ */
+data class CamPayPaymentResponse(
+    @SerializedName("success")
+    val success: Boolean,
+
+    @SerializedName("message")
+    val message: String,
+
+    @SerializedName("data")
+    val data: CamPayPaymentData
+) {
+    // Propriétés de commodité pour compatibilité
+    val reference: String get() = data.reference
+    val ussdCode: String? get() = data.ussdCode
+    val operator: String? get() = data.operator
+    val status: String get() = data.status
+    val paymentUrl: String? get() = null // Pas utilisé pour CamPay
+}
 
 /**
  * Vérification du statut de paiement

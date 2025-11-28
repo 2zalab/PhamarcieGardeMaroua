@@ -82,11 +82,22 @@ fun SubscriptionScreen(
                         isCurrentPlan = currentUser?.subscriptionType == plan.type,
                         onSelectPlan = {
                             if (plan.type != SubscriptionType.FREE) {
-                                subscriptionViewModel.initiatePayment(plan.type)
+                                subscriptionViewModel.selectPlan(plan.type)
                             }
                         }
                     )
                 }
+            }
+
+            // Dialogue de saisie du numéro de téléphone
+            if (uiState.showPhoneDialog) {
+                PhoneNumberDialog(
+                    selectedPlan = uiState.selectedPlan,
+                    onDismiss = { subscriptionViewModel.dismissPhoneDialog() },
+                    onConfirm = { phoneNumber ->
+                        subscriptionViewModel.initiatePayment(phoneNumber)
+                    }
+                )
             }
 
             // Dialogue de paiement
@@ -381,6 +392,72 @@ fun PaymentDialog(
         confirmButton = {
             Button(onClick = onCheckStatus) {
                 Text("Vérifier le paiement")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Annuler")
+            }
+        }
+    )
+}
+
+@Composable
+fun PhoneNumberDialog(
+    selectedPlan: SubscriptionType?,
+    onDismiss: () -> Unit,
+    onConfirm: (String) -> Unit
+) {
+    var phoneNumber by remember { mutableStateOf("") }
+    var isError by remember { mutableStateOf(false) }
+
+    val planName = when (selectedPlan) {
+        SubscriptionType.MONTHLY -> "Mensuel (500 FCFA)"
+        SubscriptionType.ANNUAL -> "Annuel (5000 FCFA)"
+        else -> ""
+    }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Numéro de téléphone") },
+        text = {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text("Abonnement : $planName")
+                Text("Entrez votre numéro de téléphone pour le paiement Mobile Money:")
+
+                OutlinedTextField(
+                    value = phoneNumber,
+                    onValueChange = {
+                        phoneNumber = it.filter { char -> char.isDigit() }
+                        isError = false
+                    },
+                    label = { Text("Numéro de téléphone") },
+                    placeholder = { Text("237670000000") },
+                    isError = isError,
+                    supportingText = if (isError) {
+                        { Text("Veuillez entrer un numéro valide (ex: 237670000000)") }
+                    } else {
+                        { Text("Format : 237XXXXXXXXX") }
+                    },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = {
+                    if (phoneNumber.isNotEmpty() && phoneNumber.length >= 9) {
+                        onConfirm(phoneNumber)
+                    } else {
+                        isError = true
+                    }
+                }
+            ) {
+                Text("Continuer")
             }
         },
         dismissButton = {

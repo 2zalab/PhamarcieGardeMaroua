@@ -29,6 +29,9 @@ data class CamPayPaymentRequest(
     @SerializedName("external_reference")
     val externalReference: String, // ID de transaction unique
 
+    @SerializedName("phone_number")
+    val phoneNumber: String, // Numéro de téléphone (ex: 237670000000)
+
     @SerializedName("redirect_url")
     val redirectUrl: String? = null,
 

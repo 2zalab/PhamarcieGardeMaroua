@@ -27,6 +27,7 @@ data class SubscriptionUiState(
     val paymentReference: String? = null,
     val isPaymentSuccessful: Boolean = false,
     val showPaymentDialog: Boolean = false,
+    val showPhoneDialog: Boolean = false,
     val selectedPlan: SubscriptionType? = null
 )
 
@@ -58,16 +59,24 @@ class SubscriptionViewModel @Inject constructor(
     }
 
     /**
-     * Initier le paiement pour un abonnement
+     * Sélectionner un plan et afficher le dialogue du numéro de téléphone
      */
-    fun initiatePayment(subscriptionType: SubscriptionType) {
+    fun selectPlan(subscriptionType: SubscriptionType) {
         if (subscriptionType == SubscriptionType.FREE) {
             // Pas besoin de paiement pour le plan gratuit
             return
         }
+        _uiState.update { it.copy(selectedPlan = subscriptionType, showPhoneDialog = true) }
+    }
+
+    /**
+     * Initier le paiement pour un abonnement avec numéro de téléphone
+     */
+    fun initiatePayment(phoneNumber: String) {
+        val subscriptionType = _uiState.value.selectedPlan ?: return
 
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, error = null, selectedPlan = subscriptionType) }
+            _uiState.update { it.copy(isLoading = true, error = null, showPhoneDialog = false) }
 
             val amount = when (subscriptionType) {
                 SubscriptionType.MONTHLY -> 500
@@ -87,7 +96,8 @@ class SubscriptionViewModel @Inject constructor(
             subscriptionRepository.initiateCamPayPayment(
                 amount = amount,
                 description = description,
-                externalReference = externalReference
+                externalReference = externalReference,
+                phoneNumber = phoneNumber
             ).collect { result ->
                 result.onSuccess { response ->
                     _uiState.update {
@@ -108,6 +118,13 @@ class SubscriptionViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    /**
+     * Fermer le dialogue du numéro de téléphone
+     */
+    fun dismissPhoneDialog() {
+        _uiState.update { it.copy(showPhoneDialog = false, selectedPlan = null) }
     }
 
     /**

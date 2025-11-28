@@ -213,6 +213,9 @@ fun MainScreen(
                     pharmacyId = pharmacyId,
                     onBackClick = {
                         navController.popBackStack()
+                    },
+                    onNavigateToSubscription = {
+                        navController.navigate(AppDestination.Subscription.route)
                     }
                 )
             }

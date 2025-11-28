@@ -37,6 +37,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 fun PharmacyDetailsScreen(
     pharmacyId: Int,
     onBackClick: () -> Unit,
+    onNavigateToSubscription: () -> Unit = {},
     viewModel: PharmacyViewModel = hiltViewModel(),
     detailsViewModel: PharmacyDetailsViewModel = hiltViewModel()
 ) {
@@ -138,7 +139,8 @@ fun PharmacyDetailsScreen(
                     } else {
                         PremiumLockedCard(
                             featureName = "Contact & Localisation",
-                            description = "Accédez aux numéros de téléphone, adresse complète et itinéraire GPS"
+                            description = "Accédez aux numéros de téléphone, adresse complète et itinéraire GPS",
+                            onUpgradeClick = onNavigateToSubscription
                         )
                     }
                 }
@@ -492,7 +494,8 @@ fun FeatureItem(
 @Composable
 fun PremiumLockedCard(
     featureName: String,
-    description: String
+    description: String,
+    onUpgradeClick: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -555,12 +558,21 @@ fun PremiumLockedCard(
                 }
             }
 
-            Text(
-                text = "Passez à Premium pour débloquer cette fonctionnalité",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center
-            )
+            Button(
+                onClick = onUpgradeClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                )
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Débloquer")
+            }
         }
     }
 }

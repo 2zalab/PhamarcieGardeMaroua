@@ -11,11 +11,13 @@ import com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsScreen
 import com.maroua.pharmaciegarde.ui.screens.map.MapScreen
 import com.maroua.pharmaciegarde.ui.screens.search.SearchScreen
 import com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionScreen
+import com.maroua.pharmaciegarde.ui.screens.calendar.CalendarScreen
 
 sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Map : Screen("map")
     object Search : Screen("search")
+    object Calendar : Screen("calendar")
     object Subscription : Screen("subscription")
     object Details : Screen("details/{pharmacyId}") {
         fun createRoute(pharmacyId: Int) = "details/$pharmacyId"
@@ -41,6 +43,9 @@ fun NavGraph(
                 },
                 onSearchClick = {
                     navController.navigate(Screen.Search.route)
+                },
+                onCalendarClick = {
+                    navController.navigate(Screen.Calendar.route)
                 }
             )
         }
@@ -69,6 +74,17 @@ fun NavGraph(
 
         composable(Screen.Search.route) {
             SearchScreen(
+                onPharmacyClick = { pharmacy ->
+                    navController.navigate(Screen.Details.createRoute(pharmacy.id))
+                },
+                onBackClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable(Screen.Calendar.route) {
+            CalendarScreen(
                 onPharmacyClick = { pharmacy ->
                     navController.navigate(Screen.Details.createRoute(pharmacy.id))
                 },

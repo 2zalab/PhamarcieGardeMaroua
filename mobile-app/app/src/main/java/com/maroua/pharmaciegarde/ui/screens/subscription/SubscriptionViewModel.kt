@@ -8,6 +8,8 @@ import com.maroua.pharmaciegarde.data.model.User
 import com.maroua.pharmaciegarde.data.repository.AuthRepository
 import com.maroua.pharmaciegarde.data.repository.SubscriptionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -42,6 +44,8 @@ class SubscriptionViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(SubscriptionUiState())
     val uiState: StateFlow<SubscriptionUiState> = _uiState.asStateFlow()
+
+    private var pollingJob: Job? = null
 
     init {
         loadCurrentUser()
@@ -108,6 +112,8 @@ class SubscriptionViewModel @Inject constructor(
                             showPaymentDialog = true
                         )
                     }
+                    // Démarrer le polling automatique du statut du paiement
+                    startPaymentStatusPolling()
                 }.onFailure { exception ->
                     _uiState.update {
                         it.copy(
@@ -128,7 +134,86 @@ class SubscriptionViewModel @Inject constructor(
     }
 
     /**
-     * Vérifier le statut du paiement
+     * Démarrer le polling automatique du statut du paiement
+     */
+    private fun startPaymentStatusPolling() {
+        // Annuler le polling précédent s'il existe
+        pollingJob?.cancel()
+
+        pollingJob = viewModelScope.launch {
+            var attempts = 0
+            val maxAttempts = 60 // 5 minutes (60 * 5 secondes)
+
+            while (attempts < maxAttempts) {
+                delay(5000) // Vérifier toutes les 5 secondes
+
+                val reference = _uiState.value.paymentReference ?: break
+
+                subscriptionRepository.checkPaymentStatus(reference).collect { result ->
+                    result.onSuccess { status ->
+                        when (status.status) {
+                            "SUCCESSFUL" -> {
+                                // Paiement réussi, arrêter le polling et recharger l'utilisateur
+                                pollingJob?.cancel()
+                                refreshUserAfterPayment()
+                            }
+                            "FAILED" -> {
+                                // Paiement échoué, arrêter le polling
+                                pollingJob?.cancel()
+                                _uiState.update {
+                                    it.copy(
+                                        isLoading = false,
+                                        error = "Le paiement a échoué. Veuillez réessayer.",
+                                        showPaymentDialog = false
+                                    )
+                                }
+                            }
+                            else -> {
+                                // Paiement en attente, continuer le polling
+                                attempts++
+                            }
+                        }
+                    }.onFailure {
+                        // Erreur de vérification, continuer le polling
+                        attempts++
+                    }
+                }
+            }
+
+            // Timeout atteint
+            if (attempts >= maxAttempts) {
+                _uiState.update {
+                    it.copy(
+                        error = "Délai d'attente dépassé. Veuillez vérifier votre historique de paiements."
+                    )
+                }
+            }
+        }
+    }
+
+    /**
+     * Rafraîchir l'utilisateur après paiement réussi
+     */
+    private fun refreshUserAfterPayment() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+
+            // Recharger l'utilisateur depuis le backend
+            authRepository.getCurrentUser().collect { user ->
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        isPaymentSuccessful = true,
+                        showPaymentDialog = false,
+                        currentUser = user
+                    )
+                }
+            }
+        }
+    }
+
+    /**
+     * Vérifier le statut du paiement (appelée manuellement)
      */
     fun checkPaymentStatus() {
         val reference = _uiState.value.paymentReference ?: return
@@ -139,8 +224,8 @@ class SubscriptionViewModel @Inject constructor(
             subscriptionRepository.checkPaymentStatus(reference).collect { result ->
                 result.onSuccess { status ->
                     if (status.status == "SUCCESSFUL") {
-                        // Paiement réussi, activer l'abonnement
-                        activateSubscription(reference)
+                        // Paiement réussi, recharger l'utilisateur
+                        refreshUserAfterPayment()
                     } else if (status.status == "FAILED") {
                         _uiState.update {
                             it.copy(
@@ -216,7 +301,23 @@ class SubscriptionViewModel @Inject constructor(
      * Fermer le dialogue de paiement
      */
     fun dismissPaymentDialog() {
+        pollingJob?.cancel()
         _uiState.update { it.copy(showPaymentDialog = false) }
+    }
+
+    /**
+     * Arrêter le polling
+     */
+    fun stopPaymentPolling() {
+        pollingJob?.cancel()
+    }
+
+    /**
+     * Cleanup
+     */
+    override fun onCleared() {
+        super.onCleared()
+        pollingJob?.cancel()
     }
 
     /**

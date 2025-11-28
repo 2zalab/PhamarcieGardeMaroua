@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Models\Payment;
+use App\Models\Subscription;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -239,6 +241,9 @@ class CamPayService
                     'payment_id' => $payment->id,
                     'reference' => $reference,
                 ]);
+
+                // Activer automatiquement l'abonnement
+                $this->autoActivateSubscription($payment);
             } elseif ($status === 'FAILED') {
                 $errorMessage = $webhookData['reason'] ?? 'Paiement échoué';
                 $payment->markAsFailed($errorMessage);
@@ -270,5 +275,85 @@ class CamPayService
     public static function generateExternalReference(): string
     {
         return 'PG-' . strtoupper(Str::random(10)) . '-' . time();
+    }
+
+    /**
+     * Activer automatiquement l'abonnement après paiement réussi
+     *
+     * @param Payment $payment
+     * @return void
+     */
+    private function autoActivateSubscription(Payment $payment): void
+    {
+        try {
+            // Vérifier si un abonnement n'existe pas déjà pour ce paiement
+            if (Subscription::where('payment_id', $payment->id)->exists()) {
+                Log::info('Subscription already exists for payment', [
+                    'payment_id' => $payment->id,
+                ]);
+                return;
+            }
+
+            DB::transaction(function () use ($payment) {
+                // Déterminer le type d'abonnement basé sur le montant
+                $subscriptionType = $payment->amount == 500 ? 'MONTHLY' : 'ANNUAL';
+
+                Log::info('Auto-activating subscription', [
+                    'payment_id' => $payment->id,
+                    'amount' => $payment->amount,
+                    'subscription_type' => $subscriptionType,
+                ]);
+
+                // Annuler l'abonnement actif s'il existe
+                $activeSubscription = Subscription::where('user_id', $payment->user_id)
+                    ->where('status', 'ACTIVE')
+                    ->first();
+
+                if ($activeSubscription) {
+                    $activeSubscription->cancel('Mise à niveau vers nouvel abonnement');
+                    Log::info('Previous subscription cancelled', [
+                        'subscription_id' => $activeSubscription->id,
+                        'user_id' => $payment->user_id,
+                    ]);
+                }
+
+                // Créer le nouvel abonnement
+                $startsAt = now();
+                $expiresAt = $subscriptionType === 'MONTHLY'
+                    ? $startsAt->copy()->addMonth()
+                    : $startsAt->copy()->addYear();
+
+                $subscription = Subscription::create([
+                    'user_id' => $payment->user_id,
+                    'payment_id' => $payment->id,
+                    'subscription_type' => $subscriptionType,
+                    'status' => 'ACTIVE',
+                    'starts_at' => $startsAt,
+                    'expires_at' => $expiresAt,
+                ]);
+
+                // Mettre à jour l'utilisateur
+                $user = $payment->user;
+                $user->update([
+                    'is_subscribed' => true,
+                    'subscription_type' => $subscriptionType,
+                    'subscription_expires_at' => $expiresAt,
+                ]);
+
+                Log::info('Subscription auto-activated successfully', [
+                    'subscription_id' => $subscription->id,
+                    'user_id' => $user->id,
+                    'subscription_type' => $subscriptionType,
+                    'expires_at' => $expiresAt->toISOString(),
+                ]);
+            });
+        } catch (\Exception $e) {
+            Log::error('Auto-activation subscription error', [
+                'payment_id' => $payment->id,
+                'user_id' => $payment->user_id,
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+        }
     }
 }

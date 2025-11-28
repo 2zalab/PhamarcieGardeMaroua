@@ -46,6 +46,7 @@ class SubscriptionViewModel @Inject constructor(
     val uiState: StateFlow<SubscriptionUiState> = _uiState.asStateFlow()
 
     private var pollingJob: Job? = null
+    private var currentPaymentReference: String? = null // Sauv garde la référence ici aussi
 
     init {
         loadCurrentUser()
@@ -104,6 +105,11 @@ class SubscriptionViewModel @Inject constructor(
                 phoneNumber = phoneNumber
             ).collect { result ->
                 result.onSuccess { response ->
+                    println("📥 [PAYMENT] Réponse reçue: reference=${response.reference}")
+
+                    // Sauvegarder la référence
+                    currentPaymentReference = response.reference
+
                     _uiState.update {
                         it.copy(
                             isLoading = false,
@@ -112,6 +118,10 @@ class SubscriptionViewModel @Inject constructor(
                             showPaymentDialog = true
                         )
                     }
+
+                    println("💾 [PAYMENT] Référence sauvegardée: currentPaymentReference=$currentPaymentReference")
+                    println("💾 [PAYMENT] UiState reference: ${_uiState.value.paymentReference}")
+
                     // Démarrer le polling automatique du statut du paiement
                     startPaymentStatusPolling()
                 }.onFailure { exception ->
@@ -140,20 +150,20 @@ class SubscriptionViewModel @Inject constructor(
         // Annuler le polling précédent s'il existe
         pollingJob?.cancel()
 
+        val reference = currentPaymentReference
+        if (reference == null) {
+            println("❌ [POLLING] Aucune référence de paiement, impossible de démarrer le polling")
+            return
+        }
+
+        println("🔄 [POLLING] Démarrage du polling de paiement avec référence: $reference")
+
         pollingJob = viewModelScope.launch {
             var attempts = 0
             val maxAttempts = 60 // 5 minutes (60 * 5 secondes)
 
-            println("🔄 [POLLING] Démarrage du polling de paiement")
-
             while (attempts < maxAttempts) {
                 delay(5000) // Vérifier toutes les 5 secondes
-
-                val reference = _uiState.value.paymentReference
-                if (reference == null) {
-                    println("❌ [POLLING] Référence nulle, arrêt du polling")
-                    break
-                }
 
                 println("🔍 [POLLING] Tentative ${attempts + 1}/$maxAttempts - Vérification référence: $reference")
 
@@ -343,7 +353,9 @@ class SubscriptionViewModel @Inject constructor(
      * Fermer le dialogue de paiement
      */
     fun dismissPaymentDialog() {
+        println("🚪 [DIALOG] Fermeture du dialogue de paiement")
         pollingJob?.cancel()
+        currentPaymentReference = null
         _uiState.update { it.copy(showPaymentDialog = false) }
     }
 
@@ -351,6 +363,7 @@ class SubscriptionViewModel @Inject constructor(
      * Arrêter le polling
      */
     fun stopPaymentPolling() {
+        println("🛑 [POLLING] Arrêt manuel du polling")
         pollingJob?.cancel()
     }
 
@@ -359,7 +372,9 @@ class SubscriptionViewModel @Inject constructor(
      */
     override fun onCleared() {
         super.onCleared()
+        println("🧹 [CLEANUP] ViewModel cleared")
         pollingJob?.cancel()
+        currentPaymentReference = null
     }
 
     /**
@@ -373,6 +388,8 @@ class SubscriptionViewModel @Inject constructor(
      * Réinitialiser le statut de paiement
      */
     fun resetPaymentStatus() {
+        println("🔄 [RESET] Réinitialisation du statut de paiement")
+        currentPaymentReference = null
         _uiState.update {
             it.copy(
                 isPaymentSuccessful = false,

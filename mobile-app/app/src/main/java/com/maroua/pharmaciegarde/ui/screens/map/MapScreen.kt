@@ -25,21 +25,29 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.maps.android.compose.*
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
+import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 import kotlinx.coroutines.tasks.await
 import androidx.compose.ui.text.style.TextAlign
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.background
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
 fun MapScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onBackClick: () -> Unit,
-    viewModel: PharmacyViewModel = hiltViewModel()
+    onUpgradeClick: () -> Unit = {},
+    viewModel: PharmacyViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
+
+    val canAccessMap = SubscriptionChecker.canAccessMap(currentUser)
 
     val locationPermissionsState = rememberMultiplePermissionsState(
         permissions = listOf(
@@ -199,7 +207,10 @@ fun MapScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
-            if (locationPermissionsState.allPermissionsGranted) {
+            if (!canAccessMap) {
+                // Afficher l'écran verrouillé pour les utilisateurs gratuits
+                PremiumLockedMapScreen(onUpgradeClick = onUpgradeClick)
+            } else if (locationPermissionsState.allPermissionsGranted) {
                 // Carte Google Maps
                 GoogleMap(
                     modifier = Modifier.fillMaxSize(),
@@ -483,6 +494,98 @@ fun PharmacyMapCard(
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Voir les détails")
+            }
+        }
+    }
+}
+
+@Composable
+fun PremiumLockedMapScreen(onUpgradeClick: () -> Unit) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Lock,
+                    contentDescription = null,
+                    modifier = Modifier.size(72.dp),
+                    tint = MaterialTheme.colorScheme.primary
+                )
+
+                Text(
+                    text = "Carte Interactive",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center
+                )
+
+                Text(
+                    text = "Visualisez toutes les pharmacies sur une carte interactive, localisez les pharmacies à proximité et obtenez des itinéraires GPS",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = TextAlign.Center
+                )
+
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = null,
+                            modifier = Modifier.size(20.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            text = "Fonctionnalité Premium",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Button(
+                    onClick = onUpgradeClick,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Icon(imageVector = Icons.Default.Upgrade, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Passer à Premium")
+                }
+
+                TextButton(onClick = {}) {
+                    Text(
+                        text = "En savoir plus sur les avantages Premium",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
             }
         }
     }

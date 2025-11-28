@@ -731,9 +731,10 @@ fun RatingSubmitCard(
 fun RatingsDisplayCard(
     averageRating: Double,
     totalRatings: Int,
-    ratings: List<com.maroua.pharmaciegarde.data.model.Rating>,
+    ratings: List<com.maroua.pharmaciegarde.data.model.Rating>?,
     isLoading: Boolean
 ) {
+    val safeRatings = ratings ?: emptyList()
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
@@ -796,7 +797,7 @@ fun RatingsDisplayCard(
                         color = MaterialTheme.colorScheme.primary
                     )
                 }
-            } else if (ratings.isEmpty()) {
+            } else if (safeRatings.isEmpty()) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -829,16 +830,16 @@ fun RatingsDisplayCard(
                 Column(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    ratings.take(5).forEach { rating ->
+                    safeRatings.take(5).forEach { rating ->
                         RatingItem(rating = rating)
-                        if (rating != ratings.last()) {
+                        if (rating != safeRatings.last()) {
                             Divider(color = MaterialTheme.colorScheme.outlineVariant)
                         }
                     }
 
-                    if (ratings.size > 5) {
+                    if (safeRatings.size > 5) {
                         Text(
-                            text = "Et ${ratings.size - 5} autres avis...",
+                            text = "Et ${safeRatings.size - 5} autres avis...",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(top = 8.dp)

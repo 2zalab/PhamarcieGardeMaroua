@@ -58,9 +58,10 @@ class CamPayService
      * @param int $amount Montant en FCFA
      * @param string $description Description du paiement
      * @param string $externalReference Référence externe unique
+     * @param string $phoneNumber Numéro de téléphone du client (ex: 237670000000)
      * @return array
      */
-    public function initiatePayment(int $amount, string $description, string $externalReference): array
+    public function initiatePayment(int $amount, string $description, string $externalReference, string $phoneNumber): array
     {
         $token = $this->getToken();
 
@@ -71,6 +72,14 @@ class CamPayService
             ];
         }
 
+        // Valider le format du numéro de téléphone
+        if (!preg_match('/^[0-9]+$/', $phoneNumber)) {
+            return [
+                'success' => false,
+                'message' => 'Invalid phone number. Must be digits only',
+            ];
+        }
+
         try {
             $response = Http::withHeaders([
                 'Authorization' => "Token {$token}",
@@ -78,7 +87,7 @@ class CamPayService
             ])->post("{$this->baseUrl}/collect/", [
                 'amount' => $amount,
                 'currency' => 'XAF',
-                'from' => '237xxxxxxxxx', // Le numéro sera fourni par le client via USSD
+                'from' => $phoneNumber,
                 'description' => $description,
                 'external_reference' => $externalReference,
             ]);

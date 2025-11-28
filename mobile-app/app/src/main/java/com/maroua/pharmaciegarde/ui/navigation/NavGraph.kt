@@ -87,6 +87,9 @@ fun NavGraph(
                 pharmacyId = pharmacyId,
                 onBackClick = {
                     navController.popBackStack()
+                },
+                onNavigateToSubscription = {
+                    navController.navigate(Screen.Subscription.route)
                 }
             )
         }

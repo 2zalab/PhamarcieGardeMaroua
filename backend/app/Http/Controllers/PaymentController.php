@@ -28,6 +28,7 @@ class PaymentController extends Controller
         $validator = Validator::make($request->all(), [
             'amount' => 'required|integer|min:100',
             'description' => 'required|string|max:255',
+            'phone_number' => 'required|string|regex:/^[0-9]+$/|min:9',
             'external_reference' => 'nullable|string|unique:payments,external_reference',
         ]);
 
@@ -42,6 +43,7 @@ class PaymentController extends Controller
         $user = $request->user();
         $amount = $request->input('amount');
         $description = $request->input('description');
+        $phoneNumber = $request->input('phone_number');
         $externalReference = $request->input('external_reference')
             ?? CamPayService::generateExternalReference();
 
@@ -57,7 +59,7 @@ class PaymentController extends Controller
         ]);
 
         // Initier le paiement avec CamPay
-        $result = $this->camPayService->initiatePayment($amount, $description, $externalReference);
+        $result = $this->camPayService->initiatePayment($amount, $description, $externalReference, $phoneNumber);
 
         if ($result['success']) {
             // Mettre à jour le paiement avec les données CamPay

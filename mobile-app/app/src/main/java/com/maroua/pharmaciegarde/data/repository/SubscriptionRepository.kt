@@ -26,13 +26,15 @@ class SubscriptionRepository @Inject constructor(
     fun initiateCamPayPayment(
         amount: Int,
         description: String,
-        externalReference: String
+        externalReference: String,
+        phoneNumber: String
     ): Flow<kotlin.Result<CamPayPaymentResponse>> = flow {
         try {
             val request = CamPayPaymentRequest(
                 amount = amount,
                 description = description,
-                externalReference = externalReference
+                externalReference = externalReference,
+                phoneNumber = phoneNumber
             )
             val response = subscriptionApi.initiateCamPayPayment(request)
 

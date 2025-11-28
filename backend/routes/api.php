@@ -6,6 +6,9 @@ use App\Http\Controllers\Api\PharmacyController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FavoritesController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\WebhookController;
 
 // Authentication endpoints (public)
 Route::post('/auth/google', [AuthController::class, 'googleAuth']);
@@ -35,3 +38,20 @@ Route::get('/pharmacies/{id}', [PharmacyController::class, 'show']);
 
 // Ratings endpoints (public read)
 Route::get('/pharmacies/{id}/ratings', [RatingController::class, 'index']);
+
+// Webhook endpoints (public - must be accessible by CamPay)
+Route::post('/webhooks/campay', [WebhookController::class, 'handleCamPayWebhook']);
+
+// Payment and Subscription endpoints (protected)
+Route::middleware('auth:sanctum')->group(function () {
+    // Payment endpoints
+    Route::post('/payments/campay/initiate', [PaymentController::class, 'initiateCamPayPayment']);
+    Route::get('/payments/{reference}/status', [PaymentController::class, 'checkPaymentStatus']);
+    Route::get('/payments/history', [PaymentController::class, 'getPaymentHistory']);
+
+    // Subscription endpoints
+    Route::post('/subscriptions/activate', [SubscriptionController::class, 'activateSubscription']);
+    Route::get('/subscriptions/status', [SubscriptionController::class, 'checkSubscriptionStatus']);
+    Route::post('/subscriptions/cancel', [SubscriptionController::class, 'cancelSubscription']);
+    Route::get('/subscriptions/history', [SubscriptionController::class, 'getSubscriptionHistory']);
+});

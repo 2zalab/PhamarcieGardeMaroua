@@ -108,6 +108,11 @@ class PaymentController extends Controller
     {
         $user = auth()->user();
 
+        Log::info('🔍 [CHECK_STATUS] Vérification du statut de paiement', [
+            'reference' => $reference,
+            'user_id' => $user->id,
+        ]);
+
         // Trouver le paiement par référence externe ou CamPay
         $payment = Payment::where('user_id', $user->id)
             ->where(function ($query) use ($reference) {
@@ -117,14 +122,28 @@ class PaymentController extends Controller
             ->first();
 
         if (!$payment) {
+            Log::warning('❌ [CHECK_STATUS] Paiement introuvable', [
+                'reference' => $reference,
+                'user_id' => $user->id,
+            ]);
+
             return response()->json([
                 'success' => false,
                 'message' => 'Paiement introuvable',
             ], 404);
         }
 
+        Log::info('📋 [CHECK_STATUS] Paiement trouvé', [
+            'payment_id' => $payment->id,
+            'current_status' => $payment->status,
+        ]);
+
         // Si le paiement est déjà réussi, retourner directement le statut
         if ($payment->isSuccessful()) {
+            Log::info('✅ [CHECK_STATUS] Paiement déjà marqué comme SUCCESSFUL', [
+                'payment_id' => $payment->id,
+            ]);
+
             return response()->json([
                 'success' => true,
                 'status' => 'SUCCESSFUL',
@@ -142,18 +161,32 @@ class PaymentController extends Controller
 
         // Vérifier le statut auprès de CamPay
         $campayReference = $payment->campay_reference ?? $reference;
+        Log::info('📡 [CHECK_STATUS] Interrogation CamPay', [
+            'campay_reference' => $campayReference,
+        ]);
+
         $result = $this->camPayService->checkPaymentStatus($campayReference);
 
         if ($result['success']) {
             $status = $result['status'];
+            Log::info('📥 [CHECK_STATUS] Réponse CamPay reçue', [
+                'status' => $status,
+            ]);
 
             // Mettre à jour le paiement selon le statut
             if ($status === 'SUCCESSFUL' && !$payment->isSuccessful()) {
+                Log::info('🎉 [CHECK_STATUS] Paiement SUCCESSFUL détecté, activation...', [
+                    'payment_id' => $payment->id,
+                ]);
+
                 $payment->markAsSuccessful();
+                Log::info('✅ [CHECK_STATUS] Paiement marqué comme SUCCESSFUL');
 
                 // Activer automatiquement l'abonnement
+                Log::info('🚀 [CHECK_STATUS] Déclenchement de autoActivateSubscription');
                 $this->autoActivateSubscription($payment);
             } elseif ($status === 'FAILED' && !$payment->isFailed()) {
+                Log::warning('❌ [CHECK_STATUS] Paiement FAILED détecté');
                 $payment->markAsFailed($result['data']['code'] ?? 'Paiement échoué');
             }
 

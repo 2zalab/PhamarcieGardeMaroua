@@ -5,6 +5,9 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.TimeZone
 
 /**
  * API Service pour l'authentification avec Laravel
@@ -72,9 +75,39 @@ fun UserDto.toUser(): User {
             "annual" -> com.maroua.pharmaciegarde.data.model.SubscriptionType.ANNUAL
             else -> com.maroua.pharmaciegarde.data.model.SubscriptionType.FREE
         },
-        subscriptionExpiryDate = subscription_expires_at?.let {
-            // Convert to timestamp if needed
-            System.currentTimeMillis()
+        subscriptionExpiryDate = subscription_expires_at?.let { dateString ->
+            parseDateToTimestamp(dateString)
         }
     )
+}
+
+/**
+ * Parse une date du backend Laravel en timestamp milliseconds.
+ * Supporte les formats:
+ * - SQL: "2025-12-28 17:47:37"
+ * - ISO 8601: "2025-12-28T17:47:37.000000Z"
+ */
+private fun parseDateToTimestamp(dateString: String): Long? {
+    return try {
+        // Essayer d'abord le format ISO 8601 (avec T et Z)
+        if (dateString.contains("T")) {
+            val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+            format.timeZone = TimeZone.getTimeZone("UTC")
+            // Supprimer les microsecondes et le Z si présents
+            val cleanedDate = dateString.replace(Regex("\\.\\d+Z?$"), "")
+            val date = format.parse(cleanedDate)
+            println("✅ [DATE_PARSE] Date ISO parsée: $dateString -> ${date?.time}")
+            return date?.time
+        }
+
+        // Sinon, format SQL datetime
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        format.timeZone = TimeZone.getDefault()
+        val date = format.parse(dateString)
+        println("✅ [DATE_PARSE] Date SQL parsée: $dateString -> ${date?.time}")
+        date?.time
+    } catch (e: Exception) {
+        println("❌ [DATE_PARSE] Erreur de parsing de la date: $dateString - ${e.message}")
+        null
+    }
 }

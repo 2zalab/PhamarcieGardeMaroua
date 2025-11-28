@@ -21,10 +21,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.components.PharmacyCard
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
+import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -32,11 +35,16 @@ fun HomeScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onMapClick: () -> Unit,
     onSearchClick: () -> Unit,
+    onNavigateToSubscription: () -> Unit = {},
     currentUserName: String? = null,
-    viewModel: PharmacyViewModel = hiltViewModel()
+    viewModel: PharmacyViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
     var sortBy by remember { mutableStateOf("default") }
+
+    val isPremium = SubscriptionChecker.isPremium(currentUser)
 
     // Actualiser les données au chargement
     LaunchedEffect(Unit) {
@@ -117,36 +125,47 @@ fun HomeScreen(
                             HeroSection(userName = currentUserName)
                         }
 
-                        if (sortedPharmacies.isNotEmpty()) {
-                            item {
-                                SectionHeader(
-                                    title = stringResource(R.string.on_duty_pharmacies),
-                                    subtitle = stringResource(R.string.pharmacies_available, sortedPharmacies.size),
-                                    icon = Icons.Default.MedicalServices
-                                )
-                            }
+                        // Pharmacies de garde - uniquement pour les utilisateurs premium
+                        if (isPremium) {
+                            if (sortedPharmacies.isNotEmpty()) {
+                                item {
+                                    SectionHeader(
+                                        title = stringResource(R.string.on_duty_pharmacies),
+                                        subtitle = stringResource(R.string.pharmacies_available, sortedPharmacies.size),
+                                        icon = Icons.Default.MedicalServices
+                                    )
+                                }
 
-                            // Tri des pharmacies
-                            item {
-                                SortSelector(
-                                    currentSort = sortBy,
-                                    onSortChange = { sortBy = it }
-                                )
-                            }
+                                // Tri des pharmacies
+                                item {
+                                    SortSelector(
+                                        currentSort = sortBy,
+                                        onSortChange = { sortBy = it }
+                                    )
+                                }
 
-                            items(
-                                items = sortedPharmacies,
-                                key = { it.id }
-                            ) { pharmacy ->
-                                PharmacyCard(
-                                    pharmacy = pharmacy,
-                                    onClick = { onPharmacyClick(pharmacy) },
-                                    modifier = Modifier.animateItemPlacement()
-                                )
+                                items(
+                                    items = sortedPharmacies,
+                                    key = { it.id }
+                                ) { pharmacy ->
+                                    PharmacyCard(
+                                        pharmacy = pharmacy,
+                                        onClick = { onPharmacyClick(pharmacy) },
+                                        modifier = Modifier.animateItemPlacement(),
+                                        isPremium = isPremium
+                                    )
+                                }
+                            } else {
+                                item {
+                                    EmptyOnDutyState()
+                                }
                             }
                         } else {
+                            // Afficher une carte premium locked pour les utilisateurs gratuits
                             item {
-                                EmptyOnDutyState()
+                                OnDutyPremiumLockedCard(
+                                    onUpgradeClick = onNavigateToSubscription
+                                )
                             }
                         }
                     }
@@ -373,6 +392,92 @@ fun EmptyOnDutyState() {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center
             )
+        }
+    }
+}
+
+@Composable
+fun OnDutyPremiumLockedCard(
+    onUpgradeClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Lock,
+                contentDescription = null,
+                modifier = Modifier.size(48.dp),
+                tint = MaterialTheme.colorScheme.primary
+            )
+
+            Text(
+                text = "Pharmacies de Garde",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Text(
+                text = "Accédez aux pharmacies de garde disponibles 24h/24 avec un abonnement Premium",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Surface(
+                shape = RoundedCornerShape(8.dp),
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+            ) {
+                Row(
+                    modifier = Modifier.padding(12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp),
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Text(
+                        text = "Fonctionnalité Premium",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
+            Button(
+                onClick = onUpgradeClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                )
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Passer à Premium")
+            }
         }
     }
 }

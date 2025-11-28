@@ -28,7 +28,8 @@ import com.maroua.pharmaciegarde.ui.theme.OnDutyGreen
 fun PharmacyCard(
     pharmacy: Pharmacy,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isPremium: Boolean = true
 ) {
     Card(
         modifier = modifier
@@ -91,7 +92,8 @@ fun PharmacyCard(
                     }
                 }
 
-                AnimatedVisibility(visible = pharmacy.isOnDutyToday) {
+                // Badge de garde - uniquement pour les utilisateurs premium
+                AnimatedVisibility(visible = pharmacy.isOnDutyToday && isPremium) {
                     Surface(
                         color = OnDutyGreen,
                         shape = RoundedCornerShape(8.dp),
@@ -153,23 +155,45 @@ fun PharmacyCard(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Phone,
-                    contentDescription = null,
-                    modifier = Modifier.size(18.dp),
-                    tint = MaterialTheme.colorScheme.primary
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = pharmacy.phone,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    fontWeight = FontWeight.Medium
-                )
+            // Numéro de téléphone - uniquement pour les utilisateurs premium
+            if (isPremium) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Phone,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp),
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = pharmacy.phone,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            } else {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Lock,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = "Numéro masqué - Premium requis",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                    )
+                }
             }
         }
     }

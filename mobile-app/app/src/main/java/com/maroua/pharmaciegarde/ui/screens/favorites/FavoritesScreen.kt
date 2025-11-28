@@ -14,20 +14,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.components.PharmacyCard
+import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun FavoritesScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onBackClick: () -> Unit,
-    viewModel: FavoritesViewModel = hiltViewModel()
+    viewModel: FavoritesViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
     var searchQuery by remember { mutableStateOf("") }
     var sortBy by remember { mutableStateOf("default") }
+
+    val isPremium = SubscriptionChecker.isPremium(currentUser)
 
     // Actualiser les données au chargement
     LaunchedEffect(Unit) {
@@ -117,7 +124,8 @@ fun FavoritesScreen(
                             PharmacyCard(
                                 pharmacy = pharmacy,
                                 onClick = { onPharmacyClick(pharmacy) },
-                                modifier = Modifier.animateItemPlacement()
+                                modifier = Modifier.animateItemPlacement(),
+                                isPremium = isPremium
                             )
                         }
                     }

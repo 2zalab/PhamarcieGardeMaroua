@@ -27,11 +27,14 @@ import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
 import com.maroua.pharmaciegarde.util.SubscriptionChecker
-import kotlinx.coroutines.tasks.await
 import androidx.compose.ui.text.style.TextAlign
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.background
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import com.google.android.gms.location.FusedLocationProviderClient
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
@@ -76,7 +79,7 @@ fun MapScreen(
         if (locationPermissionsState.allPermissionsGranted && userLocation == null) {
             try {
                 val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-                val location = fusedLocationClient.lastLocation.await()
+                val location = fusedLocationClient.getLastLocationSuspend()
                 userLocation = location?.let { LatLng(it.latitude, it.longitude) }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -93,7 +96,7 @@ fun MapScreen(
                 try {
                     if (userLocation == null) {
                         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-                        val location = fusedLocationClient.lastLocation.await()
+                        val location = fusedLocationClient.getLastLocationSuspend()
                         userLocation = location?.let { LatLng(it.latitude, it.longitude) }
                     }
 
@@ -390,6 +393,26 @@ fun MapScreen(
                 }
             }
         }
+    }
+}
+
+/**
+ * Extension function pour obtenir la dernière localisation de manière suspendable
+ * Alternative à fusedLocationClient.lastLocation.await() qui peut ne pas être reconnue
+ */
+@Suppress("MissingPermission")
+private suspend fun FusedLocationProviderClient.getLastLocationSuspend(): android.location.Location? {
+    return suspendCancellableCoroutine { continuation ->
+        lastLocation
+            .addOnSuccessListener { location ->
+                continuation.resume(location)
+            }
+            .addOnFailureListener { exception ->
+                continuation.resumeWithException(exception)
+            }
+            .addOnCanceledListener {
+                continuation.cancel()
+            }
     }
 }
 

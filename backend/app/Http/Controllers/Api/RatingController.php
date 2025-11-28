@@ -33,7 +33,7 @@ class RatingController extends Controller
             'pharmacy_id' => $pharmacyId,
             'rating' => $validated['rating'],
             'comment' => $validated['comment'] ?? null,
-            'user_name' => $validated['user_name'] ?? null,
+            'user_name' => $validated['user_name'] ?? 'Anonyme',
             'user_email' => $validated['user_email'] ?? null,
             'device_id' => $validated['device_id'] ?? null,
         ]);
@@ -41,15 +41,20 @@ class RatingController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Évaluation enregistrée avec succès',
-            'data' => [
-                'rating' => $rating,
-                'average_rating' => $pharmacy->averageRating(),
-                'ratings_count' => $pharmacy->ratingsCount(),
+            'rating' => [
+                'id' => $rating->id,
+                'pharmacy_id' => $rating->pharmacy_id,
+                'rating' => $rating->rating,
+                'comment' => $rating->comment,
+                'user_name' => $rating->user_name,
+                'user_email' => $rating->user_email,
+                'device_id' => $rating->device_id,
+                'created_at' => $rating->created_at->toISOString(),
             ]
         ], 201);
     }
 
-    public function index($pharmacyId): JsonResponse
+    public function index(Request $request, $pharmacyId): JsonResponse
     {
         $pharmacy = Pharmacy::find($pharmacyId);
 
@@ -60,26 +65,33 @@ class RatingController extends Controller
             ], 404);
         }
 
+        // Limiter au nombre d'avis demandés (par défaut 10, max 50)
+        $limit = min((int) $request->query('limit', 10), 50);
+        $offset = (int) $request->query('offset', 0);
+
+        // Récupérer les avis triés du plus récent au plus ancien
         $ratings = $pharmacy->ratings()
             ->latest()
+            ->skip($offset)
+            ->take($limit)
             ->get()
             ->map(function($rating) {
                 return [
                     'id' => $rating->id,
+                    'pharmacy_id' => $rating->pharmacy_id,
                     'rating' => $rating->rating,
                     'comment' => $rating->comment,
                     'user_name' => $rating->user_name ?? 'Anonyme',
-                    'created_at' => $rating->created_at->format('Y-m-d H:i:s'),
+                    'user_email' => $rating->user_email,
+                    'device_id' => $rating->device_id,
+                    'created_at' => $rating->created_at->toISOString(),
                 ];
             });
 
         return response()->json([
-            'success' => true,
-            'data' => [
-                'ratings' => $ratings,
-                'average_rating' => $pharmacy->averageRating(),
-                'ratings_count' => $pharmacy->ratingsCount(),
-            ]
+            'ratings' => $ratings,
+            'average_rating' => round($pharmacy->averageRating(), 1),
+            'total_ratings' => $pharmacy->ratingsCount(),
         ]);
     }
 }

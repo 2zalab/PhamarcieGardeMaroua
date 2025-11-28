@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PharmacyController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FavoritesController;
+use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\WebhookController;
@@ -35,6 +36,12 @@ Route::post('/pharmacies', [PharmacyController::class, 'store']);
 Route::get('/pharmacies/on-duty', [PharmacyController::class, 'onDuty']);
 Route::get('/pharmacies/nearby', [PharmacyController::class, 'nearby']);
 Route::get('/pharmacies/{id}', [PharmacyController::class, 'show']);
+
+// Schedule/Calendar endpoints (public)
+Route::get('/schedules/day/{date}', [ScheduleController::class, 'getScheduleByDay']);
+Route::get('/schedules/week/{date}', [ScheduleController::class, 'getScheduleByWeek']);
+Route::get('/schedules/month/{year}/{month}', [ScheduleController::class, 'getScheduleByMonth']);
+Route::post('/schedules/range', [ScheduleController::class, 'getScheduleByRange']);
 
 // Ratings endpoints (public read)
 Route::get('/pharmacies/{id}/ratings', [RatingController::class, 'index']);

@@ -111,17 +111,11 @@ class CalendarViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, error = null)
 
-            // Pour l'instant, on va chercher les pharmacies de garde du jour
-            // TODO: Implémenter l'API pour récupérer les pharmacies de garde par date
-            when (val result = repository.getOnDutyPharmacies()) {
+            val dateString = dateFormat.format(date)
+            when (val result = repository.getScheduleByDay(dateString)) {
                 is Result.Success -> {
-                    val schedule = PharmacySchedule(
-                        date = dateFormat.format(date),
-                        pharmacies = result.data,
-                        dayOfWeek = dayNameFormat.format(date).capitalize(Locale.getDefault())
-                    )
                     _uiState.value = _uiState.value.copy(
-                        schedules = listOf(schedule),
+                        schedules = listOf(result.data),
                         isLoading = false
                     )
                 }
@@ -145,41 +139,24 @@ class CalendarViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, error = null)
 
-            val calendar = Calendar.getInstance()
-            calendar.time = date
-
-            // Se positionner au début de la semaine (lundi)
-            calendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY)
-
-            val schedules = mutableListOf<PharmacySchedule>()
-
-            // Charger les 7 jours de la semaine
-            for (i in 0..6) {
-                when (val result = repository.getOnDutyPharmacies()) {
-                    is Result.Success -> {
-                        val schedule = PharmacySchedule(
-                            date = dateFormat.format(calendar.time),
-                            pharmacies = result.data,
-                            dayOfWeek = dayNameFormat.format(calendar.time).capitalize(Locale.getDefault())
-                        )
-                        schedules.add(schedule)
-                    }
-                    is Result.Error -> {
-                        _uiState.value = _uiState.value.copy(
-                            error = result.message,
-                            isLoading = false
-                        )
-                        return@launch
-                    }
-                    is Result.Loading -> {}
+            val dateString = dateFormat.format(date)
+            when (val result = repository.getScheduleByWeek(dateString)) {
+                is Result.Success -> {
+                    _uiState.value = _uiState.value.copy(
+                        schedules = result.data,
+                        isLoading = false
+                    )
                 }
-                calendar.add(Calendar.DAY_OF_MONTH, 1)
+                is Result.Error -> {
+                    _uiState.value = _uiState.value.copy(
+                        error = result.message,
+                        isLoading = false
+                    )
+                }
+                is Result.Loading -> {
+                    _uiState.value = _uiState.value.copy(isLoading = true)
+                }
             }
-
-            _uiState.value = _uiState.value.copy(
-                schedules = schedules,
-                isLoading = false
-            )
         }
     }
 
@@ -193,40 +170,26 @@ class CalendarViewModel @Inject constructor(
             val calendar = Calendar.getInstance()
             calendar.time = date
 
-            // Se positionner au début du mois
-            calendar.set(Calendar.DAY_OF_MONTH, 1)
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH) + 1 // Calendar.MONTH est 0-indexé
 
-            val schedules = mutableListOf<PharmacySchedule>()
-            val maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
-
-            // Charger tous les jours du mois
-            for (day in 1..maxDays) {
-                calendar.set(Calendar.DAY_OF_MONTH, day)
-
-                when (val result = repository.getOnDutyPharmacies()) {
-                    is Result.Success -> {
-                        val schedule = PharmacySchedule(
-                            date = dateFormat.format(calendar.time),
-                            pharmacies = result.data,
-                            dayOfWeek = dayNameFormat.format(calendar.time).capitalize(Locale.getDefault())
-                        )
-                        schedules.add(schedule)
-                    }
-                    is Result.Error -> {
-                        _uiState.value = _uiState.value.copy(
-                            error = result.message,
-                            isLoading = false
-                        )
-                        return@launch
-                    }
-                    is Result.Loading -> {}
+            when (val result = repository.getScheduleByMonth(year, month)) {
+                is Result.Success -> {
+                    _uiState.value = _uiState.value.copy(
+                        schedules = result.data,
+                        isLoading = false
+                    )
+                }
+                is Result.Error -> {
+                    _uiState.value = _uiState.value.copy(
+                        error = result.message,
+                        isLoading = false
+                    )
+                }
+                is Result.Loading -> {
+                    _uiState.value = _uiState.value.copy(isLoading = true)
                 }
             }
-
-            _uiState.value = _uiState.value.copy(
-                schedules = schedules,
-                isLoading = false
-            )
         }
     }
 

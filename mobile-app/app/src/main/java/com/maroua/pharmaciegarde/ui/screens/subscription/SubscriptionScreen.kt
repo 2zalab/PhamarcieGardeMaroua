@@ -36,10 +36,11 @@ fun SubscriptionScreen(
     val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
     val uiState by subscriptionViewModel.uiState.collectAsStateWithLifecycle()
 
-    // Afficher un dialogue de succès
+    // Rafraîchir l'utilisateur immédiatement après paiement réussi
     LaunchedEffect(uiState.isPaymentSuccessful) {
         if (uiState.isPaymentSuccessful) {
-            // L'utilisateur peut revenir en arrière après succès
+            println("🔄 [SUBSCRIPTION_SCREEN] Paiement réussi détecté, rafraîchissement AuthViewModel...")
+            authViewModel.refreshUser()
         }
     }
 

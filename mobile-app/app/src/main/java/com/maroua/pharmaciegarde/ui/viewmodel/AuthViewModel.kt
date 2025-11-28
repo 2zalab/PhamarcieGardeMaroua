@@ -30,6 +30,9 @@ class AuthViewModel @Inject constructor(
                 _currentUser.value = user
             }
         }
+
+        // Rafraîchir automatiquement l'utilisateur au démarrage
+        refreshUser()
     }
 
     fun isUserSignedInFlow() = authRepository.isUserSignedInFlow()

@@ -144,44 +144,62 @@ class SubscriptionViewModel @Inject constructor(
             var attempts = 0
             val maxAttempts = 60 // 5 minutes (60 * 5 secondes)
 
+            println("🔄 [POLLING] Démarrage du polling de paiement")
+
             while (attempts < maxAttempts) {
                 delay(5000) // Vérifier toutes les 5 secondes
 
-                val reference = _uiState.value.paymentReference ?: break
+                val reference = _uiState.value.paymentReference
+                if (reference == null) {
+                    println("❌ [POLLING] Référence nulle, arrêt du polling")
+                    break
+                }
 
-                subscriptionRepository.checkPaymentStatus(reference).collect { result ->
-                    result.onSuccess { status ->
-                        when (status.status) {
-                            "SUCCESSFUL" -> {
-                                // Paiement réussi, arrêter le polling et recharger l'utilisateur
-                                pollingJob?.cancel()
-                                refreshUserAfterPayment()
-                            }
-                            "FAILED" -> {
-                                // Paiement échoué, arrêter le polling
-                                pollingJob?.cancel()
-                                _uiState.update {
-                                    it.copy(
-                                        isLoading = false,
-                                        error = "Le paiement a échoué. Veuillez réessayer.",
-                                        showPaymentDialog = false
-                                    )
-                                }
-                            }
-                            else -> {
-                                // Paiement en attente, continuer le polling
-                                attempts++
-                            }
+                println("🔍 [POLLING] Tentative ${attempts + 1}/$maxAttempts - Vérification référence: $reference")
+
+                // Utiliser la version suspend directe au lieu de Flow
+                val result = subscriptionRepository.checkPaymentStatusDirect(reference)
+
+                result.onSuccess { status ->
+                    println("✅ [POLLING] Statut reçu: ${status.status}")
+
+                    when (status.status) {
+                        "SUCCESSFUL" -> {
+                            println("🎉 [POLLING] Paiement réussi! Arrêt du polling")
+                            // Paiement réussi, arrêter le polling et recharger l'utilisateur
+                            pollingJob?.cancel()
+                            refreshUserAfterPayment()
+                            return@launch
                         }
-                    }.onFailure {
-                        // Erreur de vérification, continuer le polling
-                        attempts++
+                        "FAILED" -> {
+                            println("❌ [POLLING] Paiement échoué! Arrêt du polling")
+                            // Paiement échoué, arrêter le polling
+                            pollingJob?.cancel()
+                            _uiState.update {
+                                it.copy(
+                                    isLoading = false,
+                                    error = "Le paiement a échoué. Veuillez réessayer.",
+                                    showPaymentDialog = false
+                                )
+                            }
+                            return@launch
+                        }
+                        else -> {
+                            println("⏳ [POLLING] Paiement en attente (${status.status}), continue...")
+                            // Paiement en attente, continuer le polling
+                            attempts++
+                        }
                     }
+                }.onFailure { exception ->
+                    println("⚠️ [POLLING] Erreur lors de la vérification: ${exception.message}")
+                    // Erreur de vérification, continuer le polling
+                    attempts++
                 }
             }
 
             // Timeout atteint
             if (attempts >= maxAttempts) {
+                println("⏰ [POLLING] Timeout atteint après $maxAttempts tentatives")
                 _uiState.update {
                     it.copy(
                         error = "Délai d'attente dépassé. Veuillez vérifier votre historique de paiements."
@@ -196,15 +214,23 @@ class SubscriptionViewModel @Inject constructor(
      */
     private fun refreshUserAfterPayment() {
         viewModelScope.launch {
+            println("🔄 [REFRESH] Début du rafraîchissement utilisateur")
             _uiState.update { it.copy(isLoading = true) }
 
             // Attendre un peu pour que le backend ait le temps de traiter
-            delay(1000)
+            delay(2000) // Augmenté à 2 secondes pour plus de sécurité
+
+            println("📡 [REFRESH] Appel API getUserInfo()...")
 
             // Forcer le rechargement de l'utilisateur depuis le backend
             val result = authRepository.refreshUserFromBackend()
 
             result.onSuccess { user ->
+                println("✅ [REFRESH] Utilisateur rafraîchi avec succès")
+                println("👤 [REFRESH] is_subscribed: ${user?.isSubscribed}")
+                println("📋 [REFRESH] subscription_type: ${user?.subscriptionType}")
+                println("📅 [REFRESH] subscription_expires_at: ${user?.subscriptionExpiryDate}")
+
                 _uiState.update {
                     it.copy(
                         isLoading = false,
@@ -213,7 +239,8 @@ class SubscriptionViewModel @Inject constructor(
                         currentUser = user
                     )
                 }
-            }.onFailure {
+            }.onFailure { exception ->
+                println("❌ [REFRESH] Échec du rafraîchissement: ${exception.message}")
                 // Même en cas d'échec du refresh, marquer comme réussi
                 // car le paiement a été validé
                 _uiState.update {

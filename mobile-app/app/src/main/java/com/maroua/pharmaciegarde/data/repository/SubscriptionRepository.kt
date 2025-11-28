@@ -49,7 +49,24 @@ class SubscriptionRepository @Inject constructor(
     }
 
     /**
-     * Vérifier le statut d'un paiement
+     * Vérifier le statut d'un paiement (version suspend pour le polling)
+     */
+    suspend fun checkPaymentStatusDirect(reference: String): kotlin.Result<PaymentStatusResponse> {
+        return try {
+            val response = subscriptionApi.checkPaymentStatus(reference)
+
+            if (response.isSuccessful && response.body() != null) {
+                kotlin.Result.success(response.body()!!)
+            } else {
+                kotlin.Result.failure(Exception("Échec de la vérification du paiement: ${response.message()}"))
+            }
+        } catch (e: Exception) {
+            kotlin.Result.failure(e)
+        }
+    }
+
+    /**
+     * Vérifier le statut d'un paiement (version Flow pour compatibilité)
      */
     fun checkPaymentStatus(reference: String): Flow<kotlin.Result<PaymentStatusResponse>> = flow {
         try {

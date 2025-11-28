@@ -48,6 +48,12 @@ fun PharmacyDetailsScreen(
     val isFavorite by detailsViewModel.isFavorite.collectAsState()
     val currentUser by detailsViewModel.currentUser.collectAsStateWithLifecycle()
     val error by detailsViewModel.error.collectAsStateWithLifecycle()
+    val ratings by detailsViewModel.ratings.collectAsState()
+    val averageRating by detailsViewModel.averageRating.collectAsState()
+    val totalRatings by detailsViewModel.totalRatings.collectAsState()
+    val isLoadingRatings by detailsViewModel.isLoadingRatings.collectAsState()
+    val isSubmittingRating by detailsViewModel.isSubmittingRating.collectAsState()
+    val ratingSuccess by detailsViewModel.ratingSuccess.collectAsState()
 
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -55,9 +61,21 @@ fun PharmacyDetailsScreen(
 
     val canViewContact = SubscriptionChecker.canViewContactInfo(currentUser)
 
-    // Check if pharmacy is favorite
+    // Check if pharmacy is favorite and load ratings
     LaunchedEffect(pharmacyId) {
         detailsViewModel.checkIfFavorite(pharmacyId)
+        detailsViewModel.loadRatings(pharmacyId)
+    }
+
+    // Show success message when rating is submitted
+    LaunchedEffect(ratingSuccess) {
+        if (ratingSuccess) {
+            snackbarHostState.showSnackbar(
+                message = "Notation envoyée avec succès!",
+                duration = SnackbarDuration.Short
+            )
+            detailsViewModel.resetRatingSuccess()
+        }
     }
 
     // Afficher les erreurs via Snackbar
@@ -153,6 +171,35 @@ fun PharmacyDetailsScreen(
                     item {
                         DescriptionCard(pharmacy.description)
                     }
+                }
+
+                // Rating section
+                item {
+                    RatingSubmitCard(
+                        pharmacyId = pharmacyId,
+                        isSubmitting = isSubmittingRating,
+                        onSubmit = { rating, comment ->
+                            val deviceId = Settings.Secure.getString(
+                                context.contentResolver,
+                                Settings.Secure.ANDROID_ID
+                            )
+                            detailsViewModel.submitRating(
+                                pharmacyId = pharmacyId,
+                                rating = rating,
+                                comment = comment,
+                                deviceId = deviceId
+                            )
+                        }
+                    )
+                }
+
+                item {
+                    RatingsDisplayCard(
+                        averageRating = averageRating,
+                        totalRatings = totalRatings,
+                        ratings = ratings,
+                        isLoading = isLoadingRatings
+                    )
                 }
             }
         } else {
@@ -574,5 +621,282 @@ fun PremiumLockedCard(
                 Text("Débloquer")
             }
         }
+    }
+}
+
+@Composable
+fun RatingSubmitCard(
+    pharmacyId: Int,
+    isSubmitting: Boolean,
+    onSubmit: (rating: Int, comment: String?) -> Unit
+) {
+    var selectedRating by remember { mutableIntStateOf(0) }
+    var comment by remember { mutableStateOf("") }
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Text(
+                text = "Notez cette pharmacie",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            // Star rating selector
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                for (i in 1..5) {
+                    IconButton(
+                        onClick = { selectedRating = i },
+                        modifier = Modifier.size(48.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (i <= selectedRating) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = "Étoile $i",
+                            modifier = Modifier.size(36.dp),
+                            tint = if (i <= selectedRating) Color(0xFFFFA000) else MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+
+            // Comment field
+            OutlinedTextField(
+                value = comment,
+                onValueChange = { comment = it },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Votre commentaire (optionnel)") },
+                minLines = 3,
+                maxLines = 5,
+                shape = RoundedCornerShape(12.dp)
+            )
+
+            // Submit button
+            Button(
+                onClick = {
+                    if (selectedRating > 0) {
+                        onSubmit(selectedRating, comment.ifBlank { null })
+                        selectedRating = 0
+                        comment = ""
+                    }
+                },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = selectedRating > 0 && !isSubmitting,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                )
+            ) {
+                if (isSubmitting) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(20.dp),
+                        color = Color.White,
+                        strokeWidth = 2.dp
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Envoi en cours...")
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.Send,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Envoyer la notation")
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun RatingsDisplayCard(
+    averageRating: Double,
+    totalRatings: Int,
+    ratings: List<com.maroua.pharmaciegarde.data.model.Rating>,
+    isLoading: Boolean
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Avis des utilisateurs",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+
+                if (totalRatings > 0) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = null,
+                            modifier = Modifier.size(20.dp),
+                            tint = Color(0xFFFFA000)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = String.format("%.1f", averageRating),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Text(
+                            text = " ($totalRatings)",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+
+            if (isLoading) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(32.dp),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            } else if (ratings.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.RateReview,
+                            contentDescription = null,
+                            modifier = Modifier.size(48.dp),
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+                        )
+                        Text(
+                            text = "Aucun avis pour le moment",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Text(
+                            text = "Soyez le premier à donner votre avis!",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                        )
+                    }
+                }
+            } else {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    ratings.take(5).forEach { rating ->
+                        RatingItem(rating = rating)
+                        if (rating != ratings.last()) {
+                            Divider(color = MaterialTheme.colorScheme.outlineVariant)
+                        }
+                    }
+
+                    if (ratings.size > 5) {
+                        Text(
+                            text = "Et ${ratings.size - 5} autres avis...",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(top = 8.dp)
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun RatingItem(rating: com.maroua.pharmaciegarde.data.model.Rating) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = rating.userName,
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                repeat(rating.rating) {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = null,
+                        modifier = Modifier.size(16.dp),
+                        tint = Color(0xFFFFA000)
+                    )
+                }
+                repeat(5 - rating.rating) {
+                    Icon(
+                        imageVector = Icons.Default.StarBorder,
+                        contentDescription = null,
+                        modifier = Modifier.size(16.dp),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        }
+
+        rating.comment?.let { comment ->
+            if (comment.isNotBlank()) {
+                Text(
+                    text = comment,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+
+        Text(
+            text = rating.createdAt,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+        )
     }
 }

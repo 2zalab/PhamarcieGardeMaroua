@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Subscription;
 use App\Services\CamPayService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class PaymentController extends Controller
@@ -147,6 +150,9 @@ class PaymentController extends Controller
             // Mettre à jour le paiement selon le statut
             if ($status === 'SUCCESSFUL' && !$payment->isSuccessful()) {
                 $payment->markAsSuccessful();
+
+                // Activer automatiquement l'abonnement
+                $this->autoActivateSubscription($payment);
             } elseif ($status === 'FAILED' && !$payment->isFailed()) {
                 $payment->markAsFailed($result['data']['code'] ?? 'Paiement échoué');
             }
@@ -204,5 +210,85 @@ class PaymentController extends Controller
             'success' => true,
             'data' => $payments,
         ]);
+    }
+
+    /**
+     * Activer automatiquement l'abonnement après paiement réussi
+     *
+     * @param Payment $payment
+     * @return void
+     */
+    private function autoActivateSubscription(Payment $payment): void
+    {
+        try {
+            // Vérifier si un abonnement n'existe pas déjà pour ce paiement
+            if (Subscription::where('payment_id', $payment->id)->exists()) {
+                Log::info('Subscription already exists for payment', [
+                    'payment_id' => $payment->id,
+                ]);
+                return;
+            }
+
+            DB::transaction(function () use ($payment) {
+                // Déterminer le type d'abonnement basé sur le montant
+                $subscriptionType = $payment->amount == 500 ? 'MONTHLY' : 'ANNUAL';
+
+                Log::info('Auto-activating subscription from payment check', [
+                    'payment_id' => $payment->id,
+                    'amount' => $payment->amount,
+                    'subscription_type' => $subscriptionType,
+                ]);
+
+                // Annuler l'abonnement actif s'il existe
+                $activeSubscription = Subscription::where('user_id', $payment->user_id)
+                    ->where('status', 'ACTIVE')
+                    ->first();
+
+                if ($activeSubscription) {
+                    $activeSubscription->cancel('Mise à niveau vers nouvel abonnement');
+                    Log::info('Previous subscription cancelled', [
+                        'subscription_id' => $activeSubscription->id,
+                        'user_id' => $payment->user_id,
+                    ]);
+                }
+
+                // Créer le nouvel abonnement
+                $startsAt = now();
+                $expiresAt = $subscriptionType === 'MONTHLY'
+                    ? $startsAt->copy()->addMonth()
+                    : $startsAt->copy()->addYear();
+
+                $subscription = Subscription::create([
+                    'user_id' => $payment->user_id,
+                    'payment_id' => $payment->id,
+                    'subscription_type' => $subscriptionType,
+                    'status' => 'ACTIVE',
+                    'starts_at' => $startsAt,
+                    'expires_at' => $expiresAt,
+                ]);
+
+                // Mettre à jour l'utilisateur
+                $user = $payment->user;
+                $user->update([
+                    'is_subscribed' => true,
+                    'subscription_type' => $subscriptionType,
+                    'subscription_expires_at' => $expiresAt,
+                ]);
+
+                Log::info('Subscription auto-activated successfully from payment check', [
+                    'subscription_id' => $subscription->id,
+                    'user_id' => $user->id,
+                    'subscription_type' => $subscriptionType,
+                    'expires_at' => $expiresAt->toISOString(),
+                ]);
+            });
+        } catch (\Exception $e) {
+            Log::error('Auto-activation subscription error from payment check', [
+                'payment_id' => $payment->id,
+                'user_id' => $payment->user_id ?? null,
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+        }
     }
 }

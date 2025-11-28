@@ -5,6 +5,7 @@ import com.maroua.pharmaciegarde.data.remote.AuthApiService
 import com.maroua.pharmaciegarde.data.remote.AuthInterceptor
 import com.maroua.pharmaciegarde.data.remote.FavoritesApiService
 import com.maroua.pharmaciegarde.data.remote.PharmacyApiService
+import com.maroua.pharmaciegarde.data.remote.SubscriptionApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -73,5 +74,11 @@ object NetworkModule {
     @Singleton
     fun provideFavoritesApiService(retrofit: Retrofit): FavoritesApiService {
         return retrofit.create(FavoritesApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSubscriptionApiService(retrofit: Retrofit): SubscriptionApiService {
+        return retrofit.create(SubscriptionApiService::class.java)
     }
 }

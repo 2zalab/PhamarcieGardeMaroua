@@ -25,6 +25,9 @@ import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.local.AppLanguage
 import com.maroua.pharmaciegarde.data.local.ThemeMode
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
+import com.maroua.pharmaciegarde.data.model.SubscriptionType
+import androidx.compose.ui.text.font.FontWeight
 import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
 import coil.compose.SubcomposeAsyncImageContent
@@ -36,6 +39,7 @@ import coil.compose.AsyncImagePainter
 fun SettingsScreen(
     onBackClick: () -> Unit,
     onLoginClick: () -> Unit = {},
+    onSubscriptionClick: () -> Unit = {},
     settingsViewModel: SettingsViewModel = hiltViewModel(),
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
@@ -188,6 +192,18 @@ fun SettingsScreen(
                         }
                     }
                 }
+            }
+
+            item {
+                Divider(modifier = Modifier.padding(vertical = 8.dp))
+            }
+
+            // Subscription Section
+            item {
+                SubscriptionCard(
+                    user = currentUser,
+                    onClick = onSubscriptionClick
+                )
             }
 
             item {
@@ -585,4 +601,92 @@ fun LanguageSelectionDialog(
             }
         }
     )
+}
+
+@Composable
+fun SubscriptionCard(
+    user: com.maroua.pharmaciegarde.data.model.User?,
+    onClick: () -> Unit
+) {
+    val subscriptionType = user?.subscriptionType ?: SubscriptionType.FREE
+    val isPremium = SubscriptionChecker.isPremium(user)
+    val isExpired = SubscriptionChecker.isSubscriptionExpired(user)
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isPremium && !isExpired) {
+                MaterialTheme.colorScheme.primaryContainer
+            } else {
+                MaterialTheme.colorScheme.surfaceVariant
+            }
+        )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = when {
+                    isPremium && !isExpired -> Icons.Default.Stars
+                    else -> Icons.Default.StarBorder
+                },
+                contentDescription = null,
+                modifier = Modifier.size(40.dp),
+                tint = if (isPremium && !isExpired) {
+                    MaterialTheme.colorScheme.primary
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                }
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = when {
+                        isExpired -> "Abonnement expiré"
+                        isPremium -> SubscriptionChecker.getSubscriptionTypeText(subscriptionType)
+                        else -> "Version gratuite"
+                    },
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = if (isPremium && !isExpired) {
+                        MaterialTheme.colorScheme.onPrimaryContainer
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    }
+                )
+                Text(
+                    text = when {
+                        isExpired -> "Renouvelez votre abonnement"
+                        isPremium -> {
+                            val expiryDate = user?.subscriptionExpiryDate?.let {
+                                java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.FRANCE).format(java.util.Date(it))
+                            } ?: ""
+                            "Expire le: $expiryDate"
+                        }
+                        else -> "Passez à Premium pour plus de fonctionnalités"
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (isPremium && !isExpired) {
+                        MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    }
+                )
+            }
+            Icon(
+                imageVector = Icons.Default.ChevronRight,
+                contentDescription = null,
+                tint = if (isPremium && !isExpired) {
+                    MaterialTheme.colorScheme.onPrimaryContainer
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                }
+            )
+        }
+    }
 }

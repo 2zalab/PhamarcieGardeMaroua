@@ -26,6 +26,7 @@ import com.maroua.pharmaciegarde.ui.screens.home.HomeScreen
 import com.maroua.pharmaciegarde.ui.screens.map.MapScreen
 import com.maroua.pharmaciegarde.ui.screens.search.SearchScreen
 import com.maroua.pharmaciegarde.ui.screens.settings.SettingsScreen
+import com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionScreen
 import androidx.hilt.navigation.compose.hiltViewModel
 
 // Destinations de la BottomNavigationBar
@@ -45,6 +46,7 @@ sealed class AppDestination(val route: String) {
     object Login : AppDestination("login")
     object Map : AppDestination("map")
     object Search : AppDestination("search")
+    object Subscription : AppDestination("subscription")
     object Details : AppDestination("details/{pharmacyId}") {
         fun createRoute(pharmacyId: Int) = "details/$pharmacyId"
     }
@@ -167,6 +169,9 @@ fun MainScreen(
                     },
                     onLoginClick = {
                         navController.navigate(AppDestination.Login.route)
+                    },
+                    onSubscriptionClick = {
+                        navController.navigate(AppDestination.Subscription.route)
                     }
                 )
             }
@@ -179,6 +184,9 @@ fun MainScreen(
                     },
                     onBackClick = {
                         navController.popBackStack()
+                    },
+                    onUpgradeClick = {
+                        navController.navigate(AppDestination.Subscription.route)
                     }
                 )
             }
@@ -218,6 +226,15 @@ fun MainScreen(
                     },
                     onContinueAsGuest = {
                         // Retour à l'écran précédent
+                        navController.popBackStack()
+                    }
+                )
+            }
+
+            // Subscription Screen
+            composable(AppDestination.Subscription.route) {
+                SubscriptionScreen(
+                    onNavigateBack = {
                         navController.popBackStack()
                     }
                 )

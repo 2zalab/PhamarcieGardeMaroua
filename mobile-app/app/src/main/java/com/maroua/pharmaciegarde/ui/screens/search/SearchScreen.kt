@@ -21,10 +21,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.components.PharmacyCard
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
+import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class,
     ExperimentalFoundationApi::class
@@ -33,10 +36,14 @@ import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
 fun SearchScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onBackClick: () -> Unit,
-    viewModel: PharmacyViewModel = hiltViewModel()
+    viewModel: PharmacyViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
     val keyboardController = LocalSoftwareKeyboardController.current
+
+    val isPremium = SubscriptionChecker.isPremium(currentUser)
 
     Scaffold(
         topBar = {
@@ -106,7 +113,8 @@ fun SearchScreen(
                             PharmacyCard(
                                 pharmacy = pharmacy,
                                 onClick = { onPharmacyClick(pharmacy) },
-                                modifier = Modifier.animateItem()
+                                modifier = Modifier.animateItem(),
+                                isPremium = isPremium
                             )
                         }
                     }

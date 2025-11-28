@@ -133,6 +133,9 @@ fun MainScreen(
                     onSearchClick = {
                         navController.navigate(AppDestination.Search.route)
                     },
+                    onNavigateToSubscription = {
+                        navController.navigate(AppDestination.Subscription.route)
+                    },
                     currentUserName = currentUser?.displayName
                 )
             }

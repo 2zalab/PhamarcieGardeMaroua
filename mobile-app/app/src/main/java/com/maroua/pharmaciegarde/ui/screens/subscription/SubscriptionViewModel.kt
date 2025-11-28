@@ -52,7 +52,7 @@ class SubscriptionViewModel @Inject constructor(
      */
     private fun loadCurrentUser() {
         viewModelScope.launch {
-            authRepository.currentUser.collect { user ->
+            authRepository.getCurrentUser().collect { user ->
                 _uiState.update { it.copy(currentUser = user) }
             }
         }

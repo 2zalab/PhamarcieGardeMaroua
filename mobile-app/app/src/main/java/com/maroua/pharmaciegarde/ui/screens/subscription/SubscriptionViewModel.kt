@@ -198,14 +198,29 @@ class SubscriptionViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 
-            // Recharger l'utilisateur depuis le backend
-            authRepository.getCurrentUser().collect { user ->
+            // Attendre un peu pour que le backend ait le temps de traiter
+            delay(1000)
+
+            // Forcer le rechargement de l'utilisateur depuis le backend
+            val result = authRepository.refreshUserFromBackend()
+
+            result.onSuccess { user ->
                 _uiState.update {
                     it.copy(
                         isLoading = false,
                         isPaymentSuccessful = true,
                         showPaymentDialog = false,
                         currentUser = user
+                    )
+                }
+            }.onFailure {
+                // Même en cas d'échec du refresh, marquer comme réussi
+                // car le paiement a été validé
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        isPaymentSuccessful = true,
+                        showPaymentDialog = false
                     )
                 }
             }

@@ -70,11 +70,13 @@ class AuthViewModel @Inject constructor(
     suspend fun isUserSignedIn() = authRepository.isUserSignedIn()
 
     /**
-     * Rafraîchir les informations de l'utilisateur
+     * Rafraîchir les informations de l'utilisateur depuis le backend
+     * Force un nouvel appel API pour obtenir les dernières données
      */
     fun refreshUser() {
         viewModelScope.launch {
-            authRepository.getCurrentUser().collect { user ->
+            val result = authRepository.refreshUserFromBackend()
+            result.onSuccess { user ->
                 _currentUser.value = user
             }
         }

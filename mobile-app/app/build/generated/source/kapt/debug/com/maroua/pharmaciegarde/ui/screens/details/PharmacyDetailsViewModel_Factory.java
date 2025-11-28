@@ -2,6 +2,7 @@ package com.maroua.pharmaciegarde.ui.screens.details;
 
 import com.maroua.pharmaciegarde.data.repository.AuthRepository;
 import com.maroua.pharmaciegarde.data.repository.FavoritesRepository;
+import com.maroua.pharmaciegarde.data.repository.RatingRepository;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -27,25 +28,30 @@ public final class PharmacyDetailsViewModel_Factory implements Factory<PharmacyD
 
   private final Provider<AuthRepository> authRepositoryProvider;
 
+  private final Provider<RatingRepository> ratingRepositoryProvider;
+
   public PharmacyDetailsViewModel_Factory(Provider<FavoritesRepository> favoritesRepositoryProvider,
-      Provider<AuthRepository> authRepositoryProvider) {
+      Provider<AuthRepository> authRepositoryProvider,
+      Provider<RatingRepository> ratingRepositoryProvider) {
     this.favoritesRepositoryProvider = favoritesRepositoryProvider;
     this.authRepositoryProvider = authRepositoryProvider;
+    this.ratingRepositoryProvider = ratingRepositoryProvider;
   }
 
   @Override
   public PharmacyDetailsViewModel get() {
-    return newInstance(favoritesRepositoryProvider.get(), authRepositoryProvider.get());
+    return newInstance(favoritesRepositoryProvider.get(), authRepositoryProvider.get(), ratingRepositoryProvider.get());
   }
 
   public static PharmacyDetailsViewModel_Factory create(
       Provider<FavoritesRepository> favoritesRepositoryProvider,
-      Provider<AuthRepository> authRepositoryProvider) {
-    return new PharmacyDetailsViewModel_Factory(favoritesRepositoryProvider, authRepositoryProvider);
+      Provider<AuthRepository> authRepositoryProvider,
+      Provider<RatingRepository> ratingRepositoryProvider) {
+    return new PharmacyDetailsViewModel_Factory(favoritesRepositoryProvider, authRepositoryProvider, ratingRepositoryProvider);
   }
 
   public static PharmacyDetailsViewModel newInstance(FavoritesRepository favoritesRepository,
-      AuthRepository authRepository) {
-    return new PharmacyDetailsViewModel(favoritesRepository, authRepository);
+      AuthRepository authRepository, RatingRepository ratingRepository) {
+    return new PharmacyDetailsViewModel(favoritesRepository, authRepository, ratingRepository);
   }
 }

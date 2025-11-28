@@ -160,7 +160,7 @@ class PharmacyDetailsViewModel @Inject constructor(
             _isSubmittingRating.value = true
             _ratingSuccess.value = false
 
-            val userName = _currentUser.value?.name ?: "Anonyme"
+            val userName = _currentUser.value?.displayName ?: "Anonyme"
 
             ratingRepository.submitRating(
                 pharmacyId = pharmacyId,

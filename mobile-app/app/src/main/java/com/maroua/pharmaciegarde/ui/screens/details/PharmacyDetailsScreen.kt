@@ -28,7 +28,9 @@ import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.theme.OnDutyGreen
 import com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 import kotlinx.coroutines.launch
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,13 +45,29 @@ fun PharmacyDetailsScreen(
         ?: uiState.onDutyPharmacies.find { it.id == pharmacyId }
 
     val isFavorite by detailsViewModel.isFavorite.collectAsState()
+    val currentUser by detailsViewModel.currentUser.collectAsStateWithLifecycle()
+    val error by detailsViewModel.error.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+
+    val canViewContact = SubscriptionChecker.canViewContactInfo(currentUser)
 
     // Check if pharmacy is favorite
     LaunchedEffect(pharmacyId) {
         detailsViewModel.checkIfFavorite(pharmacyId)
+    }
+
+    // Afficher les erreurs via Snackbar
+    LaunchedEffect(error) {
+        error?.let {
+            snackbarHostState.showSnackbar(
+                message = it,
+                duration = SnackbarDuration.Long
+            )
+            detailsViewModel.clearError()
+        }
     }
 
     Scaffold(
@@ -86,7 +104,8 @@ fun PharmacyDetailsScreen(
                     actionIconContentColor = Color.White
                 )
             )
-        }
+        },
+        snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
         if (pharmacy != null) {
             LazyColumn(
@@ -101,20 +120,27 @@ fun PharmacyDetailsScreen(
                 }
 
                 item {
-                    ContactCard(
-                        pharmacy = pharmacy,
-                        onCallClick = {
-                            val intent = Intent(Intent.ACTION_DIAL).apply {
-                                data = Uri.parse("tel:${pharmacy.phone}")
+                    if (canViewContact) {
+                        ContactCard(
+                            pharmacy = pharmacy,
+                            onCallClick = {
+                                val intent = Intent(Intent.ACTION_DIAL).apply {
+                                    data = Uri.parse("tel:${pharmacy.phone}")
+                                }
+                                context.startActivity(intent)
+                            },
+                            onDirectionsClick = {
+                                val uri = Uri.parse("geo:${pharmacy.latitude},${pharmacy.longitude}?q=${pharmacy.name}")
+                                val intent = Intent(Intent.ACTION_VIEW, uri)
+                                context.startActivity(intent)
                             }
-                            context.startActivity(intent)
-                        },
-                        onDirectionsClick = {
-                            val uri = Uri.parse("geo:${pharmacy.latitude},${pharmacy.longitude}?q=${pharmacy.name}")
-                            val intent = Intent(Intent.ACTION_VIEW, uri)
-                            context.startActivity(intent)
-                        }
-                    )
+                        )
+                    } else {
+                        PremiumLockedCard(
+                            featureName = "Contact & Localisation",
+                            description = "Accédez aux numéros de téléphone, adresse complète et itinéraire GPS"
+                        )
+                    }
                 }
 
                 item {
@@ -458,6 +484,82 @@ fun FeatureItem(
                 contentDescription = null,
                 modifier = Modifier.size(20.dp),
                 tint = OnDutyGreen
+            )
+        }
+    }
+}
+
+@Composable
+fun PremiumLockedCard(
+    featureName: String,
+    description: String
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Lock,
+                contentDescription = null,
+                modifier = Modifier.size(48.dp),
+                tint = MaterialTheme.colorScheme.primary
+            )
+
+            Text(
+                text = featureName,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Text(
+                text = description,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Surface(
+                shape = RoundedCornerShape(8.dp),
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+            ) {
+                Row(
+                    modifier = Modifier.padding(12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp),
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Text(
+                        text = "Fonctionnalité Premium",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
+            Text(
+                text = "Passez à Premium pour débloquer cette fonctionnalité",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
             )
         }
     }

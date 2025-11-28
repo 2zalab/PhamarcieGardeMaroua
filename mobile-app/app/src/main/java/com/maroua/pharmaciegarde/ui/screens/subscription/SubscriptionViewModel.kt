@@ -1,0 +1,262 @@
+package com.maroua.pharmaciegarde.ui.screens.subscription
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.maroua.pharmaciegarde.data.model.CamPayPaymentResponse
+import com.maroua.pharmaciegarde.data.model.SubscriptionType
+import com.maroua.pharmaciegarde.data.model.User
+import com.maroua.pharmaciegarde.data.repository.AuthRepository
+import com.maroua.pharmaciegarde.data.repository.SubscriptionRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import java.util.UUID
+import javax.inject.Inject
+
+/**
+ * États UI pour l'écran d'abonnement
+ */
+data class SubscriptionUiState(
+    val currentUser: User? = null,
+    val isLoading: Boolean = false,
+    val error: String? = null,
+    val paymentResponse: CamPayPaymentResponse? = null,
+    val paymentReference: String? = null,
+    val isPaymentSuccessful: Boolean = false,
+    val showPaymentDialog: Boolean = false,
+    val selectedPlan: SubscriptionType? = null
+)
+
+/**
+ * ViewModel pour gérer les abonnements
+ */
+@HiltViewModel
+class SubscriptionViewModel @Inject constructor(
+    private val subscriptionRepository: SubscriptionRepository,
+    private val authRepository: AuthRepository
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow(SubscriptionUiState())
+    val uiState: StateFlow<SubscriptionUiState> = _uiState.asStateFlow()
+
+    init {
+        loadCurrentUser()
+    }
+
+    /**
+     * Charger l'utilisateur actuel
+     */
+    private fun loadCurrentUser() {
+        viewModelScope.launch {
+            authRepository.currentUser.collect { user ->
+                _uiState.update { it.copy(currentUser = user) }
+            }
+        }
+    }
+
+    /**
+     * Initier le paiement pour un abonnement
+     */
+    fun initiatePayment(subscriptionType: SubscriptionType) {
+        if (subscriptionType == SubscriptionType.FREE) {
+            // Pas besoin de paiement pour le plan gratuit
+            return
+        }
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true, error = null, selectedPlan = subscriptionType) }
+
+            val amount = when (subscriptionType) {
+                SubscriptionType.MONTHLY -> 500
+                SubscriptionType.ANNUAL -> 5000
+                else -> 0
+            }
+
+            val description = when (subscriptionType) {
+                SubscriptionType.MONTHLY -> "Abonnement Mensuel - Pharmacie de Garde"
+                SubscriptionType.ANNUAL -> "Abonnement Annuel - Pharmacie de Garde"
+                else -> ""
+            }
+
+            // Générer une référence unique pour le paiement
+            val externalReference = "SUB-${UUID.randomUUID()}"
+
+            subscriptionRepository.initiateCamPayPayment(
+                amount = amount,
+                description = description,
+                externalReference = externalReference
+            ).collect { result ->
+                result.onSuccess { response ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            paymentResponse = response,
+                            paymentReference = response.reference,
+                            showPaymentDialog = true
+                        )
+                    }
+                }.onFailure { exception ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            error = exception.message ?: "Erreur lors de l'initiation du paiement"
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Vérifier le statut du paiement
+     */
+    fun checkPaymentStatus() {
+        val reference = _uiState.value.paymentReference ?: return
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+
+            subscriptionRepository.checkPaymentStatus(reference).collect { result ->
+                result.onSuccess { status ->
+                    if (status.status == "SUCCESSFUL") {
+                        // Paiement réussi, activer l'abonnement
+                        activateSubscription(reference)
+                    } else if (status.status == "FAILED") {
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                error = "Le paiement a échoué. Veuillez réessayer.",
+                                showPaymentDialog = false
+                            )
+                        }
+                    } else {
+                        // Paiement en attente
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                error = "Le paiement est en cours de traitement..."
+                            )
+                        }
+                    }
+                }.onFailure { exception ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            error = exception.message ?: "Erreur lors de la vérification du paiement"
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Activer l'abonnement après paiement réussi
+     */
+    private fun activateSubscription(paymentReference: String) {
+        val subscriptionType = _uiState.value.selectedPlan ?: return
+
+        viewModelScope.launch {
+            subscriptionRepository.activateSubscription(
+                subscriptionType = subscriptionType,
+                paymentReference = paymentReference
+            ).collect { result ->
+                result.onSuccess { response ->
+                    if (response.success) {
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                isPaymentSuccessful = true,
+                                showPaymentDialog = false,
+                                currentUser = response.user
+                            )
+                        }
+                        // L'utilisateur sera automatiquement rafraîchi via AuthViewModel
+                    } else {
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                error = response.message
+                            )
+                        }
+                    }
+                }.onFailure { exception ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            error = exception.message ?: "Erreur lors de l'activation de l'abonnement"
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Fermer le dialogue de paiement
+     */
+    fun dismissPaymentDialog() {
+        _uiState.update { it.copy(showPaymentDialog = false) }
+    }
+
+    /**
+     * Effacer l'erreur
+     */
+    fun clearError() {
+        _uiState.update { it.copy(error = null) }
+    }
+
+    /**
+     * Réinitialiser le statut de paiement
+     */
+    fun resetPaymentStatus() {
+        _uiState.update {
+            it.copy(
+                isPaymentSuccessful = false,
+                paymentResponse = null,
+                paymentReference = null,
+                selectedPlan = null
+            )
+        }
+    }
+
+    /**
+     * Annuler l'abonnement
+     */
+    fun cancelSubscription() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true, error = null) }
+
+            subscriptionRepository.cancelSubscription().collect { result ->
+                result.onSuccess { response ->
+                    if (response.success) {
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                currentUser = response.user
+                            )
+                        }
+                        // L'utilisateur sera automatiquement rafraîchi via AuthViewModel
+                    } else {
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                error = response.message
+                            )
+                        }
+                    }
+                }.onFailure { exception ->
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            error = exception.message ?: "Erreur lors de l'annulation de l'abonnement"
+                        )
+                    }
+                }
+            }
+        }
+    }
+}

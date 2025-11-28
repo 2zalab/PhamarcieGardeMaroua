@@ -68,6 +68,17 @@ class AuthViewModel @Inject constructor(
     fun getGoogleSignInClient() = authRepository.getGoogleSignInClient()
 
     suspend fun isUserSignedIn() = authRepository.isUserSignedIn()
+
+    /**
+     * Rafraîchir les informations de l'utilisateur
+     */
+    fun refreshUser() {
+        viewModelScope.launch {
+            authRepository.getCurrentUser().collect { user ->
+                _currentUser.value = user
+            }
+        }
+    }
 }
 
 sealed class AuthState {

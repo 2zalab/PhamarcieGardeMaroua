@@ -23,6 +23,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.data.model.CalendarViewMode
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.data.model.PharmacySchedule
+import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import com.maroua.pharmaciegarde.util.SubscriptionChecker
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,9 +33,14 @@ import java.util.*
 fun CalendarScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onBackClick: () -> Unit,
-    viewModel: CalendarViewModel = hiltViewModel()
+    onUpgradeClick: () -> Unit = {},
+    viewModel: CalendarViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val currentUser by authViewModel.currentUser.collectAsStateWithLifecycle()
+
+    val canAccessCalendar = SubscriptionChecker.canAccessCalendar(currentUser)
 
     Scaffold(
         topBar = {
@@ -61,19 +68,26 @@ fun CalendarScreen(
             )
         }
     ) { paddingValues ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
-            // Barre de sélection du mode (Jour/Semaine/Mois)
-            ViewModeSelector(
-                selectedMode = uiState.viewMode,
-                onModeSelected = { mode -> viewModel.setViewMode(mode) }
-            )
+            if (!canAccessCalendar) {
+                // Afficher l'écran verrouillé pour les utilisateurs gratuits
+                PremiumLockedCalendarScreen(onUpgradeClick = onUpgradeClick)
+            } else {
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    // Barre de sélection du mode (Jour/Semaine/Mois)
+                    ViewModeSelector(
+                        selectedMode = uiState.viewMode,
+                        onModeSelected = { mode -> viewModel.setViewMode(mode) }
+                    )
 
-            // Navigation de date
-            DateNavigationBar(
+                    // Navigation de date
+                    DateNavigationBar(
                 uiState = uiState,
                 onPrevious = {
                     when (uiState.viewMode) {
@@ -124,6 +138,100 @@ fun CalendarScreen(
                             )
                         }
                     }
+                }
+            }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun PremiumLockedCalendarScreen(onUpgradeClick: () -> Unit) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Lock,
+                    contentDescription = null,
+                    modifier = Modifier.size(72.dp),
+                    tint = MaterialTheme.colorScheme.primary
+                )
+
+                Text(
+                    text = "Calendrier des Gardes",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center
+                )
+
+                Text(
+                    text = "Consultez le calendrier complet des pharmacies de garde par jour, semaine ou mois. Planifiez vos besoins et ne manquez jamais une pharmacie ouverte.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = TextAlign.Center
+                )
+
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = null,
+                            modifier = Modifier.size(20.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            text = "Fonctionnalité Premium",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Button(
+                    onClick = onUpgradeClick,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Icon(imageVector = Icons.Default.Upgrade, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Passer à Premium")
+                }
+
+                TextButton(onClick = {}) {
+                    Text(
+                        text = "En savoir plus sur les avantages Premium",
+                        style = MaterialTheme.typography.bodySmall
+                    )
                 }
             }
         }

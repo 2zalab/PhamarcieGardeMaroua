@@ -44,6 +44,13 @@ object SubscriptionChecker {
     }
 
     /**
+     * Vérifie si l'utilisateur peut accéder au calendrier
+     */
+    fun canAccessCalendar(user: User?): Boolean {
+        return isPremium(user)
+    }
+
+    /**
      * Vérifie si l'utilisateur peut effectuer une recherche illimitée
      */
     fun canSearchUnlimited(user: User?): Boolean {

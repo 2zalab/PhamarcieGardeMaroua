@@ -23,7 +23,7 @@ import javax.inject.Singleton;
 @dagger.hilt.InstallIn(value = {dagger.hilt.components.SingletonComponent.class})
 public final class NetworkModule {
     @org.jetbrains.annotations.NotNull
-    private static final java.lang.String BASE_URL = "http://192.168.1.119:8000/api/";
+    private static final java.lang.String BASE_URL = "http://172.20.10.4:8000/api/";
     @org.jetbrains.annotations.NotNull
     public static final com.maroua.pharmaciegarde.di.NetworkModule INSTANCE = null;
     

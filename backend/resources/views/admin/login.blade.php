@@ -20,7 +20,7 @@
             <div class="relative z-10">
                 <div class="flex items-center space-x-3 mb-8">
                     <div class="bg-white rounded-xl p-3 shadow-lg">
-                        <i class="fas fa-pills text-3xl text-teal-600"></i>
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-12 w-12">
                     </div>
                     <div>
                         <h1 class="text-2xl font-bold text-white">Pharmacie de Garde</h1>

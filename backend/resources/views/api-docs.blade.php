@@ -13,9 +13,7 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="/" class="flex items-center space-x-3">
-                    <div class="bg-gradient-to-br from-teal-600 to-green-600 rounded-xl p-2">
-                        <i class="fas fa-pills text-xl text-white"></i>
-                    </div>
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10 w-10 rounded-xl">
                     <span class="text-xl font-bold text-gray-800">Pharmacie de Garde</span>
                 </a>
                 <a href="/" class="text-gray-700 hover:text-teal-600">

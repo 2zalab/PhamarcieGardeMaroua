@@ -14,9 +14,7 @@
             <!-- Logo -->
             <div class="flex items-center justify-center h-20 border-b border-teal-600">
                 <div class="flex items-center space-x-3">
-                    <div class="bg-white rounded-xl p-2 flex-shrink-0">
-                        <i class="fas fa-pills text-2xl text-teal-600"></i>
-                    </div>
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10 w-10 rounded-xl flex-shrink-0">
                     <div class="sidebar-text transition-opacity duration-300 overflow-hidden">
                         <h1 class="text-xl font-bold whitespace-nowrap">Pharmacie Garde</h1>
                         <p class="text-xs text-teal-200 whitespace-nowrap">Administration</p>

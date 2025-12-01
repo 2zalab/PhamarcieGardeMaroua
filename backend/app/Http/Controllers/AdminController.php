@@ -36,7 +36,8 @@ class AdminController extends Controller
     {
         $pharmacies = Pharmacy::withCount('ratings')
             ->withAvg('ratings', 'rating')
-            ->get();
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('admin.pharmacies', compact('pharmacies'));
     }

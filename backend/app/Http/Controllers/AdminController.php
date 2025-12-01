@@ -209,11 +209,18 @@ class AdminController extends Controller
             ->with('success', 'Horaire supprimé avec succès!');
     }
 
-    public function ratings()
+    public function ratings(Request $request)
     {
-        $ratings = Rating::with('pharmacy')
-            ->latest()
-            ->paginate(20);
+        $query = Rating::with('pharmacy')->latest();
+
+        // Appliquer le filtre par nombre d'étoiles
+        $ratingFilter = $request->get('rating');
+
+        if ($ratingFilter) {
+            $query->where('rating', $ratingFilter);
+        }
+
+        $ratings = $query->paginate(20);
 
         return view('admin.ratings', compact('ratings'));
     }

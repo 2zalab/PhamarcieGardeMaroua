@@ -34,16 +34,16 @@
 
 <!-- Tableau des horaires -->
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    <table class="min-w-full">
+    <table class="min-w-full text-sm">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Pharmacie</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date début</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date fin</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Horaires</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">De garde</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Statut</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Pharmacie</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Date début</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Date fin</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Horaires</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">De garde</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Statut</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
@@ -64,43 +64,43 @@
                     $statusClass = 'bg-gray-100 text-gray-800';
                 }
             @endphp
-            <tr>
-                <td class="px-6 py-4">
+            <tr class="hover:bg-gray-50">
+                <td class="px-3 py-2">
                     <a href="{{ route('admin.pharmacies.show', $schedule->pharmacy->id) }}" class="font-medium text-teal-600 hover:text-teal-800">
                         {{ $schedule->pharmacy->name }}
                     </a>
                 </td>
-                <td class="px-6 py-4">{{ $startDate->format('d/m/Y') }}</td>
-                <td class="px-6 py-4">{{ $endDate->format('d/m/Y') }}</td>
-                <td class="px-6 py-4">
+                <td class="px-3 py-2">{{ $startDate->format('d/m/Y') }}</td>
+                <td class="px-3 py-2">{{ $endDate->format('d/m/Y') }}</td>
+                <td class="px-3 py-2">
                     @if($schedule->start_time && $schedule->end_time)
                         {{ $schedule->start_time }} - {{ $schedule->end_time }}
                     @else
-                        <span class="text-gray-500">-</span>
+                        <span class="text-gray-400">-</span>
                     @endif
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-3 py-2">
                     <span class="px-2 py-1 text-xs rounded {{ $schedule->is_on_duty ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' }}">
                         {{ $schedule->is_on_duty ? 'Oui' : 'Non' }}
                     </span>
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-3 py-2">
                     <span class="px-2 py-1 text-xs rounded {{ $statusClass }}">
                         {{ $status }}
                     </span>
                 </td>
-                <td class="px-6 py-4">
-                    <div class="flex items-center space-x-3">
+                <td class="px-3 py-2">
+                    <div class="flex items-center space-x-2">
                         @if($schedule->notes)
                         <button onclick="alert('{{ addslashes($schedule->notes) }}')" class="text-blue-600 hover:text-blue-800 transition" title="Voir les notes">
-                            <i class="fas fa-info-circle text-lg"></i>
+                            <i class="fas fa-info-circle"></i>
                         </button>
                         @endif
                         <form action="{{ route('admin.schedules.delete', $schedule->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet horaire?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-600 hover:text-red-800 transition" title="Supprimer">
-                                <i class="fas fa-trash text-lg"></i>
+                                <i class="fas fa-trash"></i>
                             </button>
                         </form>
                     </div>
@@ -108,7 +108,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="7" class="px-6 py-4 text-center text-gray-500">Aucun horaire enregistré</td>
+                <td colspan="7" class="px-3 py-4 text-center text-gray-500">Aucun horaire enregistré</td>
             </tr>
             @endforelse
         </tbody>
@@ -118,7 +118,46 @@
 <!-- Pagination -->
 @if($schedules->hasPages())
 <div class="mt-6">
-    {{ $schedules->links() }}
+    <div class="flex items-center justify-between">
+        <div class="text-sm text-gray-600">
+            Affichage de <span class="font-semibold">{{ $schedules->firstItem() }}</span> à <span class="font-semibold">{{ $schedules->lastItem() }}</span> sur <span class="font-semibold">{{ $schedules->total() }}</span> horaires
+        </div>
+
+        <nav class="flex items-center space-x-2">
+            {{-- Bouton Précédent --}}
+            @if ($schedules->onFirstPage())
+                <span class="px-4 py-2 text-sm bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed">
+                    <i class="fas fa-chevron-left mr-1"></i>Précédent
+                </span>
+            @else
+                <a href="{{ $schedules->previousPageUrl() }}" class="px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    <i class="fas fa-chevron-left mr-1"></i>Précédent
+                </a>
+            @endif
+
+            {{-- Numéros de page --}}
+            <div class="flex items-center space-x-1">
+                @foreach ($schedules->getUrlRange(1, $schedules->lastPage()) as $page => $url)
+                    @if ($page == $schedules->currentPage())
+                        <span class="px-3 py-2 text-sm bg-teal-600 text-white rounded-lg font-semibold">{{ $page }}</span>
+                    @else
+                        <a href="{{ $url }}" class="px-3 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">{{ $page }}</a>
+                    @endif
+                @endforeach
+            </div>
+
+            {{-- Bouton Suivant --}}
+            @if ($schedules->hasMorePages())
+                <a href="{{ $schedules->nextPageUrl() }}" class="px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    Suivant<i class="fas fa-chevron-right ml-1"></i>
+                </a>
+            @else
+                <span class="px-4 py-2 text-sm bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed">
+                    Suivant<i class="fas fa-chevron-right ml-1"></i>
+                </span>
+            @endif
+        </nav>
+    </div>
 </div>
 @endif
 

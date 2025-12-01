@@ -96,20 +96,15 @@ fun MainScreen(
                             label = { Text(destination.title) },
                             selected = selected,
                             onClick = {
-                                // Si l'utilisateur n'est pas connecté et qu'il essaie d'accéder aux favoris
-                                if (destination == BottomNavDestination.Favorites && currentUser == null) {
-                                    navController.navigate(AppDestination.Login.route)
-                                } else {
-                                    navController.navigate(destination.route) {
-                                        // Pop to start destination pour éviter l'accumulation
-                                        popUpTo(navController.graph.findStartDestination().id) {
-                                            saveState = true
-                                        }
-                                        // Éviter plusieurs copies de la même destination
-                                        launchSingleTop = true
-                                        // Actualiser la page à chaque clic (pas de restoreState)
-                                        restoreState = false
+                                navController.navigate(destination.route) {
+                                    // Pop to start destination pour éviter l'accumulation
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
                                     }
+                                    // Éviter plusieurs copies de la même destination
+                                    launchSingleTop = true
+                                    // Actualiser la page à chaque clic (pas de restoreState)
+                                    restoreState = false
                                 }
                             }
                         )

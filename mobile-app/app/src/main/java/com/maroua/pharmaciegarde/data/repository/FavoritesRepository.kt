@@ -18,6 +18,34 @@ class FavoritesRepository @Inject constructor(
 ) {
 
     /**
+     * Charger les favoris depuis le serveur et mettre à jour le cache local
+     */
+    suspend fun loadFavoritesFromServer(): Result<List<Int>> {
+        return try {
+            if (!tokenManager.hasToken()) {
+                // Utilisateur non connecté - retourner favoris locaux
+                return Result.Success(localFavoritesManager.favoritesFlow.first().toList())
+            }
+
+            val response = favoritesApiService.getFavorites()
+            if (response.isSuccessful && response.body()?.success == true) {
+                val favoriteIds = response.body()?.data?.favorite_ids ?: emptyList()
+
+                // Mettre à jour le cache local avec les favoris du serveur
+                localFavoritesManager.setFavorites(favoriteIds.toSet())
+
+                Result.Success(favoriteIds)
+            } else {
+                // En cas d'erreur, retourner les favoris locaux
+                Result.Success(localFavoritesManager.favoritesFlow.first().toList())
+            }
+        } catch (e: Exception) {
+            // En cas d'erreur réseau, retourner les favoris locaux
+            Result.Success(localFavoritesManager.favoritesFlow.first().toList())
+        }
+    }
+
+    /**
      * Récupérer les favoris (observe le Flow local pour des mises à jour en temps réel)
      */
     fun getFavorites(): Flow<Set<Int>> = flow {

@@ -21,6 +21,7 @@ class User extends Authenticatable
         'is_subscribed',
         'subscription_type',
         'subscription_expires_at',
+        'is_admin',
     ];
 
     protected $hidden = [
@@ -32,6 +33,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_subscribed' => 'boolean',
         'subscription_expires_at' => 'datetime',
+        'is_admin' => 'boolean',
     ];
 
     /**
@@ -108,5 +110,13 @@ class User extends Authenticatable
     public function canAccessMap(): bool
     {
         return $this->isPremium();
+    }
+
+    /**
+     * Check if user is an admin.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->is_admin === true;
     }
 }

@@ -165,6 +165,15 @@ fun MainScreen(
                     },
                     onBackClick = {
                         navController.popBackStack()
+                    },
+                    onLoginClick = {
+                        navController.navigate(AppDestination.Login.route) {
+                            popUpTo(BottomNavDestination.Favorites.route) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
                     }
                 )
             }

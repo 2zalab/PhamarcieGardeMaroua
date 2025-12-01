@@ -45,31 +45,43 @@ class FavoritesViewModel @Inject constructor(
                 val isAuthenticated = user != null
                 _uiState.value = _uiState.value.copy(isAuthenticated = isAuthenticated)
 
-                // Observe favorites
-                favoritesRepository.getFavorites().collect { favoriteIds ->
-                    if (favoriteIds.isEmpty()) {
-                        _uiState.value = _uiState.value.copy(
-                            favoritePharmacies = emptyList(),
-                            isLoading = false
-                        )
-                    } else {
-                        when (val result = pharmacyRepository.getAllPharmacies()) {
-                            is Result.Success -> {
-                                val favorites = result.data.filter { it.id in favoriteIds }
-                                _uiState.value = _uiState.value.copy(
-                                    favoritePharmacies = favorites,
-                                    isLoading = false
-                                )
+                // Charger les favoris depuis le serveur (synchronise avec le cache local)
+                when (val serverResult = favoritesRepository.loadFavoritesFromServer()) {
+                    is Result.Success -> {
+                        val favoriteIds = serverResult.data
+
+                        if (favoriteIds.isEmpty()) {
+                            _uiState.value = _uiState.value.copy(
+                                favoritePharmacies = emptyList(),
+                                isLoading = false
+                            )
+                        } else {
+                            // Charger les détails des pharmacies favorites
+                            when (val result = pharmacyRepository.getAllPharmacies()) {
+                                is Result.Success -> {
+                                    val favorites = result.data.filter { it.id in favoriteIds }
+                                    _uiState.value = _uiState.value.copy(
+                                        favoritePharmacies = favorites,
+                                        isLoading = false
+                                    )
+                                }
+                                is Result.Error -> {
+                                    _uiState.value = _uiState.value.copy(
+                                        error = result.message,
+                                        isLoading = false
+                                    )
+                                }
+                                is Result.Loading -> { /* nothing */ }
                             }
-                            is Result.Error -> {
-                                _uiState.value = _uiState.value.copy(
-                                    error = result.message,
-                                    isLoading = false
-                                )
-                            }
-                            is Result.Loading -> { /* nothing */ }
                         }
                     }
+                    is Result.Error -> {
+                        _uiState.value = _uiState.value.copy(
+                            error = serverResult.message,
+                            isLoading = false
+                        )
+                    }
+                    is Result.Loading -> { /* nothing */ }
                 }
             }
         }

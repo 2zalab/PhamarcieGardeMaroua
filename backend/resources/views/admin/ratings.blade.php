@@ -1,6 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layout-sidebar')
 
 @section('title', 'Gestion des évaluations')
+@section('page-title', 'Évaluations')
 
 @section('content')
 <div class="mb-8">
@@ -106,8 +107,8 @@
                     <div class="max-w-md">
                         <p class="text-sm text-gray-900">{{ Str::limit($rating->comment, 100) }}</p>
                         @if(strlen($rating->comment) > 100)
-                        <button onclick="alert('{{ addslashes($rating->comment) }}')" class="text-teal-600 text-xs hover:text-teal-800 mt-1">
-                            Lire plus
+                        <button onclick="alert('{{ addslashes($rating->comment) }}')" class="text-teal-600 text-xs hover:text-teal-800 mt-1 flex items-center" title="Lire le commentaire complet">
+                            <i class="fas fa-arrow-right mr-1"></i>Lire plus
                         </button>
                         @endif
                     </div>
@@ -124,8 +125,8 @@
                     <form action="{{ route('admin.ratings.delete', $rating->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette évaluation?')">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-800 text-sm">
-                            Supprimer
+                        <button type="submit" class="text-red-600 hover:text-red-800 transition" title="Supprimer">
+                            <i class="fas fa-trash text-lg"></i>
                         </button>
                     </form>
                 </td>

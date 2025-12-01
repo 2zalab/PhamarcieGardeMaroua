@@ -1,6 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layout-sidebar')
 
 @section('title', 'Gestion des pharmacies')
+@section('page-title', 'Pharmacies')
 
 @section('content')
 <div class="mb-8 flex justify-between items-center">
@@ -8,8 +9,8 @@
         <h2 class="text-3xl font-bold text-gray-800">Pharmacies</h2>
         <p class="text-gray-600">Gérer les pharmacies de Maroua</p>
     </div>
-    <a href="{{ route('admin.pharmacies.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
-        + Ajouter une pharmacie
+    <a href="{{ route('admin.pharmacies.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition duration-200">
+        <i class="fas fa-plus mr-2"></i>Ajouter une pharmacie
     </a>
 </div>
 
@@ -48,14 +49,22 @@
                         {{ $pharmacy->is_active ? 'Active' : 'Inactive' }}
                     </span>
                 </td>
-                <td class="px-6 py-4 space-x-2">
-                    <a href="{{ route('admin.pharmacies.show', $pharmacy->id) }}" class="text-teal-600 hover:text-teal-800">Voir</a>
-                    <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="text-blue-600 hover:text-blue-800">Modifier</a>
-                    <form action="{{ route('admin.pharmacies.delete', $pharmacy->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-800">Supprimer</button>
-                    </form>
+                <td class="px-6 py-4">
+                    <div class="flex items-center space-x-3">
+                        <a href="{{ route('admin.pharmacies.show', $pharmacy->id) }}" class="text-teal-600 hover:text-teal-800 transition" title="Voir les détails">
+                            <i class="fas fa-eye text-lg"></i>
+                        </a>
+                        <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="text-blue-600 hover:text-blue-800 transition" title="Modifier">
+                            <i class="fas fa-edit text-lg"></i>
+                        </a>
+                        <form action="{{ route('admin.pharmacies.delete', $pharmacy->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette pharmacie?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-600 hover:text-red-800 transition" title="Supprimer">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @empty

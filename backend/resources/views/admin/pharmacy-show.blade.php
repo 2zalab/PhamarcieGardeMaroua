@@ -1,6 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layout-sidebar')
 
 @section('title', 'Détails de la pharmacie')
+@section('page-title', 'Détails de la pharmacie')
 
 @section('content')
 <div class="mb-8 flex justify-between items-center">
@@ -9,11 +10,11 @@
         <p class="text-gray-600">Détails et informations complètes</p>
     </div>
     <div class="space-x-2">
-        <a href="{{ route('admin.pharmacies') }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
-            ← Retour
+        <a href="{{ route('admin.pharmacies') }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 inline-flex items-center">
+            <i class="fas fa-arrow-left mr-2"></i>Retour
         </a>
-        <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">
-            Modifier
+        <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700 inline-flex items-center">
+            <i class="fas fa-edit mr-2"></i>Modifier
         </a>
     </div>
 </div>
@@ -133,11 +134,11 @@
         <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-lg font-bold text-gray-800 mb-4">Actions rapides</h3>
             <div class="space-y-2">
-                <a href="{{ route('admin.schedules.create') }}?pharmacy_id={{ $pharmacy->id }}" class="block w-full px-4 py-2 bg-teal-600 text-white text-center rounded hover:bg-teal-700">
-                    Ajouter un horaire
+                <a href="{{ route('admin.schedules.create') }}?pharmacy_id={{ $pharmacy->id }}" class="flex items-center justify-center w-full px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">
+                    <i class="fas fa-calendar-plus mr-2"></i>Ajouter un horaire
                 </a>
-                <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="block w-full px-4 py-2 bg-blue-600 text-white text-center rounded hover:bg-blue-700">
-                    Modifier
+                <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    <i class="fas fa-edit mr-2"></i>Modifier
                 </a>
             </div>
         </div>

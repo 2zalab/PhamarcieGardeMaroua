@@ -1,6 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layout-sidebar')
 
 @section('title', 'Ajouter un horaire de garde')
+@section('page-title', 'Ajouter un horaire de garde')
 
 @section('content')
 <div class="mb-8">
@@ -96,11 +97,11 @@
 
         <!-- Boutons -->
         <div class="flex justify-end space-x-4">
-            <a href="{{ route('admin.schedules') }}" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
-                Annuler
+            <a href="{{ route('admin.schedules') }}" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center">
+                <i class="fas fa-times mr-2"></i>Annuler
             </a>
-            <button type="submit" class="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700">
-                Créer l'horaire
+            <button type="submit" class="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 flex items-center">
+                <i class="fas fa-check mr-2"></i>Créer l'horaire
             </button>
         </div>
     </form>

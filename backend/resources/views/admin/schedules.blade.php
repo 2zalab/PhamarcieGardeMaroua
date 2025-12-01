@@ -1,6 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layout-sidebar')
 
 @section('title', 'Gestion des horaires de garde')
+@section('page-title', 'Horaires de garde')
 
 @section('content')
 <div class="mb-8 flex justify-between items-center">
@@ -8,8 +9,8 @@
         <h2 class="text-3xl font-bold text-gray-800">Horaires de garde</h2>
         <p class="text-gray-600">Gérer les horaires des pharmacies de garde</p>
     </div>
-    <a href="{{ route('admin.schedules.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
-        + Ajouter un horaire
+    <a href="{{ route('admin.schedules.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition duration-200">
+        <i class="fas fa-plus mr-2"></i>Ajouter un horaire
     </a>
 </div>
 
@@ -88,15 +89,21 @@
                         {{ $status }}
                     </span>
                 </td>
-                <td class="px-6 py-4 space-x-2">
-                    @if($schedule->notes)
-                    <button onclick="alert('{{ addslashes($schedule->notes) }}')" class="text-blue-600 hover:text-blue-800">Notes</button>
-                    @endif
-                    <form action="{{ route('admin.schedules.delete', $schedule->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet horaire?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-800">Supprimer</button>
-                    </form>
+                <td class="px-6 py-4">
+                    <div class="flex items-center space-x-3">
+                        @if($schedule->notes)
+                        <button onclick="alert('{{ addslashes($schedule->notes) }}')" class="text-blue-600 hover:text-blue-800 transition" title="Voir les notes">
+                            <i class="fas fa-info-circle text-lg"></i>
+                        </button>
+                        @endif
+                        <form action="{{ route('admin.schedules.delete', $schedule->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet horaire?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-600 hover:text-red-800 transition" title="Supprimer">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @empty

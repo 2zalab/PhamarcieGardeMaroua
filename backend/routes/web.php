@@ -2,17 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Web\AuthController;
 
 // Note: The welcome route (/) is defined in RouteServiceProvider
 // to avoid session middleware issues
+
+// API Documentation
+Route::get('/api-docs', function () {
+    return view('api-docs');
+})->name('api.docs');
 
 // Formulaire de collecte des pharmacies (public)
 Route::get('/collecte-pharmacies', function () {
     return view('collecte-pharmacies');
 })->name('collecte.pharmacies');
 
-// Admin routes
+// Admin Authentication Routes (public)
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+});
+
+// Admin routes (protected)
+Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
 
     // Pharmacies

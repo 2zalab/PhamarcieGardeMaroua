@@ -13,7 +13,11 @@
         <div class="container-fluid mx-auto px-5">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <img src="{{ asset('images/logo.png') }}" alt="Pharmacie de Garde Logo" class="h-12 w-12 rounded-xl">
+                    <a href="/">
+                        <img src="{{ asset('images/logo.png') }}" 
+                            alt="Pharmacie de Garde Logo" 
+                            class="h-12 w-12 rounded-xl">
+                    </a>
                     <div>
                         <h1 class="text-xl font-bold text-gray-800">Pharmacie de Garde</h1>
                         <p class="text-xs text-gray-600">Maroua, Cameroun</p>

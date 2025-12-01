@@ -63,4 +63,22 @@ class FavoritesManager @Inject constructor(
         }
         return result
     }
+
+    /**
+     * Remplacer tous les favoris par un nouvel ensemble (pour synchronisation serveur)
+     */
+    suspend fun setFavorites(pharmacyIds: Set<Int>) {
+        context.favoritesDataStore.edit { preferences ->
+            preferences[PreferencesKeys.FAVORITE_IDS] = pharmacyIds.map { it.toString() }.toSet()
+        }
+    }
+
+    /**
+     * Vider tous les favoris
+     */
+    suspend fun clearFavorites() {
+        context.favoritesDataStore.edit { preferences ->
+            preferences[PreferencesKeys.FAVORITE_IDS] = emptySet()
+        }
+    }
 }

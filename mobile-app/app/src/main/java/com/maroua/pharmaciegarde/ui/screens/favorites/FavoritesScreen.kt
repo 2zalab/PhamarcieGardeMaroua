@@ -26,6 +26,7 @@ import com.maroua.pharmaciegarde.util.SubscriptionChecker
 fun FavoritesScreen(
     onPharmacyClick: (Pharmacy) -> Unit,
     onBackClick: () -> Unit,
+    onLoginClick: () -> Unit = {},
     viewModel: FavoritesViewModel = hiltViewModel(),
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
@@ -35,6 +36,7 @@ fun FavoritesScreen(
     var sortBy by remember { mutableStateOf("default") }
 
     val isPremium = SubscriptionChecker.isPremium(currentUser)
+    val isAuthenticated = uiState.isAuthenticated
 
     // Actualiser les données au chargement
     LaunchedEffect(Unit) {
@@ -76,7 +78,11 @@ fun FavoritesScreen(
                 LoadingState(modifier = Modifier.padding(paddingValues))
             }
             uiState.favoritePharmacies.isEmpty() -> {
-                EmptyFavoritesState(modifier = Modifier.padding(paddingValues))
+                EmptyFavoritesState(
+                    isAuthenticated = isAuthenticated,
+                    onLoginClick = onLoginClick,
+                    modifier = Modifier.padding(paddingValues)
+                )
             }
             else -> {
                 LazyColumn(
@@ -246,7 +252,11 @@ fun LoadingState(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun EmptyFavoritesState(modifier: Modifier = Modifier) {
+fun EmptyFavoritesState(
+    isAuthenticated: Boolean,
+    onLoginClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -256,23 +266,55 @@ fun EmptyFavoritesState(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(32.dp)
         ) {
             Icon(
-                imageVector = Icons.Default.FavoriteBorder,
+                imageVector = if (isAuthenticated) Icons.Default.FavoriteBorder else Icons.Default.Lock,
                 contentDescription = null,
                 modifier = Modifier.size(80.dp),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = stringResource(R.string.no_favorites),
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = stringResource(R.string.add_favorites_message),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
-            )
+
+            if (isAuthenticated) {
+                // Utilisateur connecté mais sans favoris
+                Text(
+                    text = stringResource(R.string.no_favorites),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = stringResource(R.string.add_favorites_message),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                )
+            } else {
+                // Utilisateur non connecté
+                Text(
+                    text = "Connectez-vous pour gérer vos favoris",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Ajoutez vos pharmacies préférées en favoris pour un accès rapide",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                )
+                Spacer(modifier = Modifier.height(24.dp))
+                Button(
+                    onClick = onLoginClick,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Login,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Se connecter")
+                }
+            }
         }
     }
 }

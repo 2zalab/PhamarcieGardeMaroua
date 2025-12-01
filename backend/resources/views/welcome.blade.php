@@ -13,9 +13,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <div class="bg-gradient-to-br from-teal-600 to-green-600 rounded-xl p-2">
-                        <i class="fas fa-pills text-2xl text-white"></i>
-                    </div>
+                    <img src="{{ asset('images/logo.png') }}" alt="Pharmacie de Garde Logo" class="h-12 w-12 rounded-xl">
                     <div>
                         <h1 class="text-xl font-bold text-gray-800">Pharmacie de Garde</h1>
                         <p class="text-xs text-gray-600">Maroua, Cameroun</p>
@@ -58,7 +56,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
+                <div class="md:w-1/2 flex justify-center items-center gap-6">
                     <div class="relative">
                         <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-4 border-white/30">
                             <i class="fas fa-mobile-alt text-9xl text-white"></i>
@@ -66,6 +64,9 @@
                         <div class="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-4 animate-bounce">
                             <i class="fas fa-map-marker-alt text-3xl text-white"></i>
                         </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="{{ asset('images/mobileApp.png') }}" alt="Application Mobile" class="h-80 object-contain drop-shadow-2xl">
                     </div>
                 </div>
             </div>

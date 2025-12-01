@@ -151,11 +151,27 @@ class AdminController extends Controller
             ->with('success', 'Pharmacie supprimée avec succès!');
     }
 
-    public function schedules()
+    public function schedules(Request $request)
     {
-        $schedules = Schedule::with('pharmacy')
-            ->orderBy('start_date', 'desc')
-            ->paginate(20);
+        $query = Schedule::with('pharmacy')->orderBy('start_date', 'desc');
+
+        // Appliquer les filtres
+        $filter = $request->get('filter');
+
+        if ($filter === 'current') {
+            // Horaires en cours (la date actuelle est entre start_date et end_date)
+            $query->where('start_date', '<=', now())
+                  ->where('end_date', '>=', now());
+        } elseif ($filter === 'upcoming') {
+            // Horaires à venir (start_date est dans le futur)
+            $query->where('start_date', '>', now());
+        } elseif ($filter === 'past') {
+            // Horaires passés (end_date est dans le passé)
+            $query->where('end_date', '<', now());
+        }
+        // Si $filter est null ou 'all', on ne filtre pas (tous les horaires)
+
+        $schedules = $query->paginate(20);
 
         return view('admin.schedules', compact('schedules'));
     }

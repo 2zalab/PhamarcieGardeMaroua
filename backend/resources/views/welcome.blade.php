@@ -10,7 +10,7 @@
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-5">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
                     <img src="{{ asset('images/logo.png') }}" alt="Pharmacie de Garde Logo" class="h-12 w-12 rounded-xl">
@@ -24,7 +24,7 @@
                     <a href="#how-it-works" class="text-gray-700 hover:text-teal-600 transition">Comment ça marche</a>
                     <a href="/api-docs" class="text-gray-700 hover:text-teal-600 transition">API</a>
                     <a href="{{ route('admin.login') }}" class="bg-gradient-to-r from-teal-600 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">
-                        <i class="fas fa-sign-in-alt mr-2"></i>Admin
+                        <i class="fas fa-sign-in-alt mr-2"></i>Connexion
                     </a>
                 </div>
                 <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
@@ -34,15 +34,15 @@
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <a href="#features" class="block py-2 text-gray-700 hover:text-teal-600">Fonctionnalités</a>
                 <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-teal-600">Comment ça marche</a>
-                <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600">API</a>
-                <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Admin</a>
+                <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600" target="_blank">API</a>
+                <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Connexion</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-teal-600 to-green-600 text-white py-20">
-        <div class="container mx-auto px-4">
+    <section class="bg-gradient-to-br from-teal-600 to-green-600 text-white py-10">
+        <div class="container-fluid mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h2 class="text-5xl font-bold mb-6 leading-tight">Trouvez une pharmacie de garde près de chez vous</h2>
@@ -51,7 +51,7 @@
                         <a href="#download" class="bg-white text-teal-600 px-8 py-4 rounded-lg font-bold hover:shadow-xl transition transform hover:-translate-y-1">
                             <i class="fab fa-android mr-2"></i>Télécharger l'app
                         </a>
-                        <a href="/api-docs" class="bg-teal-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-teal-800 transition">
+                        <a href="/api-docs" class="bg-teal-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-teal-800 transition" target="_blank">
                             <i class="fas fa-code mr-2"></i>Documentation API
                         </a>
                     </div>
@@ -75,7 +75,7 @@
 
     <!-- Features Section -->
     <section id="features" class="py-20">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Fonctionnalités Principales</h2>
                 <p class="text-xl text-gray-600">Une solution complète pour gérer et trouver les pharmacies de garde</p>
@@ -129,7 +129,7 @@
 
     <!-- How It Works -->
     <section id="how-it-works" class="bg-gray-100 py-20">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Comment ça marche ?</h2>
                 <p class="text-xl text-gray-600">Simple, rapide et efficace</p>
@@ -161,7 +161,7 @@
 
     <!-- API Section -->
     <section class="py-20">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 text-white">
                 <div class="md:flex items-center justify-between">
                     <div class="mb-8 md:mb-0">
@@ -185,7 +185,7 @@
 
     <!-- Stats -->
     <section class="bg-gradient-to-br from-teal-600 to-green-600 py-16">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 text-center text-white">
                 <div>
                     <div class="text-5xl font-bold mb-2">{{ \App\Models\Pharmacy::count() }}+</div>
@@ -209,7 +209,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">

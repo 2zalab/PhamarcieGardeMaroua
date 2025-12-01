@@ -3,112 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacie de Garde Maroua - API</title>
+    <title>Pharmacie de Garde Maroua - Trouvez rapidement une pharmacie ouverte</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gradient-to-br from-teal-50 to-green-50">
-    <div class="min-h-screen flex items-center justify-center p-4">
-        <div class="max-w-4xl w-full">
-            <!-- Header -->
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-teal-600 rounded-full mb-4">
-                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                    </svg>
-                </div>
-                <h1 class="text-4xl font-bold text-gray-800 mb-2">Pharmacie de Garde Maroua</h1>
-                <p class="text-xl text-gray-600">API REST - Version 2.0.0</p>
-            </div>
-
-            <!-- API Info Card -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">📡 Endpoints Disponibles</h2>
-
-                <div class="space-y-4">
-                    <!-- Endpoint Item -->
-                    <div class="border-l-4 border-teal-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">GET</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies</code>
-                            </div>
-                            <a href="/api/pharmacies" class="text-teal-600 hover:text-teal-800 text-sm">Tester →</a>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Liste de toutes les pharmacies</p>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-br from-teal-600 to-green-600 rounded-xl p-2">
+                        <i class="fas fa-pills text-2xl text-white"></i>
                     </div>
-
-                    <div class="border-l-4 border-teal-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">GET</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies/on-duty</code>
-                            </div>
-                            <a href="/api/pharmacies/on-duty" class="text-teal-600 hover:text-teal-800 text-sm">Tester →</a>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Pharmacies de garde actuellement</p>
-                    </div>
-
-                    <div class="border-l-4 border-teal-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">GET</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies/nearby</code>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Pharmacies à proximité (params: latitude, longitude, radius)</p>
-                    </div>
-
-                    <div class="border-l-4 border-teal-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">GET</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies/{id}</code>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Détails d'une pharmacie</p>
-                    </div>
-
-                    <div class="border-l-4 border-blue-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">GET</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies/{id}/ratings</code>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Évaluations d'une pharmacie</p>
-                    </div>
-
-                    <div class="border-l-4 border-orange-500 pl-4 py-2">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">POST</span>
-                                <code class="ml-2 text-gray-700 font-mono">/api/pharmacies/{id}/ratings</code>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-1">Ajouter une évaluation</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Admin Panel Card -->
-            <div class="bg-gradient-to-r from-teal-600 to-green-600 rounded-2xl shadow-xl p-8 text-white">
-                <div class="flex items-center justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">🎛️ Panel d'Administration</h3>
-                        <p class="text-teal-100">Gérer les pharmacies, horaires et évaluations</p>
+                        <h1 class="text-xl font-bold text-gray-800">Pharmacie de Garde</h1>
+                        <p class="text-xs text-gray-600">Maroua, Cameroun</p>
                     </div>
-                    <a href="/admin" class="bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-50 transition">
-                        Accéder →
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-gray-700 hover:text-teal-600 transition">Fonctionnalités</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-teal-600 transition">Comment ça marche</a>
+                    <a href="/api-docs" class="text-gray-700 hover:text-teal-600 transition">API</a>
+                    <a href="{{ route('admin.login') }}" class="bg-gradient-to-r from-teal-600 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Admin
+                    </a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#features" class="block py-2 text-gray-700 hover:text-teal-600">Fonctionnalités</a>
+                <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-teal-600">Comment ça marche</a>
+                <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600">API</a>
+                <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-teal-600 to-green-600 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-5xl font-bold mb-6 leading-tight">Trouvez une pharmacie de garde près de chez vous</h2>
+                    <p class="text-xl text-teal-100 mb-8">Application mobile et API pour localiser rapidement les pharmacies de garde à Maroua. Disponible 24h/24, 7j/7.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#download" class="bg-white text-teal-600 px-8 py-4 rounded-lg font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+                            <i class="fab fa-android mr-2"></i>Télécharger l'app
+                        </a>
+                        <a href="/api-docs" class="bg-teal-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-teal-800 transition">
+                            <i class="fas fa-code mr-2"></i>Documentation API
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-4 border-white/30">
+                            <i class="fas fa-mobile-alt text-9xl text-white"></i>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-4 animate-bounce">
+                            <i class="fas fa-map-marker-alt text-3xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Fonctionnalités Principales</h2>
+                <p class="text-xl text-gray-600">Une solution complète pour gérer et trouver les pharmacies de garde</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-map-marked-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Carte Interactive</h3>
+                    <p class="text-gray-600">Visualisez toutes les pharmacies de garde sur une carte interactive avec votre position en temps réel.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Calendrier des Gardes</h3>
+                    <p class="text-gray-600">Consultez le calendrier complet des pharmacies de garde par jour, semaine ou mois.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Recherche Avancée</h3>
+                    <p class="text-gray-600">Recherchez par nom, quartier ou proximité. Filtrez et triez les résultats selon vos besoins.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-pink-500 to-rose-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Favoris</h3>
+                    <p class="text-gray-600">Enregistrez vos pharmacies préférées pour y accéder rapidement à tout moment.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-yellow-500 to-orange-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Évaluations</h3>
+                    <p class="text-gray-600">Consultez et laissez des avis sur les pharmacies pour aider la communauté.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-indigo-500 to-blue-500 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Application Mobile</h3>
+                    <p class="text-gray-600">Application Android native avec interface moderne et intuitive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Comment ça marche ?</h2>
+                <p class="text-xl text-gray-600">Simple, rapide et efficace</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-teal-600 to-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Téléchargez l'app</h3>
+                    <p class="text-gray-600">Installez l'application depuis le Google Play Store</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-600 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Activez la localisation</h3>
+                    <p class="text-gray-600">Autorisez l'accès à votre position pour trouver les pharmacies proches</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-orange-600 to-red-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Recherchez</h3>
+                    <p class="text-gray-600">Trouvez les pharmacies de garde près de vous en un clic</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-pink-600 to-rose-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">4</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Contactez</h3>
+                    <p class="text-gray-600">Appelez directement ou consultez les informations de la pharmacie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 text-white">
+                <div class="md:flex items-center justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <h2 class="text-4xl font-bold mb-4">API RESTful Disponible</h2>
+                        <p class="text-gray-300 text-lg mb-6">Intégrez les données des pharmacies de garde dans vos applications</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i><span>Documentation complète</span></li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i><span>Endpoints REST simples</span></li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i><span>Réponses JSON</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="/api-docs" class="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold hover:shadow-xl transition transform hover:-translate-y-1 inline-block">
+                            <i class="fas fa-book mr-2"></i>Voir la documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="bg-gradient-to-br from-teal-600 to-green-600 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <div class="text-5xl font-bold mb-2">{{ \App\Models\Pharmacy::count() }}+</div>
+                    <div class="text-teal-100">Pharmacies référencées</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">{{ \App\Models\Schedule::count() }}+</div>
+                    <div class="text-teal-100">Horaires planifiés</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">{{ \App\Models\Rating::count() }}+</div>
+                    <div class="text-teal-100">Évaluations</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">24/7</div>
+                    <div class="text-teal-100">Service disponible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-teal-600 to-green-600 rounded-xl p-2">
+                            <i class="fas fa-pills text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Pharmacie de Garde</h3>
+                            <p class="text-sm text-gray-400">Maroua</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Votre solution pour trouver rapidement une pharmacie de garde à Maroua.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-teal-400">Fonctionnalités</a></li>
+                        <li><a href="#how-it-works" class="hover:text-teal-400">Comment ça marche</a></li>
+                        <li><a href="/api-docs" class="hover:text-teal-400">API Documentation</a></li>
+                        <li><a href="{{ route('admin.login') }}" class="hover:text-teal-400">Espace Admin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-teal-400">FAQ</a></li>
+                        <li><a href="#" class="hover:text-teal-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-teal-400">Aide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Télécharger</h4>
+                    <a href="#" class="block bg-gray-800 hover:bg-gray-700 rounded-lg p-3 mb-3 transition">
+                        <i class="fab fa-google-play text-2xl text-green-400 mr-2"></i>
+                        <span class="text-sm">Google Play Store</span>
                     </a>
                 </div>
             </div>
-
-            <!-- Footer -->
-            <div class="text-center mt-8 text-gray-600">
-                <p class="mb-2">🏥 Développé avec ❤️ pour les habitants de Maroua</p>
-                <p class="text-sm">Version 2.0.0 • Laravel {{ app()->version() }}</p>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; {{ date('Y') }} Pharmacie de Garde Maroua. Tous droits réservés.</p>
             </div>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

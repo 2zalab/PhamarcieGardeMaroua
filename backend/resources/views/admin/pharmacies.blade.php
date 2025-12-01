@@ -15,53 +15,53 @@
 </div>
 
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    <table class="min-w-full">
+    <table class="min-w-full text-sm">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nom</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Téléphone</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Quartier</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Note</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Nom</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Téléphone</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Quartier</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Note</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
             @forelse($pharmacies as $pharmacy)
-            <tr>
-                <td class="px-6 py-4">
+            <tr class="hover:bg-gray-50">
+                <td class="px-3 py-2">
                     <img src="{{ $pharmacy->image ? asset('storage/' . $pharmacy->image) : asset('images/pharmacy-default.png') }}"
                         alt="{{ $pharmacy->name }}"
-                        class="w-16 h-16 object-cover rounded-lg">
+                        class="w-12 h-12 object-cover rounded-lg">
                 </td>
-                <td class="px-6 py-4 font-medium">{{ $pharmacy->name }}</td>
-                <td class="px-6 py-4">{{ $pharmacy->phone }}</td>
-                <td class="px-6 py-4">{{ $pharmacy->district ?? '-' }}</td>
-                <td class="px-6 py-4">
-                    <span class="text-yellow-500">
+                <td class="px-3 py-2 font-medium">{{ $pharmacy->name }}</td>
+                <td class="px-3 py-2">{{ $pharmacy->phone }}</td>
+                <td class="px-3 py-2">{{ $pharmacy->district ?? '-' }}</td>
+                <td class="px-3 py-2">
+                    <span class="text-yellow-500 font-medium">
                         {{ round($pharmacy->ratings_avg_rating ?? 0, 1) }}/5
                     </span>
-                    <span class="text-gray-500 text-sm">({{ $pharmacy->ratings_count }})</span>
+                    <span class="text-gray-400 text-xs">({{ $pharmacy->ratings_count }})</span>
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-3 py-2">
                     <span class="px-2 py-1 text-xs rounded {{ $pharmacy->is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                         {{ $pharmacy->is_active ? 'Active' : 'Inactive' }}
                     </span>
                 </td>
-                <td class="px-6 py-4">
-                    <div class="flex items-center space-x-3">
+                <td class="px-3 py-2">
+                    <div class="flex items-center space-x-2">
                         <a href="{{ route('admin.pharmacies.show', $pharmacy->id) }}" class="text-teal-600 hover:text-teal-800 transition" title="Voir les détails">
-                            <i class="fas fa-eye text-lg"></i>
+                            <i class="fas fa-eye"></i>
                         </a>
                         <a href="{{ route('admin.pharmacies.edit', $pharmacy->id) }}" class="text-blue-600 hover:text-blue-800 transition" title="Modifier">
-                            <i class="fas fa-edit text-lg"></i>
+                            <i class="fas fa-edit"></i>
                         </a>
                         <form action="{{ route('admin.pharmacies.delete', $pharmacy->id) }}" method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette pharmacie?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-600 hover:text-red-800 transition" title="Supprimer">
-                                <i class="fas fa-trash text-lg"></i>
+                                <i class="fas fa-trash"></i>
                             </button>
                         </form>
                     </div>
@@ -69,10 +69,56 @@
             </tr>
             @empty
             <tr>
-                <td colspan="7" class="px-6 py-4 text-center text-gray-500">Aucune pharmacie</td>
+                <td colspan="7" class="px-3 py-4 text-center text-gray-500">Aucune pharmacie</td>
             </tr>
             @endforelse
         </tbody>
     </table>
 </div>
+
+<!-- Pagination -->
+@if($pharmacies->hasPages())
+<div class="mt-6">
+    <div class="flex items-center justify-between">
+        <div class="text-sm text-gray-600">
+            Affichage de <span class="font-semibold">{{ $pharmacies->firstItem() }}</span> à <span class="font-semibold">{{ $pharmacies->lastItem() }}</span> sur <span class="font-semibold">{{ $pharmacies->total() }}</span> pharmacies
+        </div>
+
+        <nav class="flex items-center space-x-2">
+            {{-- Bouton Précédent --}}
+            @if ($pharmacies->onFirstPage())
+                <span class="px-4 py-2 text-sm bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed">
+                    <i class="fas fa-chevron-left mr-1"></i>Précédent
+                </span>
+            @else
+                <a href="{{ $pharmacies->previousPageUrl() }}" class="px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    <i class="fas fa-chevron-left mr-1"></i>Précédent
+                </a>
+            @endif
+
+            {{-- Numéros de page --}}
+            <div class="flex items-center space-x-1">
+                @foreach ($pharmacies->getUrlRange(1, $pharmacies->lastPage()) as $page => $url)
+                    @if ($page == $pharmacies->currentPage())
+                        <span class="px-3 py-2 text-sm bg-teal-600 text-white rounded-lg font-semibold">{{ $page }}</span>
+                    @else
+                        <a href="{{ $url }}" class="px-3 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">{{ $page }}</a>
+                    @endif
+                @endforeach
+            </div>
+
+            {{-- Bouton Suivant --}}
+            @if ($pharmacies->hasMorePages())
+                <a href="{{ $pharmacies->nextPageUrl() }}" class="px-4 py-2 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    Suivant<i class="fas fa-chevron-right ml-1"></i>
+                </a>
+            @else
+                <span class="px-4 py-2 text-sm bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed">
+                    Suivant<i class="fas fa-chevron-right ml-1"></i>
+                </span>
+            @endif
+        </nav>
+    </div>
+</div>
+@endif
 @endsection

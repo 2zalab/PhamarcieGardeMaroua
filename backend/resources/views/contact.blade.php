@@ -25,7 +25,7 @@
                     <a href="/api-docs" class="text-gray-700 hover:text-teal-600 transition">API</a>
                     <a href="{{ route('contact') }}" class="text-teal-600 font-semibold">Contact</a>
                     <a href="{{ route('admin.login') }}" class="bg-gradient-to-r from-teal-600 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">
-                        <i class="fas fa-sign-in-alt mr-2"></i>Admin
+                        <i class="fas fa-sign-in-alt mr-2"></i>Connexion
                     </a>
                 </div>
                 <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
@@ -37,7 +37,7 @@
                 <a href="/#how-it-works" class="block py-2 text-gray-700 hover:text-teal-600">Comment ça marche</a>
                 <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600">API</a>
                 <a href="{{ route('contact') }}" class="block py-2 text-teal-600 font-semibold">Contact</a>
-                <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Admin</a>
+                <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Connexion</a>
             </div>
         </div>
     </nav>
@@ -265,7 +265,7 @@
                         <p class="text-gray-600 mb-4">
                             Nous sommes une entreprise technologique basée à Maroua, spécialisée dans le développement de solutions innovantes pour améliorer la vie quotidienne.
                         </p>
-                        <a href="/" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold">
+                        <a href="https://mit.cm" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-arrow-right mr-2"></i>En savoir plus
                         </a>
                     </div>

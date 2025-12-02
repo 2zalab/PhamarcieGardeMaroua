@@ -1,6 +1,7 @@
 package com.maroua.pharmaciegarde.data.repository;
 
 import com.maroua.pharmaciegarde.data.model.Pharmacy;
+import com.maroua.pharmaciegarde.data.model.PharmacySchedule;
 import com.maroua.pharmaciegarde.data.remote.PharmacyApiService;
 import kotlinx.coroutines.Dispatchers;
 import javax.inject.Inject;

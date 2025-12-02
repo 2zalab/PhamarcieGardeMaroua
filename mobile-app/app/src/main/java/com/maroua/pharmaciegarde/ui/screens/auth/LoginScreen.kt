@@ -78,11 +78,16 @@ fun LoginScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             // App Icon
-            Icon(
-                imageVector = Icons.Default.LocalPharmacy,
+//            Icon(
+//                imageVector = Icons.Default.LocalPharmacy,
+//                contentDescription = "Logo",
+//                modifier = Modifier.size(100.dp),
+//                tint = MaterialTheme.colorScheme.primary
+//            )
+            Image(
+                painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo",
-                modifier = Modifier.size(100.dp),
-                tint = MaterialTheme.colorScheme.primary
+                modifier = Modifier.size(120.dp)
             )
 
             Spacer(modifier = Modifier.height(24.dp))

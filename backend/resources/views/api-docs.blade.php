@@ -40,9 +40,9 @@
                     <a href="/" class="text-gray-700 hover:text-teal-600 transition">
                         <i class="fas fa-arrow-left mr-2"></i>Accueil
                     </a>
-                    <a href="{{ route('admin.login') }}" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition">
+                    <!--a href="{{ route('admin.login') }}" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition">
                         <i class="fas fa-user-shield mr-2"></i>Admin
-                    </a>
+                    </a-->
                 </div>
             </div>
         </div>

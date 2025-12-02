@@ -10,7 +10,7 @@
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <a href="/" class="flex items-center space-x-3">
                     <img src="{{ asset('images/logo.png') }}" alt="Pharmacie de Garde Logo" class="h-12 w-12 rounded-xl">
@@ -44,7 +44,7 @@
 
     <!-- Header -->
     <section class="bg-gradient-to-br from-teal-600 to-green-600 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
+        <div class="container-fluid mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold mb-4">Contactez-nous</h1>
             <p class="text-xl text-teal-100">Nous sommes à votre écoute pour toute question ou suggestion</p>
         </div>
@@ -52,7 +52,7 @@
 
     <!-- Main Content -->
     <section class="py-16">
-        <div class="container mx-auto px-4">
+        <div class="container-fluid mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
                 <!-- Contact Form -->
@@ -276,9 +276,49 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400">© {{ date('Y') }} Maroua Innovation Technology. Tous droits réservés.</p>
+   <footer class="bg-gray-900 text-white py-12">
+        <div class="container-fluid mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-teal-600 to-green-600 rounded-xl p-2">
+                            <i class="fas fa-pills text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Pharmacie de Garde</h3>
+                            <p class="text-sm text-gray-400">Maroua</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Votre solution pour trouver rapidement une pharmacie de garde à Maroua.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-teal-400">Fonctionnalités</a></li>
+                        <li><a href="#how-it-works" class="hover:text-teal-400">Comment ça marche</a></li>
+                        <li><a href="/api-docs" class="hover:text-teal-400">API Documentation</a></li>
+                        <li><a href="{{ route('admin.login') }}" class="hover:text-teal-400">Espace Admin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-teal-400">FAQ</a></li>
+                        <li><a href="#" class="hover:text-teal-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-teal-400">Aide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Télécharger</h4>
+                    <a href="#" class="block bg-gray-800 hover:bg-gray-700 rounded-lg p-3 mb-3 transition">
+                        <i class="fab fa-google-play text-2xl text-green-400 mr-2"></i>
+                        <span class="text-sm">Google Play Store</span>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; {{ date('Y') }} Pharmacie de Garde Maroua. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 

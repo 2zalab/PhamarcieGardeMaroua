@@ -26,7 +26,8 @@ data class UserPreferences(
     val themeMode: ThemeMode = ThemeMode.SYSTEM,
     val language: AppLanguage = AppLanguage.FRENCH,
     val notificationsEnabled: Boolean = true,
-    val onDutyNotificationsEnabled: Boolean = true
+    val onDutyNotificationsEnabled: Boolean = true,
+    val hasCompletedOnboarding: Boolean = false
 )
 
 @Singleton
@@ -38,6 +39,7 @@ class UserPreferencesManager @Inject constructor(
         val LANGUAGE = stringPreferencesKey("language")
         val NOTIFICATIONS_ENABLED = booleanPreferencesKey("notifications_enabled")
         val ON_DUTY_NOTIFICATIONS = booleanPreferencesKey("on_duty_notifications")
+        val HAS_COMPLETED_ONBOARDING = booleanPreferencesKey("has_completed_onboarding")
     }
 
     val userPreferencesFlow: Flow<UserPreferences> = context.dataStore.data
@@ -57,7 +59,8 @@ class UserPreferencesManager @Inject constructor(
                     preferences[PreferencesKeys.LANGUAGE] ?: AppLanguage.FRENCH.name
                 ),
                 notificationsEnabled = preferences[PreferencesKeys.NOTIFICATIONS_ENABLED] ?: true,
-                onDutyNotificationsEnabled = preferences[PreferencesKeys.ON_DUTY_NOTIFICATIONS] ?: true
+                onDutyNotificationsEnabled = preferences[PreferencesKeys.ON_DUTY_NOTIFICATIONS] ?: true,
+                hasCompletedOnboarding = preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] ?: false
             )
         }
 
@@ -82,6 +85,12 @@ class UserPreferencesManager @Inject constructor(
     suspend fun updateOnDutyNotifications(enabled: Boolean) {
         context.dataStore.edit { preferences ->
             preferences[PreferencesKeys.ON_DUTY_NOTIFICATIONS] = enabled
+        }
+    }
+
+    suspend fun setOnboardingCompleted() {
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] = true
         }
     }
 }

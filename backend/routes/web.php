@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 
 // Note: The welcome route (/) is defined in RouteServiceProvider
 // to avoid session middleware issues
@@ -16,6 +17,10 @@ Route::get('/api-docs', function () {
 // Contact
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+
+// FAQ & Aide
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+Route::get('/aide', [PageController::class, 'aide'])->name('aide');
 
 // Formulaire de collecte des pharmacies (public)
 Route::get('/collecte-pharmacies', function () {

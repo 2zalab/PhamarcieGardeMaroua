@@ -7,24 +7,34 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.maroua.pharmaciegarde.data.local.UserPreferencesManager
 import com.maroua.pharmaciegarde.ui.screens.auth.LoginScreen
 import com.maroua.pharmaciegarde.ui.screens.main.MainScreen
+import com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingScreen
 import com.maroua.pharmaciegarde.ui.screens.splash.SplashScreen
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
 
 sealed class RootDestination(val route: String) {
     object Splash : RootDestination("splash")
+    object Onboarding : RootDestination("onboarding")
     object Login : RootDestination("login")
     object Main : RootDestination("main")
 }
 
 @Composable
 fun AppNavigation(
-    authViewModel: AuthViewModel = hiltViewModel()
+    authViewModel: AuthViewModel = hiltViewModel(),
+    userPreferencesManager: UserPreferencesManager
 ) {
     val navController = rememberNavController()
+
     // Observer l'état de connexion en temps réel
     val isUserSignedIn by authViewModel.isUserSignedInFlow().collectAsState(initial = false)
+
+    // Observer si l'utilisateur a déjà vu l'onboarding
+    val userPreferences by userPreferencesManager.userPreferencesFlow.collectAsState(
+        initial = com.maroua.pharmaciegarde.data.local.UserPreferences()
+    )
 
     NavHost(
         navController = navController,
@@ -34,14 +44,36 @@ fun AppNavigation(
         composable(RootDestination.Splash.route) {
             SplashScreen(
                 onTimeout = {
-                    // Après délai, vérifier si l'utilisateur est connecté
-                    if (isUserSignedIn) {
+                    // Après délai, vérifier si l'utilisateur a vu l'onboarding
+                    if (!userPreferences.hasSeenOnboarding) {
+                        navController.navigate(RootDestination.Onboarding.route) {
+                            popUpTo(RootDestination.Splash.route) { inclusive = true }
+                        }
+                    } else if (isUserSignedIn) {
                         navController.navigate(RootDestination.Main.route) {
                             popUpTo(RootDestination.Splash.route) { inclusive = true }
                         }
                     } else {
                         navController.navigate(RootDestination.Login.route) {
                             popUpTo(RootDestination.Splash.route) { inclusive = true }
+                        }
+                    }
+                }
+            )
+        }
+
+        // Onboarding Screen
+        composable(RootDestination.Onboarding.route) {
+            OnboardingScreen(
+                onFinish = {
+                    // Après l'onboarding, aller vers Login ou Main selon l'état de connexion
+                    if (isUserSignedIn) {
+                        navController.navigate(RootDestination.Main.route) {
+                            popUpTo(RootDestination.Onboarding.route) { inclusive = true }
+                        }
+                    } else {
+                        navController.navigate(RootDestination.Login.route) {
+                            popUpTo(RootDestination.Onboarding.route) { inclusive = true }
                         }
                     }
                 }

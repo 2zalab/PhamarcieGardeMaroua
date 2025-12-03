@@ -22,7 +22,7 @@
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="/#features" class="text-gray-700 hover:text-teal-600 transition">Fonctionnalités</a>
                     <a href="/#how-it-works" class="text-gray-700 hover:text-teal-600 transition">Comment ça marche</a>
-                    <a href="/api-docs" class="text-gray-700 hover:text-teal-600 transition">API</a>
+                    <a href="/api-docs" class="text-gray-700 hover:text-teal-600 transition" target="_blank">API</a>
                     <a href="{{ route('contact') }}" class="text-gray-700 hover:text-teal-600 transition">Contact</a>
                     <a href="{{ route('admin.login') }}" class="bg-gradient-to-r from-teal-600 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">
                         <i class="fas fa-sign-in-alt mr-2"></i>Connexion
@@ -35,7 +35,7 @@
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <a href="/#features" class="block py-2 text-gray-700 hover:text-teal-600">Fonctionnalités</a>
                 <a href="/#how-it-works" class="block py-2 text-gray-700 hover:text-teal-600">Comment ça marche</a>
-                <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600">API</a>
+                <a href="/api-docs" class="block py-2 text-gray-700 hover:text-teal-600" target="_blank">API</a>
                 <a href="{{ route('contact') }}" class="block py-2 text-gray-700 hover:text-teal-600">Contact</a>
                 <a href="{{ route('admin.login') }}" class="block py-2 text-teal-600 font-semibold">Connexion</a>
             </div>
@@ -305,7 +305,7 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="/#features" class="hover:text-teal-400">Fonctionnalités</a></li>
                         <li><a href="/#how-it-works" class="hover:text-teal-400">Comment ça marche</a></li>
-                        <li><a href="/api-docs" class="hover:text-teal-400">API Documentation</a></li>
+                        <li><a href="/api-docs" class="hover:text-teal-400" target="_blank">API Documentation</a></li>
                         <li><a href="{{ route('admin.login') }}" class="hover:text-teal-400">Espace Admin</a></li>
                     </ul>
                 </div>

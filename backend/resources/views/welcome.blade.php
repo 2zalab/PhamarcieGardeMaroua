@@ -240,9 +240,9 @@
                 <div>
                     <h4 class="font-bold mb-4">Support</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-teal-400">FAQ</a></li>
-                        <li><a href="#" class="hover:text-teal-400">Contact</a></li>
-                        <li><a href="#" class="hover:text-teal-400">Aide</a></li>
+                         <li><a href="{{ route('faq') }}" class="hover:text-teal-400">FAQ</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:text-teal-400">Contact</a></li>
+                         <li><a href="{{ route('aide') }}" class="hover:text-teal-400">Aide</a></li>
                     </ul>
                 </div>
                 <div>

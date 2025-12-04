@@ -25,7 +25,7 @@ object NetworkModule {
     // Changez cette URL par l'adresse de votre serveur Laravel
     // Pour l'émulateur Android: 10.0.2.2
     // Pour un appareil physique: utilisez l'IP de votre machine
-    private const val BASE_URL = "http://172.20.10.4:8000/api/"
+    private const val BASE_URL = "http://172.16.158.149:8000/api/"
 
     @Provides
     @Singleton

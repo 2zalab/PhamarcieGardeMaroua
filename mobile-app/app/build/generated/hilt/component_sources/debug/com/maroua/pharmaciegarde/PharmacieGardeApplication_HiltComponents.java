@@ -5,6 +5,7 @@ import com.maroua.pharmaciegarde.di.NetworkModule;
 import com.maroua.pharmaciegarde.ui.screens.calendar.CalendarViewModel_HiltModules;
 import com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel_HiltModules;
 import com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel_HiltModules;
+import com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingViewModel_HiltModules;
 import com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel_HiltModules;
 import com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel_HiltModules;
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel_HiltModules;
@@ -164,6 +165,7 @@ public final class PharmacieGardeApplication_HiltComponents {
           CalendarViewModel_HiltModules.KeyModule.class,
           FavoritesViewModel_HiltModules.KeyModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
+          OnboardingViewModel_HiltModules.KeyModule.class,
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
           PharmacyDetailsViewModel_HiltModules.KeyModule.class,
@@ -209,6 +211,7 @@ public final class PharmacieGardeApplication_HiltComponents {
           CalendarViewModel_HiltModules.BindsModule.class,
           FavoritesViewModel_HiltModules.BindsModule.class,
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          OnboardingViewModel_HiltModules.BindsModule.class,
           PharmacyDetailsViewModel_HiltModules.BindsModule.class,
           PharmacyViewModel_HiltModules.BindsModule.class,
           SettingsViewModel_HiltModules.BindsModule.class,

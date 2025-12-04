@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.vector.ImageVector;
 import androidx.compose.ui.text.font.FontWeight;
 import androidx.compose.ui.text.input.KeyboardType;
 import androidx.compose.ui.text.style.TextAlign;
+import com.maroua.pharmaciegarde.R;
 import com.maroua.pharmaciegarde.data.model.SubscriptionPlan;
 import com.maroua.pharmaciegarde.data.model.SubscriptionPlans;
 import com.maroua.pharmaciegarde.data.model.SubscriptionType;

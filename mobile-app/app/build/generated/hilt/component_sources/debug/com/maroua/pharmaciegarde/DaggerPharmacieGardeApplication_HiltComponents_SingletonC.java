@@ -37,6 +37,8 @@ import com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel;
 import com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel;
 import com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingViewModel;
+import com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel;
 import com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel;
@@ -423,7 +425,7 @@ public final class DaggerPharmacieGardeApplication_HiltComponents_SingletonC {
 
     @Override
     public Set<String> getViewModelKeys() {
-      return SetBuilder.<String>newSetBuilder(7).add(AuthViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(CalendarViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(FavoritesViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PharmacyDetailsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PharmacyViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SettingsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SubscriptionViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
+      return SetBuilder.<String>newSetBuilder(8).add(AuthViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(CalendarViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(FavoritesViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(OnboardingViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PharmacyDetailsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(PharmacyViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SettingsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SubscriptionViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
     }
 
     @Override
@@ -460,6 +462,8 @@ public final class DaggerPharmacieGardeApplication_HiltComponents_SingletonC {
 
     private Provider<FavoritesViewModel> favoritesViewModelProvider;
 
+    private Provider<OnboardingViewModel> onboardingViewModelProvider;
+
     private Provider<PharmacyDetailsViewModel> pharmacyDetailsViewModelProvider;
 
     private Provider<PharmacyViewModel> pharmacyViewModelProvider;
@@ -484,15 +488,16 @@ public final class DaggerPharmacieGardeApplication_HiltComponents_SingletonC {
       this.authViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
       this.calendarViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
       this.favoritesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
-      this.pharmacyDetailsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
-      this.pharmacyViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
-      this.settingsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
-      this.subscriptionViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.onboardingViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
+      this.pharmacyDetailsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+      this.pharmacyViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
+      this.settingsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.subscriptionViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
     }
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(7).put("com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel", ((Provider) authViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.calendar.CalendarViewModel", ((Provider) calendarViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel", ((Provider) favoritesViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel", ((Provider) pharmacyDetailsViewModelProvider)).put("com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel", ((Provider) pharmacyViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel", ((Provider) settingsViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel", ((Provider) subscriptionViewModelProvider)).build();
+      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(8).put("com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel", ((Provider) authViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.calendar.CalendarViewModel", ((Provider) calendarViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel", ((Provider) favoritesViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingViewModel", ((Provider) onboardingViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel", ((Provider) pharmacyDetailsViewModelProvider)).put("com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel", ((Provider) pharmacyViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel", ((Provider) settingsViewModelProvider)).put("com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel", ((Provider) subscriptionViewModelProvider)).build();
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -525,16 +530,19 @@ public final class DaggerPharmacieGardeApplication_HiltComponents_SingletonC {
           case 2: // com.maroua.pharmaciegarde.ui.screens.favorites.FavoritesViewModel 
           return (T) new FavoritesViewModel(singletonCImpl.pharmacyRepositoryProvider.get(), singletonCImpl.favoritesRepositoryProvider.get(), singletonCImpl.authRepositoryProvider.get());
 
-          case 3: // com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel 
+          case 3: // com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingViewModel 
+          return (T) new OnboardingViewModel(singletonCImpl.userPreferencesManagerProvider.get());
+
+          case 4: // com.maroua.pharmaciegarde.ui.screens.details.PharmacyDetailsViewModel 
           return (T) new PharmacyDetailsViewModel(singletonCImpl.favoritesRepositoryProvider.get(), singletonCImpl.authRepositoryProvider.get(), singletonCImpl.ratingRepositoryProvider.get());
 
-          case 4: // com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel 
+          case 5: // com.maroua.pharmaciegarde.ui.viewmodel.PharmacyViewModel 
           return (T) new PharmacyViewModel(singletonCImpl.pharmacyRepositoryProvider.get());
 
-          case 5: // com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel 
+          case 6: // com.maroua.pharmaciegarde.ui.screens.settings.SettingsViewModel 
           return (T) new SettingsViewModel(singletonCImpl.userPreferencesManagerProvider.get(), singletonCImpl.appLocaleManagerProvider.get());
 
-          case 6: // com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel 
+          case 7: // com.maroua.pharmaciegarde.ui.screens.subscription.SubscriptionViewModel 
           return (T) new SubscriptionViewModel(singletonCImpl.subscriptionRepositoryProvider.get(), singletonCImpl.authRepositoryProvider.get());
 
           default: throw new AssertionError(id);

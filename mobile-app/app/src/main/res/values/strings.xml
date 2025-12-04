@@ -150,6 +150,19 @@
     <string name="mtn_number">Numero MTN</string>
     <string name="email_address">Adresse Email</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_find_title">Trouvez facilement</string>
+    <string name="onboarding_find_description">Localisez rapidement les pharmacies de garde près de chez vous, 24h/24 et 7j/7</string>
+    <string name="onboarding_map_title">Carte interactive</string>
+    <string name="onboarding_map_description">Visualisez toutes les pharmacies sur une carte interactive avec itinéraires en temps réel</string>
+    <string name="onboarding_calendar_title">Calendrier de garde</string>
+    <string name="onboarding_calendar_description">Consultez le calendrier complet des pharmacies de garde pour planifier à l\'avance</string>
+    <string name="onboarding_notifications_title">Notifications intelligentes</string>
+    <string name="onboarding_notifications_description">Recevez des alertes personnalisées sur les pharmacies de garde dans votre zone</string>
+    <string name="skip">Passer</string>
+    <string name="next">Suivant</string>
+    <string name="get_started">Commencer</string>
+
     <!-- Google Cloud Console Web Client ID (OAuth 2.0) -->
     <!-- IMPORTANT: Remplacez par votre vrai Client ID depuis Google Cloud Console -->
     <!-- Format: xxxxx-xxxxx.apps.googleusercontent.com -->

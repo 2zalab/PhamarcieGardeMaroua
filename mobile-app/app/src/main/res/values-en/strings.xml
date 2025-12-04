@@ -149,4 +149,17 @@
     <string name="orange_number">Orange Number</string>
     <string name="mtn_number">MTN Number</string>
     <string name="email_address">Email Address</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_find_title">Find easily</string>
+    <string name="onboarding_find_description">Quickly locate on-duty pharmacies near you, 24/7</string>
+    <string name="onboarding_map_title">Interactive map</string>
+    <string name="onboarding_map_description">View all pharmacies on an interactive map with real-time directions</string>
+    <string name="onboarding_calendar_title">Duty calendar</string>
+    <string name="onboarding_calendar_description">Check the complete calendar of on-duty pharmacies to plan ahead</string>
+    <string name="onboarding_notifications_title">Smart notifications</string>
+    <string name="onboarding_notifications_description">Receive personalized alerts about on-duty pharmacies in your area</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
 </resources>

@@ -2,6 +2,7 @@
 <resources>
     <!-- App Name -->
     <string name="app_name">Pharmacie de Garde</string>
+    <string name="app_slogan">Retrouvez facilement les pharmacies de garde proche de vous</string>
 
     <!-- Navigation -->
     <string name="home">Accueil</string>

@@ -163,6 +163,71 @@
     <string name="next">Suivant</string>
     <string name="get_started">Commencer</string>
 
+    <!-- Map Screen -->
+    <string name="nearby_pharmacies">Pharmacies à proximité</string>
+    <string name="back">Retour</string>
+    <string name="my_location">Ma position</string>
+    <string name="your_location">Votre position</string>
+    <string name="you_are_here">Vous êtes ici</string>
+    <string name="on_duty_badge">DE GARDE</string>
+    <string name="near_you">A coté de vous</string>
+    <string name="pharmacy_count">%d pharmacies</string>
+    <string name="searching_nearby">Recherche des pharmacies proches…</string>
+    <string name="loading_pharmacies">Chargement des pharmacies…</string>
+    <string name="view_details">Voir les détails</string>
+    <string name="interactive_map">Carte Interactive</string>
+    <string name="map_description">Visualisez toutes les pharmacies sur une carte interactive, localisez les pharmacies à proximité et obtenez des itinéraires GPS</string>
+    <string name="premium_feature">Fonctionnalité Premium</string>
+
+    <!-- Search Screen -->
+    <string name="search_title">Rechercher</string>
+    <string name="pharmacies_found">%d pharmacie(s) trouvée(s)</string>
+
+    <!-- Calendar Screen -->
+    <string name="duty_calendar">Calendrier des Gardes</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="calendar_description">Consultez le calendrier complet des pharmacies de garde par jour, semaine ou mois. Planifiez vos besoins et ne manquez jamais une pharmacie ouverte.</string>
+    <string name="upgrade_to_premium">Passer à Premium</string>
+    <string name="learn_more_premium">En savoir plus sur les avantages Premium</string>
+    <string name="day">Jour</string>
+    <string name="week">Semaine</string>
+    <string name="month">Mois</string>
+    <string name="previous">Précédent</string>
+    <string name="next_button">Suivant</string>
+    <string name="no_duty_pharmacy_day">Aucune pharmacie de garde pour ce jour</string>
+
+    <!-- Pharmacy Details Screen -->
+    <string name="pharmacy_details">Détails de la pharmacie</string>
+    <string name="contact_location_feature">Contact &amp; Localisation</string>
+    <string name="contact_location_desc">Accédez aux numéros de téléphone, adresse complète et itinéraire GPS</string>
+    <string name="primary_phone">Téléphone principal</string>
+    <string name="secondary_phone">Téléphone secondaire</string>
+    <string name="normal_hours">Horaires normaux</string>
+    <string name="rating_sent_success">Notation envoyée avec succès!</string>
+
+    <!-- Subscription Screen -->
+    <string name="choose_subscription">Choisir un abonnement</string>
+    <string name="current_subscription">Abonnement actuel</string>
+    <string name="free">Gratuit</string>
+    <string name="monthly_premium">Mensuel Premium</string>
+    <string name="annual_premium">Annuel Premium</string>
+    <string name="expires_on">Expire le: %s</string>
+    <string name="current">Actuel</string>
+    <string name="fcfa_per">FCFA / %s</string>
+    <string name="stay_free">Rester gratuit</string>
+    <string name="choose_this_plan">Choisir ce plan</string>
+    <string name="payment_in_progress">Paiement en cours…</string>
+    <string name="automatic_verification">Vérification automatique en cours…</string>
+    <string name="dial_code_to_pay">Composez ce code pour payer :</string>
+    <string name="reference">Référence: %s</string>
+    <string name="payment_auto_validated">Votre paiement sera automatiquement validé dès la confirmation. Vous n\'avez rien à faire !</string>
+    <string name="verify_now">Vérifier maintenant</string>
+
+    <!-- Home Screen -->
+    <string name="quick_access">Accès rapides</string>
+    <string name="calendar">Calendrier</string>
+    <string name="an_error_occurred">Une erreur est survenue</string>
+
     <!-- Google Cloud Console Web Client ID (OAuth 2.0) -->
     <!-- IMPORTANT: Remplacez par votre vrai Client ID depuis Google Cloud Console -->
     <!-- Format: xxxxx-xxxxx.apps.googleusercontent.com -->

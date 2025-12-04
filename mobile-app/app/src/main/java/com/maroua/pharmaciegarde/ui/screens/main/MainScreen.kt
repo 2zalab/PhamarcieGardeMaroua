@@ -7,6 +7,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -17,6 +18,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.maroua.pharmaciegarde.R
 import com.maroua.pharmaciegarde.data.model.Pharmacy
 import com.maroua.pharmaciegarde.ui.screens.allpharmacies.AllPharmaciesScreen
 import com.maroua.pharmaciegarde.ui.screens.auth.LoginScreen
@@ -33,13 +35,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 // Destinations de la BottomNavigationBar
 sealed class BottomNavDestination(
     val route: String,
-    val title: String,
+    val titleResId: Int,
     val icon: ImageVector
 ) {
-    object Home : BottomNavDestination("home", "Accueil", Icons.Default.Home)
-    object AllPharmacies : BottomNavDestination("all_pharmacies", "Pharmacies", Icons.Default.LocalPharmacy)
-    object Favorites : BottomNavDestination("favorites", "Favoris", Icons.Default.Favorite)
-    object Settings : BottomNavDestination("settings", "Paramètres", Icons.Default.Settings)
+    object Home : BottomNavDestination("home", R.string.home, Icons.Default.Home)
+    object AllPharmacies : BottomNavDestination("all_pharmacies", R.string.pharmacies, Icons.Default.LocalPharmacy)
+    object Favorites : BottomNavDestination("favorites", R.string.favorites, Icons.Default.Favorite)
+    object Settings : BottomNavDestination("settings", R.string.settings, Icons.Default.Settings)
 }
 
 // Autres destinations (hors bottom nav)
@@ -90,10 +92,10 @@ fun MainScreen(
                             icon = {
                                 Icon(
                                     imageVector = destination.icon,
-                                    contentDescription = destination.title
+                                    contentDescription = stringResource(destination.titleResId)
                                 )
                             },
-                            label = { Text(destination.title) },
+                            label = { Text(stringResource(destination.titleResId)) },
                             selected = selected,
                             onClick = {
                                 navController.navigate(destination.route) {

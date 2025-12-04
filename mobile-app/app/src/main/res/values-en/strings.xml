@@ -162,4 +162,69 @@
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="get_started">Get Started</string>
+
+    <!-- Map Screen -->
+    <string name="nearby_pharmacies">Nearby Pharmacies</string>
+    <string name="back">Back</string>
+    <string name="my_location">My Location</string>
+    <string name="your_location">Your Location</string>
+    <string name="you_are_here">You are here</string>
+    <string name="on_duty_badge">ON DUTY</string>
+    <string name="near_you">Near you</string>
+    <string name="pharmacy_count">%d pharmacies</string>
+    <string name="searching_nearby">Searching for nearby pharmacies…</string>
+    <string name="loading_pharmacies">Loading pharmacies…</string>
+    <string name="view_details">View Details</string>
+    <string name="interactive_map">Interactive Map</string>
+    <string name="map_description">View all pharmacies on an interactive map, locate nearby pharmacies and get GPS directions</string>
+    <string name="premium_feature">Premium Feature</string>
+
+    <!-- Search Screen -->
+    <string name="search_title">Search</string>
+    <string name="pharmacies_found">%d pharmacy(s) found</string>
+
+    <!-- Calendar Screen -->
+    <string name="duty_calendar">Duty Calendar</string>
+    <string name="today">Today</string>
+    <string name="calendar_description">Check the complete calendar of on-duty pharmacies by day, week or month. Plan your needs and never miss an open pharmacy.</string>
+    <string name="upgrade_to_premium">Upgrade to Premium</string>
+    <string name="learn_more_premium">Learn more about Premium benefits</string>
+    <string name="day">Day</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="previous">Previous</string>
+    <string name="next_button">Next</string>
+    <string name="no_duty_pharmacy_day">No pharmacy on duty for this day</string>
+
+    <!-- Pharmacy Details Screen -->
+    <string name="pharmacy_details">Pharmacy Details</string>
+    <string name="contact_location_feature">Contact &amp; Location</string>
+    <string name="contact_location_desc">Access phone numbers, complete address and GPS directions</string>
+    <string name="primary_phone">Primary Phone</string>
+    <string name="secondary_phone">Secondary Phone</string>
+    <string name="normal_hours">Normal Hours</string>
+    <string name="rating_sent_success">Rating sent successfully!</string>
+
+    <!-- Subscription Screen -->
+    <string name="choose_subscription">Choose a Subscription</string>
+    <string name="current_subscription">Current Subscription</string>
+    <string name="free">Free</string>
+    <string name="monthly_premium">Monthly Premium</string>
+    <string name="annual_premium">Annual Premium</string>
+    <string name="expires_on">Expires on: %s</string>
+    <string name="current">Current</string>
+    <string name="fcfa_per">FCFA / %s</string>
+    <string name="stay_free">Stay Free</string>
+    <string name="choose_this_plan">Choose this Plan</string>
+    <string name="payment_in_progress">Payment in progress…</string>
+    <string name="automatic_verification">Automatic verification in progress…</string>
+    <string name="dial_code_to_pay">Dial this code to pay:</string>
+    <string name="reference">Reference: %s</string>
+    <string name="payment_auto_validated">Your payment will be automatically validated upon confirmation. You don\'t have to do anything!</string>
+    <string name="verify_now">Verify Now</string>
+
+    <!-- Home Screen -->
+    <string name="quick_access">Quick Access</string>
+    <string name="calendar">Calendar</string>
+    <string name="an_error_occurred">An error occurred</string>
 </resources>

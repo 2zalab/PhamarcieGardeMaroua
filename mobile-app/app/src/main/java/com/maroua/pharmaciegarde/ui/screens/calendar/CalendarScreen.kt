@@ -15,9 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.maroua.pharmaciegarde.R
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.data.model.CalendarViewMode
@@ -45,19 +47,19 @@ fun CalendarScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Calendrier des Gardes") },
+                title = { Text(stringResource(R.string.duty_calendar)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Retour"
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
                 },
                 actions = {
-                    // Bouton "Aujourd'hui"
+                    // Bouton stringResource(R.string.today)
                     TextButton(onClick = { viewModel.goToToday() }) {
-                        Text("Aujourd'hui", color = Color.White)
+                        Text(stringResource(R.string.today), color = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -175,7 +177,7 @@ fun PremiumLockedCalendarScreen(onUpgradeClick: () -> Unit) {
                 )
 
                 Text(
-                    text = "Calendrier des Gardes",
+                    text = stringResource(R.string.duty_calendar),
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -183,7 +185,7 @@ fun PremiumLockedCalendarScreen(onUpgradeClick: () -> Unit) {
                 )
 
                 Text(
-                    text = "Consultez le calendrier complet des pharmacies de garde par jour, semaine ou mois. Planifiez vos besoins et ne manquez jamais une pharmacie ouverte.",
+                    text = stringResource(R.string.calendar_description),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center
@@ -205,7 +207,7 @@ fun PremiumLockedCalendarScreen(onUpgradeClick: () -> Unit) {
                             tint = MaterialTheme.colorScheme.primary
                         )
                         Text(
-                            text = "Fonctionnalité Premium",
+                            text = stringResource(R.string.premium_feature),
                             style = MaterialTheme.typography.labelLarge,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
@@ -224,12 +226,12 @@ fun PremiumLockedCalendarScreen(onUpgradeClick: () -> Unit) {
                 ) {
                     Icon(imageVector = Icons.Default.Upgrade, contentDescription = null)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Passer à Premium")
+                    Text(stringResource(R.string.upgrade_to_premium))
                 }
 
                 TextButton(onClick = {}) {
                     Text(
-                        text = "En savoir plus sur les avantages Premium",
+                        text = stringResource(R.string.learn_more_premium),
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
@@ -251,21 +253,21 @@ fun ViewModeSelector(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         ViewModeButton(
-            text = "Jour",
+            text = stringResource(R.string.day),
             icon = Icons.Default.CalendarToday,
             isSelected = selectedMode == CalendarViewMode.DAY,
             onClick = { onModeSelected(CalendarViewMode.DAY) },
             modifier = Modifier.weight(1f)
         )
         ViewModeButton(
-            text = "Semaine",
+            text = stringResource(R.string.week),
             icon = Icons.Default.CalendarViewWeek,
             isSelected = selectedMode == CalendarViewMode.WEEK,
             onClick = { onModeSelected(CalendarViewMode.WEEK) },
             modifier = Modifier.weight(1f)
         )
         ViewModeButton(
-            text = "Mois",
+            text = stringResource(R.string.month),
             icon = Icons.Default.CalendarMonth,
             isSelected = selectedMode == CalendarViewMode.MONTH,
             onClick = { onModeSelected(CalendarViewMode.MONTH) },
@@ -330,7 +332,7 @@ fun DateNavigationBar(
             IconButton(onClick = onPrevious) {
                 Icon(
                     imageVector = Icons.Default.ChevronLeft,
-                    contentDescription = "Précédent",
+                    contentDescription = stringResource(R.string.previous),
                     tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
@@ -347,7 +349,7 @@ fun DateNavigationBar(
             IconButton(onClick = onNext) {
                 Icon(
                     imageVector = Icons.Default.ChevronRight,
-                    contentDescription = "Suivant",
+                    contentDescription = stringResource(R.string.next_button),
                     tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
@@ -361,7 +363,7 @@ fun DayView(
     onPharmacyClick: (Pharmacy) -> Unit
 ) {
     if (schedules.isEmpty()) {
-        EmptyState(message = "Aucune pharmacie de garde pour ce jour")
+        EmptyState(message = stringResource(R.string.no_duty_pharmacy_day))
         return
     }
 
@@ -400,7 +402,7 @@ fun DayView(
                             color = MaterialTheme.colorScheme.onSecondaryContainer
                         )
                         Text(
-                            text = "${schedule.pharmacies.size} pharmacie(s) de garde",
+                            text = stringResource(R.string.pharmacies_available, schedule.pharmacies.size),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSecondaryContainer
                         )
@@ -511,7 +513,7 @@ fun DayScheduleCard(
                             color = MaterialTheme.colorScheme.onPrimaryContainer
                         )
                         Text(
-                            text = "${schedule.pharmacies.size} pharmacie(s)",
+                            text = stringResource(R.string.pharmacy_count, schedule.pharmacies.size),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                         )
@@ -587,8 +589,8 @@ fun DayScheduleCompactCard(
                     fontWeight = FontWeight.SemiBold
                 )
                 Text(
-                    text = if (schedule.pharmacies.isEmpty()) "Aucune pharmacie de garde"
-                    else "${schedule.pharmacies.size} pharmacie(s) de garde",
+                    text = if (schedule.pharmacies.isEmpty()) stringResource(R.string.no_duty_pharmacy_day)
+                    else stringResource(R.string.pharmacies_available, schedule.pharmacies.size),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -665,7 +667,7 @@ fun PharmacyCalendarCard(
 
             Icon(
                 imageVector = Icons.Default.ChevronRight,
-                contentDescription = "Voir détails",
+                contentDescription = stringResource(R.string.view_details),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
@@ -738,7 +740,7 @@ fun ErrorView(message: String, onRetry: () -> Unit) {
                 textAlign = TextAlign.Center
             )
             Button(onClick = onRetry) {
-                Text("Réessayer")
+                Text(stringResource(R.string.retry))
             }
         }
     }

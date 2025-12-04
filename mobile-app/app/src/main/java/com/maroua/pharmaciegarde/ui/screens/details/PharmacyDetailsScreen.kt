@@ -75,7 +75,7 @@ fun PharmacyDetailsScreen(
     LaunchedEffect(ratingSuccess) {
         if (ratingSuccess) {
             snackbarHostState.showSnackbar(
-                message = "Notation envoyée avec succès!",
+                message = context.getString(R.string.rating_sent_success),
                 duration = SnackbarDuration.Short
             )
             detailsViewModel.resetRatingSuccess()
@@ -96,12 +96,12 @@ fun PharmacyDetailsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Détails de la pharmacie") },
+                title = { Text(stringResource(R.string.pharmacy_details)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Retour"
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
                 },
@@ -115,7 +115,7 @@ fun PharmacyDetailsScreen(
                     ) {
                         Icon(
                             imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                            contentDescription = if (isFavorite) "Retirer des favoris" else "Ajouter aux favoris",
+                            contentDescription = if (isFavorite) stringResource(R.string.remove_from_favorites) else stringResource(R.string.add_to_favorites),
                             tint = if (isFavorite) Color.Red else Color.White
                         )
                     }
@@ -160,8 +160,8 @@ fun PharmacyDetailsScreen(
                         )
                     } else {
                         PremiumLockedCard(
-                            featureName = "Contact & Localisation",
-                            description = "Accédez aux numéros de téléphone, adresse complète et itinéraire GPS",
+                            featureName = stringResource(R.string.contact_location_feature),
+                            description = stringResource(R.string.contact_location_desc),
                             onUpgradeClick = onNavigateToSubscription
                         )
                     }
@@ -335,7 +335,7 @@ fun ContactCard(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(
-                text = "Contact & Localisation",
+                text = stringResource(R.string.contact_location),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -343,21 +343,21 @@ fun ContactCard(
 
             InfoRow(
                 icon = Icons.Default.Phone,
-                label = "Téléphone principal",
+                label = stringResource(R.string.primary_phone),
                 value = pharmacy.phone
             )
 
             pharmacy.phoneSecondary?.let {
                 InfoRow(
                     icon = Icons.Default.PhoneAndroid,
-                    label = "Téléphone secondaire",
+                    label = stringResource(R.string.secondary_phone),
                     value = it
                 )
             }
 
             InfoRow(
                 icon = Icons.Default.LocationOn,
-                label = "Adresse",
+                label = stringResource(R.string.address),
                 value = pharmacy.address
             )
 
@@ -380,7 +380,7 @@ fun ContactCard(
                         modifier = Modifier.size(20.dp)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Appeler")
+                    Text(stringResource(R.string.call))
                 }
 
                 OutlinedButton(
@@ -393,7 +393,7 @@ fun ContactCard(
                         modifier = Modifier.size(20.dp)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Itinéraire")
+                    Text(stringResource(R.string.get_directions))
                 }
             }
         }
@@ -417,7 +417,7 @@ fun FeaturesCard(pharmacy: Pharmacy) {
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                text = "Services & Accessibilité",
+                text = stringResource(R.string.services_accessibility),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -425,19 +425,19 @@ fun FeaturesCard(pharmacy: Pharmacy) {
 
             FeatureItem(
                 icon = Icons.Default.Schedule,
-                text = if (pharmacy.is24Hours) "Ouvert 24h/24" else "Horaires normaux",
+                text = if (pharmacy.is24Hours) stringResource(R.string.open_24h) else stringResource(R.string.normal_hours),
                 isAvailable = pharmacy.is24Hours
             )
 
             FeatureItem(
                 icon = Icons.Default.LocalParking,
-                text = "Parking disponible",
+                text = stringResource(R.string.parking_available),
                 isAvailable = pharmacy.hasParking
             )
 
             FeatureItem(
                 icon = Icons.Default.Accessible,
-                text = "Accès PMR",
+                text = stringResource(R.string.wheelchair_access),
                 isAvailable = pharmacy.hasWheelchairAccess
             )
         }
@@ -460,7 +460,7 @@ fun DescriptionCard(description: String) {
                 .padding(20.dp)
         ) {
             Text(
-                text = "Description",
+                text = stringResource(R.string.description),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -601,7 +601,7 @@ fun PremiumLockedCard(
                         tint = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = "Fonctionnalité Premium",
+                        text = stringResource(R.string.premium_feature),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.Bold
@@ -622,7 +622,7 @@ fun PremiumLockedCard(
                     modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Débloquer")
+                Text(stringResource(R.string.upgrade_to_premium))
             }
         }
     }
@@ -652,7 +652,7 @@ fun RatingSubmitCard(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(
-                text = "Notez cette pharmacie",
+                text = stringResource(R.string.rate_pharmacy),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -684,7 +684,7 @@ fun RatingSubmitCard(
                 value = comment,
                 onValueChange = { comment = it },
                 modifier = Modifier.fillMaxWidth(),
-                placeholder = { Text("Votre commentaire (optionnel)") },
+                placeholder = { Text(stringResource(R.string.add_comment)) },
                 minLines = 3,
                 maxLines = 5,
                 shape = RoundedCornerShape(12.dp)
@@ -720,7 +720,7 @@ fun RatingSubmitCard(
                         modifier = Modifier.size(20.dp)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Envoyer la notation")
+                    Text(stringResource(R.string.submit_rating))
                 }
             }
         }
@@ -755,7 +755,7 @@ fun RatingsDisplayCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Avis des utilisateurs",
+                    text = stringResource(R.string.ratings),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface

@@ -75,12 +75,12 @@ fun SearchScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Rechercher") },
+                title = { Text(stringResource(R.string.search_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Retour"
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
                 },
@@ -120,7 +120,7 @@ fun SearchScreen(
                     ) {
                         item {
                             Text(
-                                text = "${filteredAndSortedPharmacies.size} pharmacie(s) trouvée(s)",
+                                text = stringResource(R.string.pharmacies_found, filteredAndSortedPharmacies.size),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -277,14 +277,14 @@ fun NoResultsState(query: String) {
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Aucun résultat",
+                text = stringResource(R.string.no_results),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             if (query.isNotEmpty()) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Aucune pharmacie trouvée pour \"$query\"",
+                    text = stringResource(R.string.no_results_for, query),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
                 )

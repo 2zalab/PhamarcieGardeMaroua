@@ -17,10 +17,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.maroua.pharmaciegarde.R
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.maroua.pharmaciegarde.data.model.SubscriptionPlan
@@ -49,10 +51,10 @@ fun SubscriptionScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Choisir un abonnement") },
+                title = { Text(stringResource(R.string.choose_subscription)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Retour")
+                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.back))
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -174,7 +176,7 @@ fun CurrentSubscriptionCard(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                text = "Abonnement actuel",
+                text = stringResource(R.string.current_subscription),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
@@ -193,9 +195,9 @@ fun CurrentSubscriptionCard(
                 )
                 Text(
                     text = when (currentType) {
-                        SubscriptionType.FREE -> "Gratuit"
-                        SubscriptionType.MONTHLY -> "Mensuel Premium"
-                        SubscriptionType.ANNUAL -> "Annuel Premium"
+                        SubscriptionType.FREE -> stringResource(R.string.free)
+                        SubscriptionType.MONTHLY -> stringResource(R.string.monthly_premium)
+                        SubscriptionType.ANNUAL -> stringResource(R.string.annual_premium)
                     },
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
@@ -204,7 +206,7 @@ fun CurrentSubscriptionCard(
             }
             expiryDate?.let { expiry ->
                 Text(
-                    text = "Expire le: ${java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.FRANCE).format(java.util.Date(expiry))}",
+                    text = stringResource(R.string.expires_on, java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.FRANCE).format(java.util.Date(expiry))),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                 )
@@ -276,7 +278,7 @@ fun SubscriptionPlanCard(
                         color = MaterialTheme.colorScheme.primary
                     ) {
                         Text(
-                            text = "Actuel",
+                            text = stringResource(R.string.current),
                             modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onPrimary
@@ -298,7 +300,7 @@ fun SubscriptionPlanCard(
                         color = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = "FCFA / ${plan.duration}",
+                        text = stringResource(R.string.fcfa_per, plan.duration),
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
                     )
@@ -330,7 +332,7 @@ fun SubscriptionPlanCard(
                     )
                 ) {
                     Text(
-                        text = if (plan.type == SubscriptionType.FREE) "Rester gratuit" else "Choisir ce plan",
+                        text = if (plan.type == SubscriptionType.FREE) stringResource(R.string.stay_free) else stringResource(R.string.choose_this_plan),
                         modifier = Modifier.padding(vertical = 4.dp)
                     )
                 }
@@ -379,7 +381,7 @@ fun PaymentDialog(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Paiement en cours...",
+                    text = stringResource(R.string.payment_in_progress),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
@@ -404,7 +406,7 @@ fun PaymentDialog(
                         tint = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = "Vérification automatique en cours...",
+                        text = stringResource(R.string.automatic_verification),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
                     )
@@ -419,7 +421,7 @@ fun PaymentDialog(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Text(
-                            text = "Composez ce code pour payer :",
+                            text = stringResource(R.string.dial_code_to_pay),
                             style = MaterialTheme.typography.bodyMedium,
                             textAlign = TextAlign.Center
                         )
@@ -450,7 +452,7 @@ fun PaymentDialog(
 
                 // Référence de paiement
                 Text(
-                    text = "Référence: ${paymentResponse?.reference ?: "N/A"}",
+                    text = stringResource(R.string.reference, paymentResponse?.reference ?: "N/A"),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                     textAlign = TextAlign.Center
@@ -475,7 +477,7 @@ fun PaymentDialog(
                             tint = MaterialTheme.colorScheme.onSecondaryContainer
                         )
                         Text(
-                            text = "Votre paiement sera automatiquement validé dès la confirmation. Vous n'avez rien à faire !",
+                            text = stringResource(R.string.payment_auto_validated),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSecondaryContainer
                         )
@@ -494,13 +496,13 @@ fun PaymentDialog(
                         contentDescription = null,
                         modifier = Modifier.size(18.dp)
                     )
-                    Text("Vérifier maintenant")
+                    Text(stringResource(R.string.verify_now))
                 }
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Fermer")
+                Text(stringResource(R.string.close))
             }
         }
     )
@@ -523,7 +525,7 @@ fun PhoneNumberDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Numéro de téléphone") },
+        title = { Text(stringResource(R.string.phone)) },
         text = {
             Column(
                 modifier = Modifier.fillMaxWidth(),
@@ -538,7 +540,7 @@ fun PhoneNumberDialog(
                         phoneNumber = it.filter { char -> char.isDigit() }
                         isError = false
                     },
-                    label = { Text("Numéro de téléphone") },
+                    label = { Text(stringResource(R.string.phone)) },
                     placeholder = { Text("237670000000") },
                     isError = isError,
                     supportingText = if (isError) {
@@ -569,7 +571,7 @@ fun PhoneNumberDialog(
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Annuler")
+                Text(stringResource(R.string.cancel))
             }
         }
     )

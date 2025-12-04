@@ -112,7 +112,7 @@ fun HomeScreen(
                 }
                 uiState.error != null && uiState.pharmacies.isEmpty() -> {
                     ErrorScreen(
-                        message = uiState.error ?: "Une erreur est survenue",
+                        message = uiState.error ?: stringResource(R.string.an_error_occurred),
                         onRetry = { viewModel.retry() }
                     )
                 }
@@ -435,7 +435,7 @@ fun OnDutyPremiumLockedCard(
             )
 
             Text(
-                text = "Pharmacies de Garde",
+                text = stringResource(R.string.on_duty_pharmacies),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -443,7 +443,7 @@ fun OnDutyPremiumLockedCard(
             )
 
             Text(
-                text = "Accédez aux pharmacies de garde disponibles 24h/24 avec un abonnement Premium",
+                text = stringResource(R.string.no_on_duty_message),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center
@@ -465,7 +465,7 @@ fun OnDutyPremiumLockedCard(
                         tint = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = "Fonctionnalité Premium",
+                        text = stringResource(R.string.premium_feature),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.Bold
@@ -486,7 +486,7 @@ fun OnDutyPremiumLockedCard(
                     modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Passer à Premium")
+                Text(stringResource(R.string.upgrade_to_premium))
             }
         }
     }
@@ -503,7 +503,7 @@ fun QuickAccessSection(
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
-            text = "Accès rapides",
+            text = stringResource(R.string.quick_access),
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface
@@ -515,7 +515,7 @@ fun QuickAccessSection(
         ) {
             // Carte interactive
             QuickAccessCard(
-                title = "Carte",
+                title = stringResource(R.string.map),
                 icon = Icons.Default.Map,
                 onClick = onMapClick,
                 modifier = Modifier.weight(1f)
@@ -523,7 +523,7 @@ fun QuickAccessSection(
 
             // Recherche
             QuickAccessCard(
-                title = "Recherche",
+                title = stringResource(R.string.search),
                 icon = Icons.Default.Search,
                 onClick = onSearchClick,
                 modifier = Modifier.weight(1f)
@@ -531,7 +531,7 @@ fun QuickAccessSection(
 
             // Calendrier
             QuickAccessCard(
-                title = "Calendrier",
+                title = stringResource(R.string.calendar),
                 icon = Icons.Default.CalendarMonth,
                 onClick = onCalendarClick,
                 modifier = Modifier.weight(1f)

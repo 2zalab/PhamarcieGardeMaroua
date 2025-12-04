@@ -147,15 +147,15 @@ fun MapScreen(
             TopAppBar(
                 title = {
                     Text(
-                        if (showNearbyPharmacies) "Pharmacies à proximité"
-                        else "Toutes les pharmacies"
+                        if (showNearbyPharmacies) stringResource(R.string.nearby_pharmacies)
+                        else stringResource(R.string.all_pharmacies)
                     )
                 },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Retour"
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
                 },
@@ -183,7 +183,7 @@ fun MapScreen(
                     ) {
                         Icon(
                             imageVector = Icons.Default.MyLocation,
-                            contentDescription = "Ma position",
+                            contentDescription = stringResource(R.string.my_location),
                             tint = Color.White
                         )
                     }
@@ -211,8 +211,8 @@ fun MapScreen(
                         Icon(
                             imageVector = if (showNearbyPharmacies) Icons.Default.Home
                             else Icons.Default.NearMe,
-                            contentDescription = if (showNearbyPharmacies) "Toutes les pharmacies"
-                            else "Pharmacies proches",
+                            contentDescription = if (showNearbyPharmacies) stringResource(R.string.all_pharmacies)
+                            else stringResource(R.string.nearby_pharmacies),
                             tint = Color.White
                         )
                     }
@@ -246,8 +246,8 @@ fun MapScreen(
                     userLocation?.let { location ->
                         Marker(
                             state = MarkerState(position = location),
-                            title = "Votre position",
-                            snippet = "Vous êtes ici",
+                            title = stringResource(R.string.your_location),
+                            snippet = stringResource(R.string.you_are_here),
                             icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)
                         )
                     }
@@ -270,7 +270,7 @@ fun MapScreen(
                             state = MarkerState(
                                 position = LatLng(pharmacy.latitude, pharmacy.longitude)
                             ),
-                            title = pharmacy.name + if (pharmacy.isOnDutyToday) " 🟢 DE GARDE" else "",
+                            title = pharmacy.name + if (pharmacy.isOnDutyToday) " 🟢 " + stringResource(R.string.on_duty_badge) else "",
                             snippet = pharmacy.address,
                             icon = BitmapDescriptorFactory.defaultMarker(markerColor),
                             onClick = {
@@ -307,7 +307,7 @@ fun MapScreen(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = " A coté de vous",
+                                text = " " + stringResource(R.string.near_you),
                                 color = Color.White,
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = FontWeight.Medium
@@ -333,7 +333,7 @@ fun MapScreen(
                         uiState.pharmacies.size
                     }
                     Text(
-                        text = "$count pharmacies",
+                        text = stringResource(R.string.pharmacy_count, count),
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Medium
@@ -386,8 +386,8 @@ fun MapScreen(
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(
-                                text = if (showNearbyPharmacies) "Recherche des pharmacies proches..."
-                                else "Chargement des pharmacies...",
+                                text = if (showNearbyPharmacies) stringResource(R.string.searching_nearby)
+                                else stringResource(R.string.loading_pharmacies),
                                 style = MaterialTheme.typography.bodyMedium
                             )
                         }
@@ -403,7 +403,7 @@ fun MapScreen(
                         .padding(16.dp),
                     action = {
                         TextButton(onClick = { viewModel.retry() }) {
-                            Text("Réessayer")
+                            Text(stringResource(R.string.retry))
                         }
                     }
                 ) {
@@ -460,7 +460,7 @@ fun PharmacyMapCard(
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "DE GARDE",
+                                text = stringResource(R.string.on_duty_badge),
                                 style = MaterialTheme.typography.labelSmall,
                                 color = Color.Red,
                                 fontWeight = FontWeight.Bold
@@ -507,7 +507,7 @@ fun PharmacyMapCard(
                 IconButton(onClick = onCloseClick) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Fermer"
+                        contentDescription = stringResource(R.string.close)
                     )
                 }
             }
@@ -527,7 +527,7 @@ fun PharmacyMapCard(
                     modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Voir les détails")
+                Text(stringResource(R.string.view_details))
             }
         }
     }
@@ -562,7 +562,7 @@ fun PremiumLockedMapScreen(onUpgradeClick: () -> Unit) {
                 )
 
                 Text(
-                    text = "Carte Interactive",
+                    text = stringResource(R.string.interactive_map),
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -570,7 +570,7 @@ fun PremiumLockedMapScreen(onUpgradeClick: () -> Unit) {
                 )
 
                 Text(
-                    text = "Visualisez toutes les pharmacies sur une carte interactive, localisez les pharmacies à proximité et obtenez des itinéraires GPS",
+                    text = stringResource(R.string.map_description),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center
@@ -592,7 +592,7 @@ fun PremiumLockedMapScreen(onUpgradeClick: () -> Unit) {
                             tint = MaterialTheme.colorScheme.primary
                         )
                         Text(
-                            text = "Fonctionnalité Premium",
+                            text = stringResource(R.string.premium_feature),
                             style = MaterialTheme.typography.labelLarge,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
@@ -611,12 +611,12 @@ fun PremiumLockedMapScreen(onUpgradeClick: () -> Unit) {
                 ) {
                     Icon(imageVector = Icons.Default.Upgrade, contentDescription = null)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Passer à Premium")
+                    Text(stringResource(R.string.upgrade_to_premium))
                 }
 
                 TextButton(onClick = {}) {
                     Text(
-                        text = "En savoir plus sur les avantages Premium",
+                        text = stringResource(R.string.learn_more_premium),
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
@@ -653,14 +653,14 @@ fun PermissionRequestCard(onRequestPermission: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Localisation requise",
+                    text = stringResource(R.string.location_permission_required),
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onSurface,
                     fontWeight = FontWeight.SemiBold
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 Text(
-                    text = "Activez la localisation pour trouver les pharmacies les plus proches de vous et bénéficier d'une expérience personnalisée.",
+                    text = stringResource(R.string.location_permission_message),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center
@@ -679,14 +679,14 @@ fun PermissionRequestCard(onRequestPermission: () -> Unit) {
                         contentDescription = null
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Activer la localisation")
+                    Text(stringResource(R.string.grant_permission))
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 TextButton(
                     onClick = { /* L'utilisateur peut ignorer */ },
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Ignorer pour l'instant")
+                    Text(stringResource(R.string.skip))
                 }
             }
         }

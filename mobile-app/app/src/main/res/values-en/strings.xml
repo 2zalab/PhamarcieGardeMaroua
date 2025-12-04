@@ -2,6 +2,7 @@
 <resources>
     <!-- App Name -->
     <string name="app_name">On-Call Pharmacy</string>
+    <string name="app_slogan">Easily find on-duty pharmacies near you</string>
 
     <!-- Navigation -->
     <string name="home">Home</string>

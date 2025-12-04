@@ -29,47 +29,57 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.launch
 
 data class OnboardingPage(
     val title: String,
     val description: String,
     val icon: ImageVector,
-    val gradient: Pair<Color, Color>
+    val gradient: List<Color>
 )
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
-    onFinish: () -> Unit,
-    viewModel: OnboardingViewModel = hiltViewModel()
+    onFinished: () -> Unit
 ) {
     val pages = remember {
         listOf(
             OnboardingPage(
-                title = "Bienvenue sur\nPharmacie de Garde",
-                description = "Trouvez rapidement les pharmacies de garde près de vous, 24h/24 et 7j/7",
-                icon = Icons.Default.Favorite,
-                gradient = Color(0xFF14b8a6) to Color(0xFF22c55e) // Teal to Green
+                title = "Trouvez facilement",
+                description = "Localisez rapidement les pharmacies de garde près de chez vous, 24h/24 et 7j/7",
+                icon = Icons.Default.Search,
+                gradient = listOf(
+                    Color(0xFF667eea),
+                    Color(0xFF764ba2)
+                )
             ),
             OnboardingPage(
-                title = "Localisation\nen Temps Réel",
-                description = "Découvrez les pharmacies ouvertes autour de vous grâce à la carte interactive",
-                icon = Icons.Default.LocationOn,
-                gradient = Color(0xFF3b82f6) to Color(0xFF8b5cf6) // Blue to Purple
+                title = "Carte interactive",
+                description = "Visualisez toutes les pharmacies sur une carte interactive avec itinéraires en temps réel",
+                icon = Icons.Default.Map,
+                gradient = listOf(
+                    Color(0xFFf093fb),
+                    Color(0xFFF5576C)
+                )
             ),
             OnboardingPage(
-                title = "Horaires\net Informations",
-                description = "Consultez les horaires, numéros de téléphone et itinéraires pour chaque pharmacie",
-                icon = Icons.Default.Schedule,
-                gradient = Color(0xFFf59e0b) to Color(0xFFef4444) // Orange to Red
+                title = "Calendrier de garde",
+                description = "Consultez le calendrier complet des pharmacies de garde pour planifier à l'avance",
+                icon = Icons.Default.CalendarToday,
+                gradient = listOf(
+                    Color(0xFF4facfe),
+                    Color(0xFF00f2fe)
+                )
             ),
             OnboardingPage(
-                title = "Favoris\net Notifications",
-                description = "Enregistrez vos pharmacies préférées et recevez des notifications",
-                icon = Icons.Default.Star,
-                gradient = Color(0xFFec4899) to Color(0xFFf43f5e) // Pink to Rose
+                title = "Notifications intelligentes",
+                description = "Recevez des alertes personnalisées sur les pharmacies de garde dans votre zone",
+                icon = Icons.Default.Notifications,
+                gradient = listOf(
+                    Color(0xFF43e97b),
+                    Color(0xFF38f9d7)
+                )
             )
         )
     }
@@ -82,52 +92,64 @@ fun OnboardingScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        Column(
+        HorizontalPager(
+            state = pagerState,
             modifier = Modifier.fillMaxSize()
+        ) { page ->
+            OnboardingPageContent(
+                page = pages[page],
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+
+        // Bottom section avec indicateurs et boutons
+        Column(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .padding(bottom = 48.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Skip button
+            // Indicateurs de page
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.End
+                modifier = Modifier.padding(bottom = 32.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                TextButton(
-                    onClick = {
-                        viewModel.completeOnboarding()
-                        onFinish()
-                    }
-                ) {
-                    Text(
-                        text = "Passer",
-                        color = MaterialTheme.colorScheme.primary
+                repeat(pages.size) { index ->
+                    PageIndicator(
+                        isSelected = pagerState.currentPage == index,
+                        color = pages[pagerState.currentPage].gradient.first()
                     )
                 }
             }
 
-            // Pager
-            HorizontalPager(
-                state = pagerState,
-                modifier = Modifier.weight(1f)
-            ) { page ->
-                OnboardingPageContent(pages[page])
-            }
-
-            // Bottom section
-            Column(
+            // Boutons de navigation
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .padding(horizontal = 24.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                // Page indicators
-                PageIndicator(
-                    pageCount = pages.size,
-                    currentPage = pagerState.currentPage,
-                    modifier = Modifier.padding(bottom = 24.dp)
-                )
+                // Bouton Passer
+                AnimatedVisibility(
+                    visible = pagerState.currentPage < pages.size - 1,
+                    enter = fadeIn(),
+                    exit = fadeOut()
+                ) {
+                    TextButton(
+                        onClick = onFinished
+                    ) {
+                        Text(
+                            text = "Passer",
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
 
-                // Next/Finish button
+                Spacer(modifier = Modifier.weight(1f))
+
+                // Bouton Suivant/Commencer
                 Button(
                     onClick = {
                         if (pagerState.currentPage < pages.size - 1) {
@@ -135,34 +157,29 @@ fun OnboardingScreen(
                                 pagerState.animateScrollToPage(pagerState.currentPage + 1)
                             }
                         } else {
-                            viewModel.completeOnboarding()
-                            onFinish()
+                            onFinished()
                         }
                     },
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
+                        .height(56.dp)
+                        .widthIn(min = 140.dp),
+                    shape = RoundedCornerShape(28.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary
-                    ),
-                    shape = RoundedCornerShape(16.dp)
+                        containerColor = pages[pagerState.currentPage].gradient.first()
+                    )
                 ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Text(
-                            text = if (pagerState.currentPage < pages.size - 1) "Suivant" else "Commencer",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
+                    Text(
+                        text = if (pagerState.currentPage < pages.size - 1) "Suivant" else "Commencer",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+
+                    if (pagerState.currentPage < pages.size - 1) {
                         Spacer(modifier = Modifier.width(8.dp))
                         Icon(
-                            imageVector = if (pagerState.currentPage < pages.size - 1)
-                                Icons.Default.ArrowForward
-                            else
-                                Icons.Default.Check,
-                            contentDescription = null
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = null,
+                            modifier = Modifier.size(20.dp)
                         )
                     }
                 }
@@ -172,22 +189,23 @@ fun OnboardingScreen(
 }
 
 @Composable
-fun OnboardingPageContent(page: OnboardingPage) {
+fun OnboardingPageContent(
+    page: OnboardingPage,
+    modifier: Modifier = Modifier
+) {
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 32.dp),
+        modifier = modifier.padding(horizontal = 32.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Animated icon with gradient background
+        // Icône avec gradient background
         Box(
             modifier = Modifier
-                .size(200.dp)
+                .size(160.dp)
                 .clip(CircleShape)
                 .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(page.gradient.first, page.gradient.second)
+                    brush = Brush.linearGradient(
+                        colors = page.gradient
                     )
                 ),
             contentAlignment = Alignment.Center
@@ -195,21 +213,21 @@ fun OnboardingPageContent(page: OnboardingPage) {
             Icon(
                 imageVector = page.icon,
                 contentDescription = null,
-                tint = Color.White,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(80.dp),
+                tint = Color.White
             )
         }
 
         Spacer(modifier = Modifier.height(48.dp))
 
-        // Title
+        // Titre
         Text(
             text = page.title,
-            fontSize = 32.sp,
+            style = MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center,
-            lineHeight = 40.sp
+            color = MaterialTheme.colorScheme.onBackground,
+            fontSize = 32.sp
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -217,43 +235,37 @@ fun OnboardingPageContent(page: OnboardingPage) {
         // Description
         Text(
             text = page.description,
-            fontSize = 16.sp,
-            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f),
+            style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
-            lineHeight = 24.sp
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            fontSize = 16.sp,
+            lineHeight = 24.sp,
+            modifier = Modifier.padding(horizontal = 16.dp)
         )
     }
 }
 
 @Composable
 fun PageIndicator(
-    pageCount: Int,
-    currentPage: Int,
-    modifier: Modifier = Modifier
+    isSelected: Boolean,
+    color: Color
 ) {
-    Row(
-        modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        repeat(pageCount) { index ->
-            val width by animateDpAsState(
-                targetValue = if (index == currentPage) 32.dp else 8.dp,
-                animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy),
-                label = "indicator_width"
-            )
+    val width by animateDpAsState(
+        targetValue = if (isSelected) 32.dp else 8.dp,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow
+        ),
+        label = "indicator width"
+    )
 
-            Box(
-                modifier = Modifier
-                    .width(width)
-                    .height(8.dp)
-                    .clip(RoundedCornerShape(4.dp))
-                    .background(
-                        if (index == currentPage)
-                            MaterialTheme.colorScheme.primary
-                        else
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
-                    )
+    Box(
+        modifier = Modifier
+            .height(8.dp)
+            .width(width)
+            .clip(RoundedCornerShape(4.dp))
+            .background(
+                if (isSelected) color else color.copy(alpha = 0.3f)
             )
-        }
-    }
+    )
 }

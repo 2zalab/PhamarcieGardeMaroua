@@ -3,6 +3,7 @@ package com.maroua.pharmaciegarde.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,6 +14,8 @@ import com.maroua.pharmaciegarde.ui.screens.main.MainScreen
 import com.maroua.pharmaciegarde.ui.screens.onboarding.OnboardingScreen
 import com.maroua.pharmaciegarde.ui.screens.splash.SplashScreen
 import com.maroua.pharmaciegarde.ui.viewmodel.AuthViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 sealed class RootDestination(val route: String) {
     object Splash : RootDestination("splash")
@@ -27,11 +30,12 @@ fun AppNavigation(
     userPreferencesManager: UserPreferencesManager
 ) {
     val navController = rememberNavController()
+    val scope = rememberCoroutineScope()
 
     // Observer l'état de connexion en temps réel
     val isUserSignedIn by authViewModel.isUserSignedInFlow().collectAsState(initial = false)
 
-    // Observer si l'utilisateur a déjà vu l'onboarding
+    // Observer les préférences utilisateur
     val userPreferences by userPreferencesManager.userPreferencesFlow.collectAsState(
         initial = com.maroua.pharmaciegarde.data.local.UserPreferences()
     )
@@ -44,8 +48,8 @@ fun AppNavigation(
         composable(RootDestination.Splash.route) {
             SplashScreen(
                 onTimeout = {
-                    // Après délai, vérifier si l'utilisateur a vu l'onboarding
-                    if (!userPreferences.hasSeenOnboarding) {
+                    // Vérifier si l'utilisateur a complété l'onboarding
+                    if (!userPreferences.hasCompletedOnboarding) {
                         navController.navigate(RootDestination.Onboarding.route) {
                             popUpTo(RootDestination.Splash.route) { inclusive = true }
                         }
@@ -65,8 +69,12 @@ fun AppNavigation(
         // Onboarding Screen
         composable(RootDestination.Onboarding.route) {
             OnboardingScreen(
-                onFinish = {
-                    // Après l'onboarding, aller vers Login ou Main selon l'état de connexion
+                onFinished = {
+                    // Marquer l'onboarding comme complété
+                    scope.launch {
+                        userPreferencesManager.setOnboardingCompleted()
+                    }
+                    // Naviguer vers Login ou Main selon l'état de connexion
                     if (isUserSignedIn) {
                         navController.navigate(RootDestination.Main.route) {
                             popUpTo(RootDestination.Onboarding.route) { inclusive = true }

@@ -27,7 +27,7 @@ data class UserPreferences(
     val language: AppLanguage = AppLanguage.FRENCH,
     val notificationsEnabled: Boolean = true,
     val onDutyNotificationsEnabled: Boolean = true,
-    val hasSeenOnboarding: Boolean = false
+    val hasCompletedOnboarding: Boolean = false
 )
 
 @Singleton
@@ -39,7 +39,7 @@ class UserPreferencesManager @Inject constructor(
         val LANGUAGE = stringPreferencesKey("language")
         val NOTIFICATIONS_ENABLED = booleanPreferencesKey("notifications_enabled")
         val ON_DUTY_NOTIFICATIONS = booleanPreferencesKey("on_duty_notifications")
-        val HAS_SEEN_ONBOARDING = booleanPreferencesKey("has_seen_onboarding")
+        val HAS_COMPLETED_ONBOARDING = booleanPreferencesKey("has_completed_onboarding")
     }
 
     val userPreferencesFlow: Flow<UserPreferences> = context.dataStore.data
@@ -60,7 +60,7 @@ class UserPreferencesManager @Inject constructor(
                 ),
                 notificationsEnabled = preferences[PreferencesKeys.NOTIFICATIONS_ENABLED] ?: true,
                 onDutyNotificationsEnabled = preferences[PreferencesKeys.ON_DUTY_NOTIFICATIONS] ?: true,
-                hasSeenOnboarding = preferences[PreferencesKeys.HAS_SEEN_ONBOARDING] ?: false
+                hasCompletedOnboarding = preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] ?: false
             )
         }
 
@@ -88,9 +88,9 @@ class UserPreferencesManager @Inject constructor(
         }
     }
 
-    suspend fun setHasSeenOnboarding(hasSeen: Boolean) {
+    suspend fun setOnboardingCompleted() {
         context.dataStore.edit { preferences ->
-            preferences[PreferencesKeys.HAS_SEEN_ONBOARDING] = hasSeen
+            preferences[PreferencesKeys.HAS_COMPLETED_ONBOARDING] = true
         }
     }
 }

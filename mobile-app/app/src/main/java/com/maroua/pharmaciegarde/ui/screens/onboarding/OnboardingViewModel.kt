@@ -12,9 +12,9 @@ class OnboardingViewModel @Inject constructor(
     private val userPreferencesManager: UserPreferencesManager
 ) : ViewModel() {
 
-    fun completeOnboarding() {
+    fun setOnboardingCompleted() {
         viewModelScope.launch {
-            userPreferencesManager.setHasSeenOnboarding(true)
+            userPreferencesManager.setOnboardingCompleted()
         }
     }
 }
